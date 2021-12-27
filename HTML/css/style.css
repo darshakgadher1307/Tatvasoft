@@ -782,7 +782,7 @@ font-size: 28px; font-family: 'Roboto';}
 .service-form .form-group .form-1 #l1{color: #4f4f4f; font-family: 'Roboto'; font-size: 16px; line-height: 1.5;} 
 .service-form .form-group .form-1 #l1 span{color: #1fb6ff;}
 .service-form .form-group button{font-size: 16px; line-height: 1.5; width: 150px;}
-.service-form .form-group button:hover{text-decoration: none; background-color: 1fb6ff;}
+.service-form .form-group button:hover{text-decoration: none; background-color: #1fb6ff;}
 
 .how-works{position: relative;}
 .how-works .container{ max-width: 1520px; margin: 60px auto 10px auto;}
@@ -813,19 +813,97 @@ margin-top: 20px; margin-bottom: 50px; max-width: 370px;}
     .how-works .container .process .row .col-lg-7:nth-child(even){padding-left: 0;}
 } 
 
+/*-------------------Upcoming Service----------------------*/
 .upcoming-service .faq-header .container{padding: 0;}
 .upcoming-service .faq-header .container .navbar{padding: 0;}
-.upcoming-service .faq-header .container .line{background-color: #e1e1e1; height: 48px; width: 1px; margin-left: 25px; margin-right: 20px;}
-.upcoming-service .faq-header .container .line#l1{margin-left: 20px; margin-right: 20px;}
+.upcoming-service .faq-header .container .line{background-color: #e1e1e1; height: 48px; width: 1px; margin-right: 20px;}
+.upcoming-service .faq-header .container .line#l1{ margin-right: 20px;}
 .upcoming-service .faq-header .container .d-flex img{width: auto; height: auto; margin: auto;}
+.upcoming-service .faq-header .container .d-flex button{background-color: transparent; border: none;}
+.upcoming-service .faq-header .container .d-flex .badge{margin-left: -5px; }
 .upcoming-service .faq-header .container img#arrow-down{margin-left: 10px;}
 .name{padding-top: 110px; background-color: #f9f9f9; padding-bottom: 40px;}
 .name p{font-family: 'Roboto'; font-size: 30px;color: #4f4f4f; font-weight: normal;line-height: 0.8;}
 .name p span{font-weight: bold;}
 
-.upcoming-service-details{padding: 30px 200px; font-family: 'Roboto'; font-weight: normal;}
+.upcoming-service-details{padding:40px 50px; font-family: 'Roboto'; font-weight: normal;}
 .upcoming-service-details .container{ max-width: 1520px;}
-.upcoming-service-details .container .container-menu{background-color: #1d7a8c; height: 712px; width: 262px;}
+.upcoming-service-details .container .container-menu{background-color: #1d7a8c; height: 764px; min-width: fit-content;}
+.upcoming-service-details .container .container-menu .navbar{padding-top: 0px; padding-bottom: 0px; }
 .upcoming-service-details .container .container-menu ul li a{color: rgba(255, 255, 255, 0.9); font-size: 18px;}
-.upcoming-service-details .container .container-menu ul li{border-bottom: 1px solid rgba(255, 255, 255, 0.2);}
+.upcoming-service-details .container .container-menu ul li{border-bottom: 1px solid rgba(255, 255, 255, 0.2); padding-right: 80px;}
 .upcoming-service-details .container .container-menu .nav-item{  padding-left: 20px; padding-top: 5px; padding-bottom: 5px;}
+.upcoming-service-details .container .container-menu ul li:hover{background-color: #146371; transition: ease 0.5s;}
+.upcoming-service-details .container .container-menu .active{background-color: #146371;}
+
+.container-details{margin-left: 20px; width: -webkit-fill-available;}   
+.container-details .table{border: 1px solid #e1e1e1;}
+.container-details table{font-family: 'Roboto'; font-size: 16px; color: #646464;}
+.container-details table thead{background-color: #f9f9f9;}
+.container-details table thead tr{border-style: none;}
+.container-details table thead span{display: flex; color: #646464; font-weight: bold; line-height: 1.63; margin: 5px 5px;}
+.container-details table thead span img{height: min-content; margin-left: 5px; margin-top: 6px;}
+.container-details table tbody span img{margin-right: 10px;}
+.container-details table tbody span{margin-bottom: 5px;}
+.container-details table tbody tr td{padding-top: 10px; padding-bottom: 10px;}
+.container-details table tbody tr td#table-item{padding-top: 25px; padding-left: 13px;}
+.container-details table tbody tr span#t-bold{font-weight: bold;}
+.container-details table tbody tr td#table-item-2{line-height: 25px;}
+.container-details table tbody tr .button{padding-top: 15px;}
+
+@media(max-width:1200px){
+    .upcoming-service-details .container .container-menu{height: auto; width: auto; margin-bottom: 25px; border-radius: 10px;}
+    .upcoming-service-details .container .container-menu ul li{border-bottom: none; padding-right: 0px;}
+    .upcoming-service-details .container .container-menu .nav-item{padding-left: 0px;}
+    .container-details{margin-left: 0px;}
+}   
+@media(max-width:868px){
+    .container-details table thead span img{margin-left: 2px;}
+}
+@media(max-width:717px){
+    .container-details .table{border: none;}
+    .container-details table thead{display: none;}
+    .container-details table tbody tr{margin-top: 15px; box-shadow: 10px 10px 5px #aaaaaa;border-bottom: 1px solid #e1e1e1;}
+}
+@media(max-width:992px){
+    .upcoming-service .faq-header .container .d-flex{width: fit-content;}
+    .upcoming-service .faq-header .container .d-flex img{margin-left: 0; margin-top: 5px;}
+    .upcoming-service .faq-header .container .d-flex img#arrow-down{margin-top: 20px;}
+}
+
+/*-------------------Service History----------------------*/
+.service-history .upcoming-service-details .container .container-menu{height: 1032px;}
+.service-history .container-details h3{font-size: 22px;}
+.service-history .container-details .title{margin-bottom: 10px;}
+.service-history .container-details .title .blue{background-color: #146371; color: #fff; font-size: 14px; line-height: 1.71; font-family: 'Roboto'; border: none; border-radius: 17px; padding-left: 15px; padding-right: 15px;}
+.service-history .container-details table tbody tr td#rating img{height: fit-content;}
+.service-history .container-details table tbody tr td#rating img#image4{margin-top: auto; margin-bottom: auto; border: 1px solid #aaaaaa; border-radius: 50%; padding: 12px 7px;}
+.service-history .container-details table tbody tr td#rating .r-details{margin-left: 10px; margin-top: 10px;}
+.service-history .container-details table tbody tr td#rating .r-details .star{margin-top: -10px;}
+.service-history .container-details table tbody tr td#table-item-2{padding-top: 23px;}
+.service-history .container-details table tbody tr td#table-btn{padding-top: 25px;}
+.service-history .container-details table tbody tr td#table-btn-2{padding-top: 33px;}
+.service-history .container-details table tbody tr td span p{display: inline-block; font-size: 24px;font-size: 'Roboto'; font-weight: bold; color: #1d7a8c;}
+.service-history .container-details table tbody tr td span#price{font-size: 20px; font-size: 'Roboto'; font-weight: bold; color: #1d7a8c;}
+.service-history .container-details table tbody tr td .blue{background-color: #6da9b5; color: #fff; font-size: 14px; line-height: 1.71; font-family: 'Roboto'; border: none; border-radius: 17px; padding: 7px 17px;}
+.service-history .container-details table tbody tr td .green{background-color: #67b644; color: #fff; font-size: 14px; line-height: 1.71; font-family: 'Roboto'; border: none;
+}
+.service-history .container-details table tbody tr td .pink{background-color: #ff6b6b; color: #fff; font-size: 14px; line-height: 1.71; font-family: 'Roboto'; border: none;}
+.service-history .container-details .numbers ul li a{border-radius: 50%; border: 1px solid #e1e1e1; color: #777777; font-size: 14px; font-family: 'Roboto';}
+.service-history .container-details .numbers ul li{margin-left: 5px;}
+.service-history .container-details .numbers ul li .active{background-color: #1d7a8c; color: #fff;}
+.service-history .container-details .details .drop-down{margin-left: 15px;}
+.service-history .container-details .details p{margin-top: 5px; font-family: 'Roboto'; color: #646464; font-size: 14px;}
+.service-history .container-details .details p#p3{margin-left: 10px; margin-right: 10px;}
+.service-history .container-details .details .drop-down select{padding: 5px; border: 1px solid #e1e1e1; color: #646464; font-size: 14px; font-family: 'Roboto';}
+
+
+@media(max-width:1200px){
+    .service-history .upcoming-service-details .container .container-menu{height: auto; width: auto; }
+}  
+@media(max-width:717px){
+    .service-history .container-details table tbody tr td .rating{justify-content: center;}
+    .service-history .container-details #table-row-number{margin-top: 30px;}
+    .service-history .container-details .details{justify-content: center;}
+    .service-history .container-details .numbers ul{justify-content: center;}
+}
