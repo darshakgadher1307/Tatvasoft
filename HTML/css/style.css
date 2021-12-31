@@ -817,6 +817,7 @@ margin-top: 20px; margin-bottom: 50px; max-width: 370px;}
 .upcoming-service .faq-header .container{padding: 0;}
 .upcoming-service .faq-header .container .navbar{padding: 0;}
 .upcoming-service .faq-header .container .line{background-color: #e1e1e1; height: 48px; width: 1px; margin-right: 20px;}
+.upcoming-service .faq-header .container ul li a#a1{margin-top: 5px;}
 .upcoming-service .faq-header .container .line#l1{ margin-right: 20px;}
 .upcoming-service .faq-header .container .d-flex img{width: auto; height: auto; margin: auto;}
 .upcoming-service .faq-header .container .d-flex button{background-color: transparent; border: none;}
@@ -866,6 +867,7 @@ margin-top: 20px; margin-bottom: 50px; max-width: 370px;}
     .container-details table tbody tr{margin-top: 15px; box-shadow: 10px 10px 5px #aaaaaa;border-bottom: 1px solid #e1e1e1;}
 }
 @media(max-width:992px){
+    .upcoming-service .faq-header .container ul .d-flex{margin-top: 9px;}
     .upcoming-service .faq-header .container .d-flex{width: fit-content;}
     .upcoming-service .faq-header .container .d-flex img{margin-left: 0; margin-top: 5px;}
     .upcoming-service .faq-header .container .d-flex img#arrow-down{margin-top: 20px;}
@@ -906,4 +908,134 @@ margin-top: 20px; margin-bottom: 50px; max-width: 370px;}
     .service-history .container-details #table-row-number{margin-top: 30px;}
     .service-history .container-details .details{justify-content: center;}
     .service-history .container-details .numbers ul{justify-content: center;}
+}
+
+/*-------------------Admin----------------------*/
+.admin-user{background-color: #1fb6ff; padding: 10px 10px; position: fixed;width: -webkit-fill-available; z-index: 10;}
+.admin-user .navbar{padding-bottom: 0; padding-top: 0;}
+.admin-user .navbar-brand{color: #fff; font-family: 'Roboto';font-size: 37.5px; font-weight: bold; line-height: 0.65;}
+.admin-user ul{flex-direction: row;}
+.admin-user ul .nav-link{color: #fff; font-family: 'Roboto'; font-size: 16px; }
+.admin-user ul li:last-child{margin-top: 5px; margin-left: 10px ;}
+
+.admin-content{font-family: 'Roboto'; padding-top: 61px;}
+.admin-content .admin-menu{background-color: #fff; height: 1012px; box-shadow:2px 0 5.5px 0.5px rgba(0, 0, 0, 0.1);}
+.admin-content .admin-menu .navbar{padding-bottom: 0;}
+.admin-content .admin-menu .hide{visibility: hidden; display: none;}
+.admin-content .admin-menu .show{visibility: visible; margin-top: 5px; margin-bottom: 5px; transition: ease 0.2s;} 
+.admin-content .admin-menu button#ham:focus{box-shadow: none;}
+.admin-content .admin-menu .show .navbar-toggler-icon{background-image: url(../image/arroe-right.svg);  opacity: 0.5;}
+.admin-content .admin-menu button[aria-expanded='true'] .navbar-toggler-icon{transform: rotate(90deg); transition: ease-in-out 0.3s;}
+.admin-content .admin-menu .navbar ul{width: max-content;}
+.admin-content .admin-menu .navbar ul li a{color: #646464; font-size: 16px;}
+.admin-content .admin-menu .navbar ul li#list-down{position: relative;}
+.admin-content .admin-menu .navbar ul li a#extra-item{display: inline-block; padding-right: 70px;}
+.admin-content .admin-menu .navbar ul li button{position: absolute;right: 7px;margin-top: 17px; transform: rotate(-90deg); padding: 0; background-color: transparent; border: none;}
+.admin-content .admin-menu .navbar ul li button[aria-expanded="true"] img{transform: rotate(90deg);transition: ease 0.3s;}
+.admin-content .admin-menu .navbar ul li div li{border-bottom: none; padding-bottom: 0;}
+.admin-content .admin-menu .navbar ul li div li:last-child{padding-bottom: 10px;}
+.admin-content .admin-menu .navbar ul li div li a{padding-bottom: 0; font-size: 15px;}
+.admin-content .admin-menu .navbar ul li div .nav{padding-left: 20px;}
+.admin-content .admin-menu .navbar ul li .active{color: #1fb6ff;}
+.admin-content .admin-menu .navbar ul li{border-bottom: 1px solid #e5e5e5; padding-top: 5px; padding-bottom: 5px; }
+.admin-content .admin-menu .navbar{padding-top: 0;}
+
+.admin-content .user-details{background-color: #f2f4f5; width: -webkit-fill-available; position: relative;}
+.admin-content .user-details .details-container{padding: 30px 25px;}
+.admin-content .user-details .details-container .title{padding-bottom: 10px;}
+.admin-content .user-details .details-container .title h2{font-size: 22px; color: #646464;}
+.admin-content .user-details .details-container .title button{border: none; border-radius: 4px; background-color: #1fb6ff; color: #fff; font-size: 14px; padding: 9px;}
+.admin-content .user-details .details-container .title button img{margin-right: 10px; margin-bottom: 2px;}
+
+.admin-content .user-search{padding-top: 10px; border: 1px solid #e1e1e1; background-color: #fff; width: fit-content;} 
+.admin-content .user-search .admin-form{border: solid 1px #dedddd; box-shadow: none; color: #a0a0a0; font-size: 16px; font-family: 'Roboto';}
+.admin-content .user-search .col-auto button{border: none; font-size: 16px; padding-top: 10px; padding-bottom: 10px; width: 84px; box-shadow: none;}
+.admin-content .user-search .col-auto .clear{border: 1px solid #dedddd; color: #646464;}
+.admin-content .user-search .col-auto button:hover{box-shadow: none;}
+.admin-content .user-search .col-auto .search{background-color: #1fb6ff; color: #fff;}
+.admin-content .user-search .row{padding: 5px 15px;}
+.admin-content .user-search .col-auto .form-control{padding-top: 10px; padding-bottom: 10px;}
+.admin-content .user-search .col-auto .form-select{padding-top: 10px; padding-bottom: 10px; padding-right: 124px;}
+.admin-content .user-search .col-auto .form-2{padding-right: 175px;}
+.admin-content .user-search .col-auto .form-4{width: 140px;}
+
+.admin-content .user-table{margin-top: 20px; margin-bottom: 20px; width: -webkit-fill-available;}
+.admin-content .user-table .table{background-color: #fff; border: 1px solid #e1e1e1; font-size: 16px; font-weight: normal; color: #646464; margin-bottom: 0;}
+.admin-content .user-table .table tr td{padding-top: 20px; padding-bottom: 20px;}
+.admin-content .user-table .table tr th{border-bottom: 1px solid #e1e1e1; font-weight: bold;padding-top: 20px; padding-bottom: 20px;}
+.admin-content .user-table .table tr th span img{margin-left: 5px;}
+.admin-content .user-table .table tr .button{padding-top: 16px; padding-bottom: 10px;} 
+.admin-content .user-table table thead{background-color: #f9f9f9;}
+.admin-content .user-table .table tr td .green{border: none; background-color: #67b644; color: #fff; padding: 5px 20px; }
+.admin-content .user-table .table tr td .pink{border: none; background-color: #ff6b6b; color: #fff; padding: 5px 14px; }
+.admin-content .user-table .table tr td img{padding-left: 20px;}
+.admin-content .table-end{background-color: #fff; border: 1px solid #e1e1e1;}
+.admin-content .table-end .details p{width: fit-content; margin: auto; padding-left: 15px; color: #646464;}
+.admin-content .table-end .details .drop-down{width: fit-content; margin: auto; padding-left: 10px; }
+.admin-content .table-end .details select{color: #646464; padding: 10px; font-size: 14px;border: 1px solid #d6d6d6;border-radius: 4px; }
+.admin-content .table-end .numbers nav ul{margin: revert; margin-right: 20px;}
+.admin-content .table-end .numbers nav ul li a{color: #646464; font-size: 14px;}
+.admin-content .table-end .numbers nav ul li .active{background-color: #646464; color: #fff;}
+.admin-content .table-end .numbers nav ul li a:hover{background-color: #646464; color: #fff; transition: ease 0.3s;}
+
+.admin-footer p{ bottom: 0; position: absolute; padding-left: 25px; font-size: 14px; color: #a2a6a8;padding-top: 20px;}
+
+@media(max-width:940px){
+    .admin-content .admin-menu{height: auto; background-color: #e1e1e1; position: fixed; z-index: 10;width: -webkit-fill-available;}
+    .admin-content .user-details{padding-top: 45px;}
+    .admin-content .admin-menu .navbar{height: 200px; overflow-y: auto;}
+    .admin-content .admin-menu .navbar ul{flex-direction: column; padding-left: 10px;}
+    .admin-content .admin-menu .navbar ul li{border-bottom: none;}
+}
+@media(max-width:717px){
+    .admin-content .user-table .table-end{border: 2px solid #e1e1e1;box-shadow: 10px 10px 5px #aaaaaa;}
+    .admin-content .user-table .table-end .details{width: fit-content; margin: auto; margin-top: 15px;}
+    .admin-content .user-table .table-end .numbers{width: fit-content; margin: auto;}
+}
+@media(max-width:500px){
+    .admin-content{padding-top: 103px;}
+    .admin-user .container-fluid{flex-direction: column;}
+    .admin-user .navbar-brand{margin-bottom: 15px; margin-right: 0;}
+    .admin-user ul li img{height: 25px;}
+    .admin-user ul li:last-child img{margin-top: -6px;}
+    .admin-user ul li a{padding-top: 3px; margin-left: 5px;}
+}
+@media(max-width:660px){
+    .admin-content .user-table table thead{display: none;}
+    .admin-content .user-table .table{border: none; background-color: transparent;}
+    .admin-content .user-table table tbody tr{border: 2px solid #e1e1e1; margin-bottom: 20px; background-color: #fff;  box-shadow: 10px 10px 5px #aaaaaa;}
+}
+
+
+/*-------------------Admin - Service Requests----------------------*/
+.admin-service-request .admin-content .user-search .col-auto .form-control{padding-top: 10px; padding-bottom: 10px;}
+.admin-service-request .admin-content .user-search .col-auto .form-select{padding-top: 10px; padding-bottom: 10px; padding-right: 60px;}
+.admin-service-request .admin-content .user-search .col-auto .form-a{width: 110px;}
+.admin-service-request .admin-content .user-search .col-auto .form-2{padding-right: 57px;}
+.admin-service-request .admin-content .user-search .col-auto .form-3{padding-right: 30px;}
+.admin-service-request .admin-content .user-search .col-auto .form-4{width: 100px; border-left: none;}
+.admin-service-request .admin-content .user-search .date span{background-color: transparent;}
+.admin-service-request .admin-content .user-table .table tr td{padding-top: 15px; padding-bottom: 0;}
+.admin-service-request .admin-content .user-table .table tr td img{padding-left: 0; padding-right: 9px;}
+.admin-service-request .admin-content .user-table .table tr td#rating{padding-top: 0; padding-bottom: 0;}
+.admin-service-request table tbody tr td#rating img{height: fit-content;}
+.admin-service-request table tbody tr td#rating img#image4{margin-top: auto; margin-bottom: auto; border: 1px solid #aaaaaa; border-radius: 50%; padding: 12px 7px;}
+.admin-service-request table tbody tr td#rating .r-details{margin-left: 10px; margin-top: 10px;}
+.admin-service-request table tbody tr td#rating .r-details .star{margin-top: -10px;}
+.admin-service-request table tbody tr td#rating .r-details .star img{padding-right: 1px;}
+.admin-service-request .admin-content .user-table .table tr td span#t-height{line-height: 30px;}
+.admin-service-request .admin-content .user-table .table tr td span#t-bold{font-weight: bold;}
+.admin-service-request .admin-content .user-table .table tr td#t1{padding-top: 30px;}
+.admin-service-request .admin-content .user-table .table tr .button{padding-top: 25px;}
+.admin-service-request .admin-content .user-table .table tr td img#menu{padding-left: 25px;}
+.admin-service-request .admin-content .user-table .table tr .button button{padding: 5px 8px; font-size: 13px;}
+.admin-service-request .admin-content .user-table .table tr .button button#yellow{background-color: #f2bb37; padding: 5px 15px;}
+.admin-service-request .admin-content .user-table .table tr .button button#blue{background-color: #1fb6ff;}
+.admin-service-request .admin-content .user-table .table tr .button button#pink{background-color: #ff6b6b;}
+
+@media(max-width:660px){
+    .admin-service-request .admin-content .user-table .table tr td#rating .rating{justify-content: center;}
+    .admin-service-request .admin-content .user-table .table tr td{padding-bottom: 5px;}
+    .admin-service-request .admin-content .user-table .table tr td#t1{padding-bottom: 15px; padding-top:15px;}
+    .admin-service-request .admin-content .user-table .table tr .button{padding-top:15px;padding-bottom: 15px;}
 }
