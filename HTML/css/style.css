@@ -353,7 +353,9 @@ a.arrow-link:hover{
 }
 .customer-content .name{
     font-size: 20px;
+    padding: 0;
     color: #4f4f4f;
+    background-color: transparent;
     font-weight: 700;
     font-family: 'Roboto';
     line-height: 1.2;
@@ -559,7 +561,17 @@ a.arrow-link:hover{
         padding: 0;
     } 
 }
-
+@media(max-width:991px){
+    .banner-step .row .col-lg-3+.col-lg-3 .step:before{ display: none;}
+    .banner-step .row .col-lg-3 .step{ width: fit-content; margin: auto; padding-bottom: 40px;}
+    .banner-step .row .col-lg-3+.col-lg-3 .step {margin: auto; padding: 0%; padding-bottom: 40px;}
+    .banner-step .row .col-lg-3:nth-child(odd) .step:before{display: none;}
+    .blog::before{display: none;}
+    .blog::after{display: none;}
+    .footer .footer-1 .footer-logo{width: fit-content; margin: auto;}
+    .row .col-lg-2 ul.social-media{width: fit-content; margin: auto;}
+    .header-block .faq-header{background-color: rgba(39,39,39,.7); }
+}
 
 
 
