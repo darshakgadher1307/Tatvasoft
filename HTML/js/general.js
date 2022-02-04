@@ -10,8 +10,6 @@ $(document).ready(function(){
         }
     })
 
-    
-
   $(".nav-tabs a").click(function(){
     $(this).tab('show');
   });
@@ -70,5 +68,28 @@ $(document).ready(function(){
       $("tr,#admin").removeClass("flex-column");
     }
   });
+
+  $('#AddAddressButton').click(function(){
+    $('#AddAddressForm').removeClass('hide');
+    $('#AddAddressForm').addClass('show');
+    $('#AddAddressButton').addClass('hide');
+  });
+
+  $('#AddAddressCancel').click(function(){
+    $('#AddAddressForm').removeClass('show');
+    $('#AddAddressForm').addClass('hide');
+    $('#AddAddressButton').removeClass('hide');
+  });
+
+  $('#InvoiceCheckbox').click(function(){
+    if($('#InvoiceCheckbox').prop('checked')){
+      $('#invoice-form').removeClass('hide');
+    }
+    else
+    {
+      $('#invoice-form').addClass('hide');
+    }
+  });
+  
 });
 

@@ -1,0 +1,119 @@
+﻿@model RegisterViewModel
+
+@{
+    ViewBag.Title = "Service Provider";
+    Layout = "_Layout";
+}
+
+<!-- Hero Banner -->
+<section class="service-banner">
+        <div class="service-form text-center justify-content-center">
+            <div class="form-group">
+                <h2>Register Now!</h2>
+                <form asp-action="Service_Provider_Sign_Up">
+                    <input asp-for="FirstName" id="fname" class="form-control form-1 mb-3" placeholder="First name">
+                    <span asp-validation-for="FirstName" class="text-start text-danger"></span>
+                    <input asp-for="LastName" id="lname" class="form-control form-1 mb-3" placeholder="Last name">
+                    <span asp-validation-for="LastName" class="text-danger text-start"></span>
+                    <input asp-for="Email" id="email" class="form-control form-1 mb-3" placeholder="Email address">
+                    <span asp-validation-for="Email" class="text-danger text-start"></span>
+                    <div class="input-group form-1 mb-3">
+                        <span class="input-group-text" id="basic-addon1">+91</span>
+                        <input asp-for="Mobile" class="form-control" placeholder="Phone Number">
+                    </div>
+                    <span asp-validation-for="Mobile" class="text-danger text-start"></span>
+                    <input asp-for="Password" id="pwd" class="form-control form-1 mb-3" placeholder="Password">
+                    <span asp-validation-for="Password" class="text-danger text-start"></span>
+                    <input asp-for="ConfirmPassword" id="cpwd" class="form-control form-1 mb-3" placeholder="Confirm Password">
+                    <span asp-validation-for="ConfirmPassword" class="text-danger text-start"></span>
+                    <div class="form-group form-check form-1 mb-2 text-start">
+                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                        <label class="form-check-label" id="l1" for="exampleCheck1">Send me newsletters from Helperland</label>
+                    </div>
+                    <div class="form-group form-check form-1 text-start mb-4">
+                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                        <label class="form-check-label" id="l1"for="exampleCheck1">I accept <span>terms and conditions</span> & <span>privacy policy</span></label>
+                    </div>
+                    <button type="submit" class="blue form-1 mb-4">
+                        <span>Get started
+                            <img src="~/image/arrow-white.png" alt="">
+                        </span>
+                    </button>
+                </form>
+            </div>
+        </div>
+        <div class="scroll-down mb-3">
+            <a href="#" title="Down" class="arrow-link">
+                <img src="~/image/white-down-arrow.png" alt="Scroll">
+            </a>
+        </div>
+</section>
+
+<!-- How it Works! -->
+<section class="how-works">
+        <div class="container">
+            <h2 class="text-center">How it works</h2>
+            <div class="process justify-content-center">
+                <div class="row">
+                    <div class="col-lg-7 text-start">
+                        <h3>Register yourself</h3>
+                        <p>Provide your basic information to register
+                            yourself as a service provider.</p>
+                            <span>
+                                <p>Read more</p>
+                                <img src="~/image/shape-2.png" alt="">
+                            </span>
+                    </div>
+                    <div class="col-lg-5 text-end">
+                        <img src="~/image/group-18-works.png" alt="Register">
+                    </div>
+                </div>
+                <div class="row">
+                        <div class="col-lg-5 text-start">
+                            <img src="~/image/group-18-works2.png" alt="Register">
+                        </div>
+                    <div class="col-lg-7 text-start">
+                        <h3>Get service requests</h3>
+                        <p>You will get service requests from
+                            customes depend on service area and profile.</p>
+                        <span>
+                            <p>Read more</p>
+                            <img src="~/image/shape-2.png" alt="">
+                        </span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-7 text-start">
+                        <h3>Complete service</h3>
+                        <p>Accept service requests from your customers
+                            and complete your work.</p>
+                        <span>
+                            <p>Read more</p>
+                            <img src="~/image/shape-2.png" alt="">
+                        </span>
+                    </div>
+                    <div class="col-lg-5 text-end">
+                        <img src="~/image/group-18-works3.png" alt="Register    ">
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+<!-- News Letter -->
+<div class="faq-news">
+        <div class="newsletter">
+            <div class="container text-center">
+                <h2>GET OUR NEWSLETTER</h2>
+                <div class="form-row d-flex justify-content-center alignitem-center">
+                    <div class="form">
+                        <!--   <label for="email">YOUR EMAIL</label> -->
+                        <input type="email" placeholder="YOUR EMAIL" id='email' class="ip-email">
+                    </div>
+                    <div class="form-grp">
+                        <button class="red">Submit</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>
+</section>

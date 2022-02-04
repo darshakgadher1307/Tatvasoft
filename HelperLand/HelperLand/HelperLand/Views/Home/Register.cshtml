@@ -1,0 +1,112 @@
+﻿@model User
+
+@{
+    ViewBag.Title = "Create an account";
+    Layout = "_Layout1";
+}
+
+<!-- Craete an account -->
+    <section class="create-account">
+        <div class="faq-section">
+            <div class="container text-center">
+                <h2>Create an account</h2>
+                <div class="d-flex justify-content-center">
+                    <div class="line1"></div>
+                    <img src="~/image/forma-1-copy-5.png">
+                    <div class="line2"></div>
+                </div>
+            </div>
+            <form asp-action="Register">
+                <div class="register-form">
+                    <div class="row mb-3">
+                        <div class="col">
+                            <input asp-for="FirstName" class="form-control reg-form" placeholder="First name" aria-label="First name">
+                            <span asp-validation-for="FirstName" class="text-danger"></span>
+                        </div>
+                        <div class="col">
+                            <input asp-for="LastName" class="form-control reg-form" placeholder="Last name" aria-label="Last name">
+                            <span asp-validation-for="LastName" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col">
+                            <input asp-for="Email" class="form-control reg-form" placeholder="E-mail address" aria-label="First name">
+                            <span asp-validation-for="Email" class="text-danger"></span>
+                        </div>
+                        <div class="col">
+                            <div class="input-group">
+                                <div class="input-group-text">+91</div>
+                                <input asp-for="Mobile" class="form-control reg-form" id="autoSizingInputGroup" placeholder="Mobile Number">
+                                
+                            </div>
+                            <span asp-validation-for="Mobile" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col">
+                            <input asp-for="Password" id="password" class="form-control reg-form" placeholder="Password">
+                            <span asp-validation-for="Password" class="text-danger"></span>
+                        </div>
+                        <div class="col">
+                            <input type="Password" id="ConfirmPassword" class="form-control reg-form" placeholder="Confirm Password">
+                            @*<span asp-validation-for="ConfirmPassword" class="text-danger"></span>*@
+                        </div>
+                    </div>
+                    <div class="form-check mb-4">
+                        <input class="form-check-input check-box" type="checkbox" id="flexCheckDefault">
+                        <label class="form-check-label check-form" for="flexCheckDefault">
+                            I have read the <a href="#">privacy policy</a>.
+                        </label>
+                        <br />
+                        <span id="checkboxDiv" class="text-danger"></span>
+                    </div>
+                    
+                    <div class="text-center mb-3">
+                        <button type="submit" class="reg-btn">Register</button>
+                    </div>
+                    <div class="text-center already">
+                        Already Registerd?&nbsp;<a href="#" data-bs-target="#staticBackdrop" data-bs-toggle="modal">Login Now</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+
+   @section Scripts{
+       <script>
+           $(document).ready(function(){
+               $("button").click(function(){
+                   
+                   if(!$("#flexCheckDefault").prop("checked"))
+                   {
+                       $('#checkboxDiv').html("Read and accept policy");
+                   }
+                   else
+                   {
+                       $('#checkboxDiv').html(" ");
+                   }
+                   
+                   //var confirmPass = $("#ConfirmPassword").val();
+                   //var pass = $("#password").val();
+                   //if(confirmPass == null)
+                   //{
+                   //    $("#ConfirmPasswordDiv").html("Confirm Password field is required");
+                   //}
+                   //else
+                   //{
+                   //    if(confirmPass != pass)
+                   //    {
+                           
+                   //        $("#ConfirmPasswordDiv").html("Password and Confirmation Password do not match");
+                   //    }
+                   //    else
+                   //    {
+                           
+                   //        $("#ConfirmPasswordDiv").html(" ");
+                   //    }
+                   //}
+               });
+
+           });
+       </script>
+   }    

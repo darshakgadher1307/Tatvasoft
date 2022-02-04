@@ -1,0 +1,173 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/style.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel=stylesheet>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>   
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="upcoming-service">
+        <div class="faq-header">
+            <div class="container">
+                <nav class="navbar navbar-expand-lg">
+                    <div class="container-fluid">
+                        <a class="navbar-brand" href="#">
+                            <img src="~/image/logo-small.png" alt="Logo">
+                        </a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                            <ul class="navbar-nav">
+                                <li class="nav-item">
+                                    <a id="a1" class="nav-link" href="#">Prices & Services</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a id="a1" class="nav-link" href="#">Warranty</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a id="a1" class="nav-link" href="#">Blog</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a id="a1" class="nav-link" href="#">Contact</a>
+                                </li>
+                                <li class="nav-item d-flex">
+                                    <div id="nav-line" class="line"></div>
+                                    <button type="button" class="notification position-relative">
+                                        <img src="~/image/icon-notification.png" class="" alt="Notification">
+                                        <span class="position-absolute top-4 start-100 translate-middle badge rounded-circle bg-danger">
+                                            9
+                                            <span class="visually-hidden">unread messages</span>
+                                        </span>
+                                    </button>
+                                </li>
+                                <li class="nav-item d-flex">
+                                    <div class="line" id="l1"></div>
+                                    <img src="~/image/admin-user.png" alt="User">
+                                    <img id="arrow-down" src="~/image/sp-arrow-down.png" alt="">
+                                </li>
+                            </ul>
+                        </div>
+                    </div>   
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <section class="name text-center">
+        @*<p>Welcome, <span>@ViewBag.Name</span></p>*@
+    </section>
+
+    <!-- Service Histoey-->
+    <section class="service-history">
+        <div class="upcoming-service-details">
+            <div class="container">
+                <div id="upcoming-service-menu-table" class="d-flex">
+                    <div class="container-menu">
+                        <div class="navbar">
+                            <ul id="upcoming-service-menu" class="nav flex-column">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Dashboard</a>
+                                </li>
+                                <li class="nav-item active">
+                                    <a class="nav-link" href="#">Service History</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Service Schedule</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Favourite Pros</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Invoices</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Notifications</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    @RenderBody()
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+     <footer class="faq-footer footer">
+        <div class="footer-1">
+            <div class="container">
+                <div class="row align-item-center">
+                    <div class="col-lg-2">
+                        <div class="footer-logo">
+                            <a href="#" ><img id="logo" src="~/image/logo-large.png" alt="Site-logo"></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-8">
+                        <ul class="footer-nav d-flex justify-content-center">
+                            <li>
+                                <a href="#" title="Home">Home</a>
+                            </li>
+                            <li>
+                                <a href="#" title="About">About</a>
+                            </li>
+                            <li>
+                                <a href="#" title="Testimonials">Testimonials</a>
+                            </li>
+                            <li>
+                                <a href="#" title="FAQs">FAQs</a>
+                            </li>
+                            <li>
+                                <a href="#" title="Insurance Policy">Insurance Policy</a>
+                            </li>
+                            <li>
+                                <a href="#" title="Impressum">Impressum</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-2">
+                        <ul class="social-media d-flex justify-content-end">
+                            <li>
+                                <a href="#" target="_blank" title="Facebook">
+                                    <img src="~/image/ic-facebook.png" alt="Facebook">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" target="_blank" title="Instagram">
+                                    <img src="~/image/ic-instagram.png" alt="Instagram">
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="line"></div>
+            <div class="copyright text-center">
+                <div class="d-flex justify-content-center">
+                    <p id="p1">©2018 Helperland<span id="p3">.</span> All rights reserved<span id="p3">.</span></p>
+                    <p id="p2">Terms and Conditions&nbsp;&nbsp;|&nbsp;&nbsp;Privacy Policy</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/general.js" asp-append-version="true"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

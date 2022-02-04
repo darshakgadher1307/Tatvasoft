@@ -693,7 +693,194 @@ a.arrow-link {
     }
 }
 
+/*-------------------Login----------------------*/
+.nav-item .login-btn {
+    color: #fff;
+    font-size: 17px;
+    font-family: 'Roboto';
+}
 
+.modal-backdrop {
+    z-index: 0 !important;
+}
+
+.modal-dialog {
+    top: 150px;
+}
+
+.modal-content {
+    max-width: 360px;
+    margin: auto;
+    font-family: 'Roboto';
+}
+
+.modal-body {
+    padding: 25px !important;
+}
+
+    .modal-body .close-btn {
+        border: none;
+        background: transparent;
+        position: absolute;
+        top: 15px;
+        right: 10px;
+    }
+
+    .modal-body h4 {
+        font-size: 24px;
+        color: #646464;
+        font-weight: bold;
+        margin-bottom: 40px;
+    }
+
+    .modal-body .login-form {
+        padding: 25px 40px 25px 20px;
+        color: #646464;
+        font-size: 16px;
+        border: 1px solid #dedddd;
+    }
+
+        .modal-body .login-form:focus {
+            box-shadow: none;
+        }
+
+    .modal-body .log-check:focus {
+        box-shadow: none;
+    }
+
+    .modal-body .log-check {
+        border: solid 1px #c7c7c7;
+        border-radius: 4px;
+        width: 20px;
+        height: 20px;
+    }
+
+        .modal-body .log-check:checked {
+            border-color: #1d798c;
+            background-color: #1d798c;
+        }
+
+    .modal-body p{
+        margin-left: 5px !important;
+        line-height: 2;
+        color: #4f4f4f;
+        font-size: 14px;
+    }
+
+    .modal-body .submit-btn {
+        background-color: #4d93a1;
+        border: none;
+        border-radius: 50px;
+        width: 100%;
+        color: #fff;
+        font-weight: bold;
+        padding: 12px;
+        font-size: 18px;
+    }
+
+        .modal-body .submit-btn:hover {
+            background-color: #1d7a8c;
+        }
+
+    .modal-body .form-log {
+        position: relative;
+    }
+
+    .modal-body .ip-img {
+        position: absolute;
+        top: 16px;
+        right: 10px;
+    }
+
+    .modal-body a {
+        font-size: 16px;
+        color: #1d7a8c;
+        text-decoration: none;
+    }
+
+
+/*-------------------Crate an account----------------------*/
+.create-account {
+    padding: 55px;
+}
+
+.register-form {
+    margin: auto;
+    max-width: 600px;
+}
+
+    .register-form .reg-form:focus {
+        box-shadow: none;
+    }
+
+    .register-form .reg-form {
+        padding: 23px 15px;
+        border: 1px solid #dedddd;
+        color: #646464;
+        font-size: 17px;
+        border-radius: 4px;
+    }
+
+        .register-form .reg-form:focus {
+            box-shadow: none;
+        }
+
+        .register-form .reg-form::placeholder {
+            color: #646464;
+            opacity: 0.6;
+            font-size: 17px;
+        }
+
+    .register-form .check-form {
+        color: #646464;
+        font-size: 17px;
+    }
+
+        .register-form .check-form a {
+            color: #1d7a8c;
+            text-decoration: none;
+        }
+
+            .register-form .check-form a:hover {
+                color: #3ac6e2;
+            }
+
+    .register-form .check-box {
+        padding: 8px;
+        margin-left: 10px;
+    }
+
+        .register-form .check-box:focus {
+            box-shadow: none;
+        }
+
+        .register-form .check-box:checked {
+            background-color: #1d7a8c;
+        }
+
+    .register-form .reg-btn {
+        background-color: #29abc5;
+        border: none;
+        color: #fff;
+        font-weight: 700;
+        padding: 5px 30px;
+        border-radius: 50px;
+        font-size: 26px;
+    }
+
+    .register-form .already {
+        color: #4f4f4f;
+        font-size: 17px;
+    }
+
+        .register-form .already a {
+            text-decoration: none;
+            color: #1d7a8c;
+        }
+
+            .register-form .already a:hover {
+                color: #3ac6e2;
+            }
 
 /*-------------------FAQ----------------------*/
 
@@ -1249,12 +1436,10 @@ a.arrow-link {
     }
 
     .include .row img#i1 {
-        width: -webkit-fill-available;
+        width: 100%;
     }
 }
-/* @media(max-width: 1149px){
-    .include .faq-section .container .row p{font-size: 14px;}
-} */
+
 @media(max-width: 1028px) {
     .include .faq-section .container .row p {
         font-size: 13px;
@@ -1307,7 +1492,7 @@ a.arrow-link {
 
 @media(max-width: 380px) {
     .include .row img#i1 {
-        width: -webkit-fill-available;
+        width: 100%;
     }
 
     .price-sec {
@@ -1325,7 +1510,7 @@ a.arrow-link {
 
 @media(max-width: 510px) {
     .whyhelperland .container .row .col-lg-4 img {
-        width: -webkit-fill-available;
+        width: 100%;
     }
 }
 
@@ -1479,6 +1664,8 @@ a.arrow-link {
         max-width: 359px;
         margin-left: auto;
         margin-right: auto;
+        margin-bottom: 0px !important;
+        margin-top: 20px;
     }
 
         .service-form .form-group .form-1 #l1 {
@@ -1492,10 +1679,11 @@ a.arrow-link {
                 color: #1fb6ff;
             }
 
-    .service-form .form-group button {
+    .service-form .form-group button.form-1{
         font-size: 16px;
         line-height: 1.5;
         width: 150px;
+        margin-bottom: 20px !important;
     }
 
         .service-form .form-group button:hover {
@@ -1545,8 +1733,8 @@ a.arrow-link {
                     margin-top: 28px;
                 }
 
-            .how-works .container .process h3 {
-                font-size: 309px;
+.how-works .container .process h3 {
+                font-size: 30px;
                 font-family: 'Roboto';
                 color: #4f4f4f;
                 line-height: 1.33;
@@ -1713,8 +1901,7 @@ a.arrow-link {
         }
 
             .upcoming-service-details .container .container-menu .navbar {
-                padding-top: 0px;
-                padding-bottom: 0px;
+                padding: 0;
             }
 
             .upcoming-service-details .container .container-menu ul li a {
@@ -1744,7 +1931,7 @@ a.arrow-link {
 
 .container-details {
     margin-left: 20px;
-    width: -webkit-fill-available;
+    width: 100%;
 }
 
     .container-details .table {
@@ -2186,7 +2373,7 @@ a.arrow-link {
 
     .admin-content .user-details {
         background-color: #f2f4f5;
-        width: -webkit-fill-available;
+        width: 100%;
         position: relative;
     }
 
@@ -2398,7 +2585,7 @@ a.arrow-link {
         background-color: #e1e1e1;
         position: fixed;
         z-index: 10;
-        width: -webkit-fill-available;
+        width: 100%;
     }
 
     .admin-content .user-details {
@@ -2614,4 +2801,15 @@ a.arrow-link {
         padding-top: 15px;
         padding-bottom: 15px;
     }
+}
+
+/*-------------------Admin - Service Requests----------------------*/
+.change-password .register-form {
+    max-width: 400px;
+}
+
+.change-password .form-label {
+    font-size: 17px;
+    color: #646464;
+    font-weight: bold;
 }

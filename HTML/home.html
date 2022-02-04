@@ -7,6 +7,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel=stylesheet>
+    
     <title>HelperLand</title>
 </head>
 <body>
@@ -41,7 +42,7 @@
                                     <a id="a1" class="nav-link" href="#">Contact</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link border-btn" href="#">Login</a>
+                                    <a href="#" class="login-btn nav-link border-btn" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Login</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link border-btn" href="#">Become a Helper</a>
@@ -53,6 +54,61 @@
             </div>
         </div>  
     </header>
+
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-center">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <h4>Login to your account</h4>
+                    <button type="button" class="close-btn" data-bs-dismiss="modal" aria-label="Close"><img src="image/close.png"></button>
+                    
+                    <form>
+                        <div class="form-log mb-3 mt-3">
+                            <input type="email" class="login-form form-control" id="pwd" placeholder="Email" name="email">
+                            <img src="image/user.png" class="ip-img">
+                        </div>
+                        <div class="form-log mb-3">
+                            <input type="password" class="login-form form-control" id="pwd" placeholder="Password" name="pswd">
+                            <img src="image/lock.png" class="ip-img">
+                        </div>
+                        <div class="form-check mb-3">
+                            <label class="form-check-label">
+                                <input class="log-check form-check-input" type="checkbox" name="remember">
+                                <span>Remember me</span> 
+                            </label>
+                        </div>
+                        <button type="submit" class="submit-btn">Login</button>
+                    </form>
+                    <div class="text-center mb-1"><a href="#" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#ForgotModal">Forgot Password?</a></div>
+                    <div class="text-center">Don't have an account?<a href="register.html" class="ms-1">Create an account</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="ForgotModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="ForgotModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-center">  
+            <div class="modal-content">
+                <div class="modal-body">
+                    <h4>Forgot password</h4>
+                    <button type="button" class="close-btn" data-bs-dismiss="modal" aria-label="Close"><img src="image/close.png"></button>
+                    
+                    <form>
+                        <div class="form-log mb-3 mt-3">
+                            <input type="email" class="login-form form-control" id="pwd" placeholder="Email" name="email">
+                        </div>
+                        <button type="submit" class="submit-btn">Send</button>
+                    </form>
+                    <div class="text-center">
+                        <a href="#" data-bs-dismiss="modal" data-bs-target="#staticBackdrop" data-bs-target="#staticBackdrop" data-bs-toggle="modal" class="ms-1">Login now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <main>
 
         <!-- Hero Banner -->
@@ -363,7 +419,6 @@
 
    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
     <script type="text/javascript" src="js/general.js"></script>
 </body>
