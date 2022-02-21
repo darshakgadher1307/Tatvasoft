@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "G:\\TatvaSoft\\Project\\Tatvasoft\\HelperLand\\HelperLand\\HelperLand\\HelperLand.csproj": {}
+    "G:\\TatvaSoft\\Practice\\HelperLand\\HelperLand\\HelperLand\\HelperLand.csproj": {}
   },
   "projects": {
-    "G:\\TatvaSoft\\Project\\Tatvasoft\\HelperLand\\HelperLand\\HelperLand\\HelperLand.csproj": {
+    "G:\\TatvaSoft\\Practice\\HelperLand\\HelperLand\\HelperLand\\HelperLand.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "G:\\TatvaSoft\\Project\\Tatvasoft\\HelperLand\\HelperLand\\HelperLand\\HelperLand.csproj",
+        "projectUniqueName": "G:\\TatvaSoft\\Practice\\HelperLand\\HelperLand\\HelperLand\\HelperLand.csproj",
         "projectName": "HelperLand",
-        "projectPath": "G:\\TatvaSoft\\Project\\Tatvasoft\\HelperLand\\HelperLand\\HelperLand\\HelperLand.csproj",
+        "projectPath": "G:\\TatvaSoft\\Practice\\HelperLand\\HelperLand\\HelperLand\\HelperLand.csproj",
         "packagesPath": "C:\\Users\\Darshak\\.nuget\\packages\\",
-        "outputPath": "G:\\TatvaSoft\\Project\\Tatvasoft\\HelperLand\\HelperLand\\HelperLand\\obj\\",
+        "outputPath": "G:\\TatvaSoft\\Practice\\HelperLand\\HelperLand\\HelperLand\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"

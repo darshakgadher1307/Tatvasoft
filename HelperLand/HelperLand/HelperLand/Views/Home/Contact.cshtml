@@ -1,4 +1,5 @@
-﻿@{
+﻿@model ContactU;
+@{
     ViewBag.Title = "Contact";
     Layout = "_Layout1";
 }
@@ -39,38 +40,53 @@
                 <div class="line"></div>
                 <div class="getin-touch">
                     <h3>Get in touch with us</h3>
-                    <div class="form-container">
-                        <div class="form-group">
-                            <div class="row justify-content-center align-items-center">
-                                <div class="col-lg-6 col-sm-12 mb-3">
-                                    <input type="text" id="name" class="form-control form-1" placeholder="First name">
-                                </div>
-                                <div class="col-lg-6 col-sm-12 mb-3">
-                                    <input type="text" id="name" class="form-control form-1" placeholder="Last name">
-                                </div>
-                            </div>
-                            <div class="row justify-content-center align-items-center">
-                                <div class="col-lg-6 col-sm-12 mb-3">
-                                    <div class="input-group">
-                                        <span class="input-group-text" id="basic-addon1">+91</span>
-                                        <input type="text" class="form-control form-1" placeholder="Mobile Number"
-                                        aria-label="mobilenumber" aria-describedby="basic-addon1">
+                    <form asp-action="Contact">
+                        <div class="form-container">
+                            <div class="form-group">
+                                <div class="row justify-content-center align-items-center">
+                                    <div class="col-lg-6 col-sm-12 mb-3">
+                                        <input asp-for="Name" id="name" class="form-control form-1" placeholder="First name">
+                                        <span asp-validation-for="Name" class="text-danger"></span>
+                                    </div>
+                                    <div class="col-lg-6 col-sm-12 mb-3">
+                                        <input asp-for="Name" id="name" class="form-control form-1" placeholder="Last name">
+                                        <span asp-validation-for="Name" class="text-danger"></span>
                                     </div>
                                 </div>
-                                <div class="col-lg-6 col-sm-12 mb-3">
-                                    <input type="email" id="name" class="form-control form-1" placeholder="Email address">
+                                <div class="row justify-content-center align-items-center">
+                                    <div class="col-lg-6 col-sm-12 mb-3">
+                                        <div class="input-group">
+                                            <span class="input-group-text" id="basic-addon1">+91</span>
+                                            <input asp-for="PhoneNumber" class="form-control form-1" placeholder="Mobile Number"
+                                            aria-label="mobilenumber" aria-describedby="basic-addon1">    
+                                        </div>
+                                        <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+                                    </div>
+                                    <div class="col-lg-6 col-sm-12 mb-3">
+                                        <input asp-for="Email" class="form-control form-1" placeholder="Email address">
+                                        <span asp-validation-for="Email" class="text-danger"></span>
+                                    </div>
                                 </div>
+                                <div class="mb-3">
+                                    <select asp-for="Subject" class="form-select form-1" aria-label="Default select example">
+                                        <option selected></option>
+                                        <option value="1">General</option>
+                                        <option value="2">Inquiry</option>
+                                        <option value="3">Renewal</option>
+                                        <option value="4">Revocation</option>
+                                    </select>
+                                    <span asp-validation-for="Subject" class="text-danger"></span>
+                                </div>
+                                
+                                <div class="mb-3">
+                                    <textarea asp-for="Message" class="form-control form-1" rows="5" id="comment" placeholder="Message"></textarea>
+                                    <span asp-validation-for="Message" class="text-danger mb-3"></span>
+                                </div>
+
+                                <button type="submit" class="blue form-1">Submit</button>
                             </div>
-                            <select class="form-select form-1 mb-3" aria-label="Default select example">
-                                <option selected>Subject</option>
-                                <option value="1">One</option>
-                                <option value="2">Two</option>
-                                <option value="3">Three</option>
-                            </select>
-                            <textarea class="form-control form-1 mb-3" rows="5" id="comment" placeholder="Message"></textarea>
-                            <button class="blue form-1">Submit</button>
                         </div>
-                    </div>
+                    </form>
                 </div>
             </div>
         </div>

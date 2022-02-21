@@ -39,6 +39,19 @@ namespace HelperLand.Controllers
             return View();
         }
 
+        [HttpPost]
+        public IActionResult Contact(ContactU model)
+        {
+            if(ModelState.IsValid)
+            {
+                model.CreatedOn = DateTime.Now;
+                helperlandContext.ContactUs.Add(model);
+                helperlandContext.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return View();
+        }
+
         public IActionResult About()
         {
             return View();
@@ -94,8 +107,9 @@ namespace HelperLand.Controllers
             {
                 if (user.Email == email && user.Password == password && user.UserTypeId == 1)
                 {
-                   //HttpContext.Session.SetString("UserId", user.UserId.ToString());
-                   return RedirectToAction("ServiceRequest", "Customer");
+                    HttpContext.Session.SetString("UserID", user.UserId.ToString());
+                    HttpContext.Session.SetString("UserName", user.FirstName);
+                    return RedirectToAction("Index","Home");
                 }
                 else
                 {
@@ -107,6 +121,13 @@ namespace HelperLand.Controllers
                     return View("Index");
                 }
             }
+        }
+
+        [HttpGet]
+        public IActionResult Logout()
+        {
+            HttpContext.Session.Remove("UserName");
+            return RedirectToAction("Index");
         }
 
         [HttpPost]

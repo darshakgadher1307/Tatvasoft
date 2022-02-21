@@ -5,12 +5,20 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Views\Shared\_Layout1.cshtml~RFa26cbf.TMP" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="EntityFramework" Version="5.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0.13" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.13">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="System\Web\" />
   </ItemGroup>
 
 </Project>

@@ -867,6 +867,17 @@ margin-top: 20px; margin-bottom: 50px; max-width: 370px;}
 .upcoming-service .faq-header .container .navbar{padding: 0;}
 .upcoming-service .faq-header .container .line{background-color: #e1e1e1; height: 48px; width: 1px; margin-right: 20px;}
 .upcoming-service .faq-header .container ul li a#a1{margin-top: 5px;}
+.upcoming-service .faq-header .container ul li .drop-toggle{height: fit-content; margin: auto; position: relative;}
+.upcoming-service .faq-header .container ul li .dropdown-menu{position: absolute;box-shadow: 0 0 10px rgb(0 0 0 / 30%);color: #646464; margin-top: 15px;top: 100%; right: 0; margin-right: 12px; padding: 0; font-family: 'Roboto'; transition: all .3s ease; min-width: 200px; border: none; padding-bottom: 5px;}
+.upcoming-service .faq-header .container ul li .dropdown-menu::after{position: absolute;top: 0;content: "";
+border-width: 0 8px 12px 8px;border-style: solid;border-color: transparent transparent #fff transparent;
+top: -12px;right: 35px;}
+.upcoming-service .faq-header .container ul li .dropdown-menu li{font-size: 16px;
+line-height: 18px;} 
+.upcoming-service .faq-header .container ul li .dropdown-menu li a{color: #646464; display: block; padding: 8px 15px;}
+.upcoming-service .faq-header .container ul li .dropdown-menu li a:hover{background: #e1e1e1;}
+.upcoming-service .faq-header .container ul li .dropdown-menu li b{display: block;}
+.upcoming-service .faq-header .container ul li .dropdown-menu .user-details{border-bottom: 1px solid #e1e1e1;margin-bottom: 5px; font-size: 14px; padding: 8px 15px;}
 .upcoming-service .faq-header .container .line#l1{ margin-right: 20px;}
 .upcoming-service .faq-header .container .d-flex img{width: auto; height: auto; margin: auto;}
 .upcoming-service .faq-header .container .d-flex button{background-color: transparent; border: none;}
@@ -914,6 +925,10 @@ margin-top: 20px; margin-bottom: 50px; max-width: 370px;}
     .container-details .table{border: none;}
     .container-details table thead{display: none;}
     .container-details table tbody tr{margin-top: 15px; box-shadow: 10px 10px 5px #aaaaaa;border-bottom: 1px solid #e1e1e1;}
+}
+@media(max-width:991px){
+    .upcoming-service .faq-header .container ul li .dropdown-menu{left: 0; right: unset; margin-left: 10px;}
+    .upcoming-service .faq-header .container ul li .dropdown-menu::after{right: 150px;}
 }
 @media(max-width:992px){
     .upcoming-service .faq-header .container ul .d-flex{margin-top: 9px;}
@@ -1101,23 +1116,22 @@ margin-top: 20px; margin-bottom: 50px; max-width: 370px;}
 .book-service .book-container .row ul .step-3 .icon{background-image: url(../image/user-details.png); position: absolute; height: 32px; width: 32px; background-repeat: no-repeat; left: 0; margin-left: -8px; margin-top: -5px;}
 .book-service .book-container .row ul .step-4 .icon{background-image: url(../image/payment.png); position: absolute; height: 32px; width: 32px; background-repeat: no-repeat; left: 0; margin-left: -12px;}
 
-.book-service .book-container .row ul li .nav-link.active{background-color: #1d7a8c; color: #fff;}
+.book-service .book-container .row ul li .nav-link.active{background-color: #1d7a8c; color: #fff; height: 100%;}
 .book-service .book-container .row ul li .nav-link.active .icon{background-position: 0 -32px;}
-/* .book-service .book-container .row ul li .nav-link.active::after{position: absolute; content: "";height: 0; width: 0; top: 137%; border-color: #1d7a8c transparent transparent transparent; border-style: solid; left: 29%; margin-left: -14px;border-width: 17px 17px 0 17px} */
-
+.book-service .book-container .row ul li{position: relative}
+.book-service .book-container .row ul li .nav-link.active::after{position: absolute; content: "";height: 0; width: 0; top: 97%; border-color: #1d7a8c transparent transparent transparent; border-style: solid; left: 47%; margin-left: -14px;border-width: 17px 17px 0 17px}
+.book-service .book-container .row ul li .nav-link.active-after{background-color: #1d7a8c; color: #fff; height: 100%;}
+.book-service .book-container .row ul li .nav-link.active-after .icon{background-position: 0 -32px;}
 .row .col-auto .postal{font-size: 16px; padding: 10px 15px; color: #646464; border: 1px solid #dedddd; width: 100%; margin-top: 40px;}
 .row .col-auto .postal:focus{box-shadow: none;}
 .row .col-auto .check-btn{background-color: #1d7a8c; font-size: 16px; color: #fff; padding: 11px 25px; border-radius: 50px; border: none; margin-top: 40px}
 
 .book-service .book-container .payment-step2 .room-bath h3{font-size: 16px; color: #4f4f4f; font-weight: bold; line-height: 20px; font-family: 'Roboto'; margin-top: 40px;} 
-.book-service .book-container .payment-step2 .room-bath .dropdown button{color: #646464; background: transparent;
-border: 1px solid #dedddd; padding: 10px;}
-.book-service .book-container .payment-step2 .room-bath .dropdown button:focus{box-shadow: none;}
+.book-service .book-container .payment-step2 .room-bath .dropdown .button{color: #646464; background: transparent; border: 1px solid #dedddd; padding: 10px; border-radius: 4px;}
+.book-service .book-container .payment-step2 .room-bath .dropdown .button:focus{ border: 1px solid #1d7a8c; box-shadow: none;}
+.book-service .book-container .payment-step2 .room-bath .dropdown .button::selection{box-shadow: none;}
 .book-service .book-container hr{margin: 30px 0; border-color: #dcdcdc;}
 .book-service .book-container .row .row{padding-left: 0; margin-top: -30px;}
-.book-service .book-container .payment-step2 .room-bath .dropdown ul li a{padding: 5px; width: auto;}
-.book-service .book-container .payment-step2 .room-bath .dropdown ul{background: #fff;}
-.book-service .book-container .payment-step2 .room-bath .dropdown ul li a:hover{background: rgb(99, 99, 182); color: #fff;}
 .book-service .book-container .row .schedule-plan-1{width: fit-content; padding-right: 50px;}
 .book-service .book-container .row .schedule-plan-2 .payment-step2 .room-bath .dropdown button{padding: 10px 20px 10px 15px;}
 .book-service .book-container .extra-service .row{margin-top: 5px;}
@@ -1125,7 +1139,7 @@ border: 1px solid #dedddd; padding: 10px;}
 
 .book-service .book-container .extra-service .extra-check{padding: 0 20px; font-size: 16px; color: #646464;     font-weight: 400; font-family: 'Roboto'; text-align: center;}
 .book-service .book-container .extra-service .extra-check input{opacity: 0;}
-.book-service .book-container .extra-service .extra-check .image-wrapper{ border: 1px solid #b0c9ce;border-radius: 50%;height: 100px; width: 100px; padding: 20px; margin-bottom: 10px; overflow: hidden; position: relative;}
+.book-service .book-container .extra-service .extra-check .image-wrapper{ border: 1px solid #b0c9ce;border-radius: 50%;height: 100px; width: 100px; padding: 20px; margin: 10px auto; overflow: hidden; position: relative;}
 .book-service .book-container .extra-service .extra-check .image-wrapper .image{position: absolute; width: 56px;
 height: 56px;overflow: hidden;}
 .book-service .book-container .extra-service .extra-check .image-wrapper .image img{position: absolute; top: 0; left: 0;}
@@ -1174,11 +1188,12 @@ height: 56px;overflow: hidden;}
 .book-service .book-container .make-payment .card-details .card-accepted .text{display: block;}
 
 .book-service .book-container {width: 100%;}
-.book-service .book-container .payment{padding-right: 70px;}
+/* .book-service .book-container .payment{padding-right: 70px;} */
 .book-service .book-container .payment-details{position: relative;}
-.book-service .book-container .payment-details .payment-info{box-shadow: 0 0 10px rgb(0 0 0 / 30%);}
-.book-service .book-container .payment-details .payment-info .title{margin: 0;background: #1d7a8c;color: #fff;
-font-size: 18px; line-height: 22px;padding: 22px 20px;font-family: 'Roboto';}
+.book-service .book-container .payment-details .payment-info{box-shadow: 0 0 10px rgb(0 0 0 / 30%); margin-bottom: 25px;}
+.book-service .book-container .payment-details .payment-info .title{margin: 0;background: #1d7a8c;padding: 22px 20px;}
+.book-service .book-container .payment-details .payment-info .title h3{font-size: 18px; line-height: 22px;font-family: 'Roboto';color: #fff;display: inline-block;}
+.book-service .book-container .payment-details .payment-info .title a{float: right;}
 .book-service .book-container .payment-details .payment-info .payment-content{padding: 20px; border-bottom: 1px solid #c8c8c8;}
 .book-service .book-container .payment-details .payment-info .payment-content span{font-size: 16px;line-height: 26px;color: #4f4f4f;font-family: 'Roboto';}
 .book-service .book-container .payment-details .payment-info .payment-content table{width: 100%; font-family: 'Roboto'; color: #4f4f4f;}
@@ -1195,11 +1210,34 @@ line-height: 24px;}
 .book-service .book-container .payment-details .payment-info .total table .price td{font-size: 16px; color: #4f4f4f;}
 .book-service .book-container .payment-details .payment-info .total table .price td:last-child{font-size: 20px;}
 .book-service .book-container .payment-details .payment-info .total p{color: #646464;font-size: 14px;
-line-height: 22px; margin: 0; font-family: 'Roboto';}
+line-height: 22px; margin: 0; font-family: 'Roboto'; cursor: pointer;}
 .book-service .book-container .payment-details .payment-info .total p a span{display: inline-block;color: #f00;
 font-size: 14px;line-height: 22px;}
 .modal#SaveModal .modal-dialog{max-width: 900px;}
 .modal#SaveModal .modal-dialog .modal-content{max-width: 900px;}
+.modal#SaveModal .modal-dialog .modal-content p{font-size: 16px;line-height: 24px;margin: 0;}
+.book-service .book-container .payment-details .payment-info .payment-footer{background: #f3f3f3;font-size: 14px;
+line-height: 21px; padding: 12px 20px;margin: 0;display: block; }
+.book-service .book-container .payment-details .payment-info .payment-footer img{margin-right: 5px; vertical-align: middle;}
+.book-service .book-container .payment-details .payment-info .payment-footer a{text-decoration: none; color: #8d8d8d; font-family: 'Roboto'; font-size: 14px; vertical-align: middle; cursor: pointer;}
+
+.book-service .book-container .payment-details .payment-faq{margin-bottom: 10px;}
+.book-service .book-container .payment-details .payment-faq h3{text-align: center; font-size: 20px; color: #4f4f4f; font-family: 'Roboto'; line-height: 24px; margin: 0 0 10px;}
+.book-service .book-container .payment-details .payment-faq .panel-heading{background: 0 0;padding: 0; border-bottom: 1px solid #e1e1e1;position: relative; margin-bottom: 5px;}
+.book-service .book-container .payment-details .payment-faq .panel-heading a{text-decoration :none; font-size: 14px;line-height: 18px;color: #4f4f4f;font-weight: 400;transition: all .3s ease;padding: 14px 0 14px 20px;display: block; font-family: 'Roboto';}
+.book-service .book-container .payment-details .payment-faq .panel-heading a img{position: absolute;left: 0;height: 12px;top: 16px;transition: all .3s ease;}
+.book-service .book-container .payment-details .payment-faq .panel-heading a:hover{opacity: 0.7;}
+.book-service .book-container .payment-details .payment-faq .panel-body{padding: 10px; font-size: 16px; color: #646464; font-family: 'Roboto';}
+.book-service .book-container .payment-details .payment-faq .panel-heading a[aria-expanded="true"] img{transform: rotate(90deg);}
+.book-service .book-container .payment-details .faq-link{font-size: 16px; color: #1d7a8c; font-family: 'Roboto'; font-weight: 700; text-decoration: none; cursor: pointer;}
+.book-service .book-container .payment-details .modal-btn{position: fixed; bottom: 0%; left: 50%; margin-left: -76px; background: #67b644; color: #fff; font-family: 'Roboto'; font-size: 14px; border: none; border-radius: 50px; padding: 10px 17px; border-bottom-right-radius: 0!important;border-bottom-left-radius: 0!important; z-index: 10;}
+.book-service .book-container .payment-details .payment-info.modal{background: #fff;margin: 20px;width: 95%;}
+
+@media(max-width:900px){
+    .book-service .book-container .payment-faq{display: none;}
+    .book-service .book-container .part-1{width: 100%;}
+    .book-service .book-container .row{padding-left: 0;}
+}
 
 @media(max-width: 1292px){
     .book-service .book-container .row ul li a .details{padding: 40px 0px 10px 0px;}
@@ -1211,7 +1249,7 @@ font-size: 14px;line-height: 22px;}
     .book-service .book-container .row ul li a{padding-right: 20px;}
     .book-service .book-container .row ul .step-3 a{padding-right: 27px;}
 }
-/*-------------------Admin - Service Requests----------------------*/
+/*-------------------hange Password----------------------*/
 .change-password .register-form{ max-width: 400px;}
 .change-password .form-label{ font-size: 17px; color: #646464; font-weight: bold;}
 

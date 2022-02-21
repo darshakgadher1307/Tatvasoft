@@ -5,6 +5,7 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" href="~/image/favicon_img.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewBag.Title</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
@@ -32,7 +33,7 @@
                     <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                         <ul class="navbar-nav">
                             <li class="nav-item">
-                                <a class="nav-link border-btn" href="#">Book now</a>
+                                <a class="nav-link border-btn" asp-action="BookService" asp-controller="BookService">Book now</a>
                             </li>
                             <li class="nav-item">
                                 @if(ViewBag.Title == "Price & Service")

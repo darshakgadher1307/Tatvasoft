@@ -178,3 +178,4 @@ G:\TatvaSoft\Project\Tatvasoft\HelperLand\HelperLand\HelperLand\obj\Debug\netcor
 G:\TatvaSoft\Project\Tatvasoft\HelperLand\HelperLand\HelperLand\obj\Debug\netcoreapp3.1\Razor\Views\Home\Register.cshtml.g.cs
 G:\TatvaSoft\Project\Tatvasoft\HelperLand\HelperLand\HelperLand\obj\Debug\netcoreapp3.1\Razor\Views\Home\Service_Provider_Sign_Up.cshtml.g.cs
 G:\TatvaSoft\Project\Tatvasoft\HelperLand\HelperLand\HelperLand\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout2.cshtml.g.cs
+G:\TatvaSoft\Practice\HelperLand\HelperLand\HelperLand\obj\Debug\netcoreapp3.1\Razor\Views\BookService\BookService.cshtml.g.cs

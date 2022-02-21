@@ -60,6 +60,7 @@
         <img src="image/calculator-banner.png" alt="FAQ-Banner">
     </div>
 
+    
     <!-- Book Service -->
     <section class="book-service">
         <div class="faq-section">
@@ -73,10 +74,10 @@
             </div>
             <div class="book-container">
                 <div class="row">
-                    <div class="part-1 col-sm-7 col-md-8">
-                        <ul class="nav nav-tabs nav-justified">
+                    <div class="part-1 col-sm-7 col-md-8" >
+                        <ul class="nav nav-tabs nav-justified" id="payment-tabs">
                             <li class="nav-item step-1">
-                                <a class="nav-link active" data-bs-toggle="tab" aria-current="page" href="#SetupService"
+                                <a type="button" class="nav-link active" data-bs-toggle="tab" aria-current="page" href="#SetupService"
                                     id="SetupService-tab">
                                     <span class="details">
                                         <span class="icon"></span>
@@ -85,7 +86,7 @@
                                 </a>
                             </li>
                             <li class="nav-item step-2">
-                                <a class="nav-link" aria-current="page" data-bs-toggle="tab" href="#SchedulePlan" id="SchedulePlan-tab">
+                                <a type="button" class="nav-link" aria-current="page" data-bs-toggle="tab" href="#SchedulePlan" id="SchedulePlan-tab">
                                     <span class="details">
                                         <span class="icon"></span>
                                         <span class="setup-service">Schedule & Plan</span>
@@ -93,7 +94,8 @@
                                 </a>
                             </li>
                             <li class="nav-item step-3">
-                                <a class="nav-link" aria-current="page" href="#YourDetails">
+                                <a type="button" class="nav-link" aria-current="page" href="#YourDetails"
+                                data-bs-toggle="tab" id="YourDetails-tab">
                                     <span class="details">
                                         <span class="icon"></span>
                                         <span class="setup-service">Your Details</span>
@@ -101,7 +103,7 @@
                                 </a>
                             </li>
                             <li class="nav-item step-4">
-                                <a class="nav-link" aria-current="page" href="#MakePayment">
+                                <a type="button" class="nav-link" aria-current="page" href="#MakePayment" data-bs-toggle="tab" id="MakePayment-tab">
                                     <span class="details">
                                         <span class="icon"></span>
                                         <span class="setup-service">Make Payment</span>
@@ -123,69 +125,44 @@
                                         <input type="text" class="postal form-control" placeholder="Postal code">
                                     </div>
                                     <div class="col-auto">
-                                        <button type="submit" class="check-btn">Check Availability</button>
+                                        <input type="button" id="check-btn" class="check-btn" value="Check Availability"/>
                                     </div>
                                 </form>
                             </div>
                 
                             <div class="tab-pane fade" id="SchedulePlan" role="tabpanel" aria-labelledby="SchedulePlan-tab">
-                                <div class="payment-step2">
-                                    <div class="room-bath">
-                                        <h3>Select number of rooms and bath</h3>
-                                        <div class="d-flex mt-3">
-                                            <div class="dropdown me-3">
-                                                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
-                                                    data-bs-toggle="dropdown" aria-expanded="false">
-                                                    3.0 hrs
-                                                </button>
-                                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                                    <li><a class="dropdown-item" href="#">1 bed</a></li>
-                                                    <li><a class="dropdown-item" href="#">1 bed</a></li>
-                                                    <li><a class="dropdown-item" href="#">1 bed</a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="dropdown">
-                                                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
-                                                    data-bs-toggle="dropdown" aria-expanded="false">
-                                                    1 bath
-                                                </button>
-                                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                                    <li><a class="dropdown-item" href="#">1 bath</a></li>
-                                                    <li><a class="dropdown-item" href="#">1 bath</a></li>
-                                                    <li><a class="dropdown-item" href="#">1 bath</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <hr>
-                                <div class="row">
+                                <div class="row mt-3">
                                     <div class="col-md-6 schedule-plan-1">
                                         <div class="payment-step2">
                                             <div class="room-bath">
-                                                <h3>Select number of rooms and bath</h3>
+                                                <h3>When do you need cleaner?</h3>
                                                 <div class="d-flex mt-3">
                                                     <div class="dropdown me-3">
-                                                        <button class="btn btn-secondary dropdown-toggle" type="button"
-                                                            id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                                                            1 bed
-                                                        </button>
-                                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                                            <li><a class="dropdown-item" href="#">1 bed</a></li>
-                                                            <li><a class="dropdown-item" href="#">1 bed</a></li>
-                                                            <li><a class="dropdown-item" href="#">1 bed</a></li>
-                                                        </ul>
+                                                        <input type="text" class="button" placeholder="DD/MM/YYYY">
                                                     </div>
                                                     <div class="dropdown">
-                                                        <button class="btn btn-secondary dropdown-toggle" type="button"
-                                                            id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                                                            2:00 PM
-                                                        </button>
-                                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                                            <li><a class="dropdown-item" href="#">3:00 PM</a></li>
-                                                            <li><a class="dropdown-item" href="#">4:00 PM</a></li>
-                                                            <li><a class="dropdown-item" href="#">5:00 PM</a></li>
-                                                        </ul>
+                                                        <select id="start-time" class="button">
+                                                            <option value="8" selected>8:00</option>
+                                                            <option value="8.5">8:30</option>
+                                                            <option value="9">9:00</option>
+                                                            <option value="9.5">9:30</option>
+                                                            <option value="10">10:00</option>
+                                                            <option value="10.5">10:30</option>
+                                                            <option value="11">11:00</option>
+                                                            <option value="11.5">11:30</option>
+                                                            <option value="12">12:00</option>
+                                                            <option value="12.5">12:30</option>
+                                                            <option value="13">13:00</option>
+                                                            <option value="13.5">13:30</option>
+                                                            <option value="14">14:00</option>
+                                                            <option value="14.5">14:30</option>
+                                                            <option value="15">15:00</option>
+                                                            <option value="15.5">15:30</option>
+                                                            <option value="16">16:00</option>
+                                                            <option value="16.5">16:30</option>
+                                                            <option value="17">17:00</option>
+                                                            <option value="17.5">17:30</option>
+                                                        </select>
                                                     </div>
                                                 </div>
                                             </div>
@@ -197,15 +174,27 @@
                                                 <h3>How long do you need your cleaner to stay?</h3>
                                                 <div class="d-flex mt-3">
                                                     <div class="dropdown me-3">
-                                                        <button class="btn btn-secondary dropdown-toggle" type="button"
-                                                            id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                                                            3.0 hrs
-                                                        </button>
-                                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                                            <li><a class="dropdown-item" href="#">3.0 hrs</a></li>
-                                                            <li><a class="dropdown-item" href="#">3.0 hrs</a></li>
-                                                            <li><a class="dropdown-item" href="#">3.0 hrs</a></li>
-                                                        </ul>
+                                                        <select id="How-long" class="button">
+                                                            <option value="3" selected>3.0 hrs</option>
+                                                            <option value="3.5">3.5 hrs</option>
+                                                            <option value="4">4.0 hrs</option>
+                                                            <option value="4.5">4.5 hrs</option>
+                                                            <option value="5">5.0 hrs</option>
+                                                            <option value="5.5">5.5 hrs</option>
+                                                            <option value="6">6.0 hrs</option>
+                                                            <option value="6.5">6.5 hrs</option>
+                                                            <option value="7">7.0 hrs</option>
+                                                            <option value="7.5">7.5 hrs</option>
+                                                            <option value="8">8.0 hrs</option>
+                                                            <option value="8.5">8.5 hrs</option>
+                                                            <option value="9">9.0 hrs</option>
+                                                            <option value="9.5">9.5 hrs</option>
+                                                            <option value="10">10.0 hrs</option>
+                                                            <option value="10.5">10.5 hrs</option>
+                                                            <option value="11">11.0 hrs</option>
+                                                            <option value="11.5">11.5 hrs</option>
+                                                            <option value="12">12.0 hrs</option>
+                                                        </select>
                                                     </div>
                                                 </div>
                                             </div>
@@ -221,7 +210,7 @@
                                     </div>
                                     <div class="extra-container">
                                         <label class="extra-check">
-                                            <input type="checkbox">
+                                            <input id="checkbox-1" name="1" type="checkbox">
                                             <div class="image-wrapper">
                                                 <div class="image">
                                                     <img id="img-1" src="image/cabinets.png" alt="">
@@ -230,40 +219,40 @@
                                             <span>Inside cabinets</span>
                                         </label>
                                         <label class="extra-check">
-                                            <input type="checkbox">
+                                            <input id="checkbox-2" name="2" type="checkbox">
                                             <div class="image-wrapper">
                                                 <div class="image">
                                                     <img id="img-1" src="image/fridge.png" alt="">
                                                 </div>
                                             </div>
-                                            <span>Inside cabinets</span>
+                                            <span>Inside fridge</span>
                                         </label>
                                         <label class="extra-check">
-                                            <input type="checkbox">
+                                            <input id="checkbox-3" name="3" type="checkbox">
                                             <div class="image-wrapper">
                                                 <div class="image">
                                                     <img id="img-1" src="image/oven.png" alt="">
                                                 </div>
                                             </div>
-                                            <span>Inside cabinets</span>
+                                            <span>Inside oven</span>
                                         </label>
-                                        <label class="extra-check">
-                                            <input type="checkbox">
+                                        <label class="extra-check text-center">
+                                            <input id="checkbox-4" name="4" type="checkbox">
                                             <div class="image-wrapper">
                                                 <div class="image">
                                                     <img id="img-1" src="image/laundry.png" alt="">
                                                 </div>
                                             </div>
-                                            <span>Inside cabinets</span>
+                                            <span>Laundry wash & dry</span>
                                         </label>
                                         <label class="extra-check">
-                                            <input type="checkbox">
+                                            <input id="checkbox-5" name="5" type="checkbox">
                                             <div class="image-wrapper">
                                                 <div class="image">
                                                     <img id="img-1" src="image/windows.png" alt="">
                                                 </div>
                                             </div>
-                                            <span>Inside cabinets</span>
+                                            <span>Interior windows</span>
                                         </label>
                                     </div>
                                 </div>
@@ -285,7 +274,7 @@
                                 </div>
                                 <hr>
                                 <div class="text-end mt-2">
-                                    <button class="btn-continue">Continue</button>
+                                    <button id="continue-btn" class="btn-continue">Continue</button>
                                 </div>
                             </div>
                 
@@ -441,7 +430,7 @@
                                             </div>
                                             <hr class="mb-3">
                                             <div class="text-end mt-2">
-                                                <button class="btn-continue">Continue</button>
+                                                <button id="continue-btn2" class="btn-continue">Continue</button>
                                             </div>
                                         </div>
                                     </form>
@@ -457,7 +446,7 @@
                                     </div>
                                     <span>Promo code(optional)</span>
                                     <form class="row mt-2">
-                                        <div class="col-auto">
+                                        <div class="col-auto mb-3">
                                             <input type="text" class="form-control" placeholder="Promo code(optional)">
                                         </div>
                                         <div class="col-auto">
@@ -502,13 +491,16 @@
                         </div>
                     </div>
 
-
+                    
                     <div class="col-sm-5 col-md-4 payment">
                         <div class="payment-details">
-                            <div class="payment-info">
-                                <h3 class="title">
-                                    Payment Summary
-                                </h3>
+                            <button class="hide modal-btn" data-bs-toggle="modal" data-bs-target="#payment-modal" id="modal-button">Payment Summary 54.00&euro;</button>
+                            <div class="payment-info" id="payment-modal">
+                                <div class="title">
+                                    <h3>Payment Summary</h3>
+                                    <a class="hide" data-bs-dismiss="modal" id="modal-close"><img src="image/close-white.png"></a>
+                                </div>
+                                
                                 <div class="payment-content">
                                     <span>04/03/2022 08:00</span>
                                     <table>
@@ -522,6 +514,30 @@
                                             <tr>
                                                 <td>Basic</td>
                                                 <td>3 Hrs</td>
+                                            </tr>
+                                            <tr id="extra" class="hide">
+                                                <th>Extras</th>
+                                                <td></td>
+                                            </tr>
+                                            <tr id="extra-1" class="hide">
+                                                <td>Inside cabinets</td>
+                                                <td>30 min.</td>
+                                            </tr>
+                                            <tr id="extra-2" class="hide">
+                                                <td>Inside fridge</td>
+                                                <td>30 min.</td>
+                                            </tr>
+                                            <tr id="extra-3" class="hide">
+                                                <td>Inside oven</td>
+                                                <td>30 min.</td>
+                                            </tr>
+                                            <tr id="extra-4" class="hide">
+                                                <td>Laundry wash & dry</td>
+                                                <td>30 min.</td>
+                                            </tr>
+                                            <tr id="extra-5" class="hide">
+                                                <td>Interior window</td>
+                                                <td>30 min.</td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -553,7 +569,9 @@
                                                 <td>54.00 &euro;</td>
                                             </tr>
                                             <tr>
-                                                <td class="text-start mt-1" colspan="2"><p>According to § 19 UStG no sales tax is calculated.</p></td>
+                                                <td class="text-start mt-1" colspan="2">
+                                                    <p>According to § 19 UStG no sales tax is calculated.</p>
+                                                </td>
                                             </tr>
                                             <tr class="price">
                                                 <td>Effective Price</td>
@@ -561,20 +579,106 @@
                                             </tr>
                                         </tbody>
                                     </table>
-                                    <p><a data-bs-toggle="modal" data-bs-target="#SaveModal"><span>*</span>You will save 20% according to §35a EStG.</a></p>
+                                    <p><a data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#SaveModal"><span>*</span>You will save 20% according to
+                                            §35a EStG.</a></p>
                                 </div>
-                                <div class="modal fade" id="SaveModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-                                aria-labelledby="SaveModalLabel" aria-hidden="true">
-                                <div class="modal-dialog modal-dialog-center">
-                                    <div class="modal-content">
-                                        <div class="modal-body">
-                                            <h4>You will save 20% according to §35a EStG.</h4>
-                                            <button type="button" class="close-btn" data-bs-dismiss="modal" aria-label="Close"><img src="image/close.png"></button>
+                                <div class="modal fade" id="SaveModal" data-bs-backdrop="static">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-body">
+                                                <h4>You will save 20% according to §35a EStG.</h4>
+                                                <button type="button" class="close-btn" data-bs-dismiss="modal" aria-label="Close"><img
+                                                        src="image/close.png"></button>
+                    
+                                                <p>Our helpers help you with tax savings! Parts of the costs for household tasks recognize
+                                                    the tax
+                                                    office as a tax advantage. Assuming you are a private client, you have received an
+                                                    invoice and have
+                                                    not paid it in cash. You can deduct 20% of the expenses directly from your tax
+                                                    liability, a maximum
+                                                    of 4,000 euros per year.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                    
+                                <div class="payment-footer">
+                                    <img alt="smiley" src="image/smiley.png">
+                                    <a data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#WhatWeInclude">See what is always included</a>
+                                </div>
+                                <div class="modal fade" id="WhatWeInclude" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+                                    aria-labelledby="WhatWeIncludeLabel" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-body">
+                                                <h4>You will save 20% according to §35a EStG.</h4>
+                                                <button type="button" class="close-btn" data-bs-dismiss="modal" aria-label="Close"><img
+                                                        src="image/close.png"></button>
+                    
+                                                <p>Our helpers help you with tax savings! Parts of the costs for household tasks recognize
+                                                    the tax
+                                                    office as a tax advantage. Assuming you are a private client, you have received an
+                                                    invoice and have
+                                                    not paid it in cash. You can deduct 20% of the expenses directly from your tax
+                                                    liability, a maximum
+                                                    of 4,000 euros per year.
+                                                </p>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+
+
+                            <div class="payment-faq">
+                                <h3>Questions?</h3>
+                                <div class="questions" id=WhatInclude>
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <a data-bs-toggle="collapse" href="#question1">
+                                                <img src="image/right-arrow-dark.png">
+                                                What's include in cleaning?
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="panel-collapse collapse" id="question1" aria-expanded="false">
+                                        <div class="panel-body">
+                                            Bedroom, Living Room & Common Areas,Bathrooms,Kitchen,Extras 
+                                        </div>
+                                    </div>
+
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <a data-bs-toggle="collapse" href="#question2">
+                                                <img src="image/right-arrow-dark.png">
+                                                Which Helperland professional will come to my place?
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="panel-collapse collapse" id="question2" aria-expanded="false">
+                                        <div class="panel-body">
+                                            Helperland has a vast network of experienced, top-rated cleaners. Based on the time and date of your request, we work to assign the best professional available.Like working with a specific pro? Add them to your Pro Team from the mobile app and they'll be requested first for all future bookings.You will receive an email with details about your professional prior to your appointment.
+                                        </div>
+                                    </div>
+
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <a data-bs-toggle="collapse" href="#question3">
+                                                <img src="image/right-arrow-dark.png">
+                                                Can I skip or reschedule bookings?
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="panel-collapse collapse" id="question3" aria-expanded="false">
+                                        <div class="panel-body">
+                                            You can reschedule any booking for free at least 24 hours in advance of the scheduled start time. If you need to skip a booking within the minimum commitment, we’ll credit the value of the booking to your account. You can use this credit on future cleanings and other Helperland services.
+                                        </div>
+                                    </div>
+
+                                </div>
                             </div>
+                            <a class="faq-link">For more help</a>
                         </div>
                     </div>
                 </div>
