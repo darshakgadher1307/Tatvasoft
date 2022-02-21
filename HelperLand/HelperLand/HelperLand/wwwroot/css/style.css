@@ -3397,12 +3397,13 @@ a.arrow-link {
                     }
 
                     .book-service .book-container .payment-details .payment-info .payment-content table td:last-child {
-                        text-align: right;
+                        text-align: right !important;
                     }
 
                     .book-service .book-container .payment-details .payment-info .payment-content table td {
                         font-size: 16px;
                         line-height: 26px;
+                        text-align: left !important;
                     }
 
                 .book-service .book-container .payment-details .payment-info .payment-content hr {

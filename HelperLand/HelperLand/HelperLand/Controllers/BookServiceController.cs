@@ -7,6 +7,7 @@ using System.Linq;
 using System.Net;
 using System.Collections.Generic;
 using HelperLand.Models;
+using System;
 
 namespace HelperLand.Controllers
 {
@@ -104,6 +105,60 @@ namespace HelperLand.Controllers
                 }
             }
             return Json(new { success = false });
+        }
+
+        [HttpPost]
+        public IActionResult CompleteBooking(BookServiceViewModel model)
+        {
+            var a = float.Parse(model.SchedulePlanView.StayTime);
+            var b = model.SchedulePlanView.TotalTime;
+            ServiceRequest model1 = new ServiceRequest();
+            model1.UserId = int.Parse(HttpContext.Session.GetString("UserID"));
+            model1.ServiceStartDate = Convert.ToDateTime(model.SchedulePlanView.ServiceStartDate);
+            model1.ZipCode = model.PostalCodeView.PostalCode;
+            model1.ServiceHours = a;
+            model1.ExtraHours = b - a;
+            model1.Comments = model.SchedulePlanView.comment;
+            model1.PaymentDue = false;
+            model1.HasPets = model.SchedulePlanView.IsPet;
+            model1.CreatedDate = DateTime.Now;
+            model1.ModifiedDate = DateTime.Now;
+            model1.SubTotal = Convert.ToDecimal(model.SchedulePlanView.TotalCost);
+            model1.TotalCost = Convert.ToDecimal(model.SchedulePlanView.EffctiveCost);
+            var count = helperlandContext.ServiceRequests.Count();
+            var ServiceId = 1000 + count;
+            model1.ServiceId = ServiceId;
+            helperlandContext.ServiceRequests.Add(model1);
+            helperlandContext.SaveChanges();
+
+            ServiceRequestAddress model2 = new ServiceRequestAddress();
+            var c = helperlandContext.ServiceRequests.Where(m => m.ServiceRequestId == ServiceId).FirstOrDefault();
+            model2.ServiceRequestId = c.ServiceRequestId;
+            model2.AddressLine1 = model.userAddress.AddressLine1;
+            model2.AddressLine2 = model.userAddress.AddressLine2;
+            model2.City = model.userAddress.City;
+            model2.PostalCode = model.userAddress.PostalCode;
+            model2.Mobile = model.userAddress.Mobile;
+            helperlandContext.ServiceRequestAddresses.Add(model2);
+            helperlandContext.SaveChanges();
+
+
+            var i = 0;
+            foreach(var e in model.SchedulePlanView.Extra)
+            {
+                if(e)
+                {
+                    ServiceRequestExtra model3 = new ServiceRequestExtra();
+                    model3.ServiceRequestId = c.ServiceRequestId;
+                    model3.ServiceExtraId = i + 1;
+                    helperlandContext.ServiceRequestExtras.Add(model3);
+                    helperlandContext.SaveChanges();
+
+                }
+                i += 1;
+            }
+
+            return Json(new { success = true , serviceId = model1.ServiceId });
         }
     }
 }

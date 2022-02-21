@@ -12,7 +12,5 @@ namespace HelperLand.ViewModels
         public List<UserAddress> Address { get; set; }
 
         public UserAddress userAddress { get; set; }
-
-        public YourDetailsViewModel yourDetailsView { get; set; }
     }
 }

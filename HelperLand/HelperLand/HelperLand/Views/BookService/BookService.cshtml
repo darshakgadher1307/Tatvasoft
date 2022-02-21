@@ -91,7 +91,7 @@
                                                 <h3>When do you need cleaner?</h3>
                                                 <div class="d-flex mt-3">
                                                     <div class="dropdown me-3">
-                                                        <input asp-for="SchedulePlanView.ServiceStartDate" class="button" placeholder="DD/MM/YYYY">
+                                                        <input asp-for="SchedulePlanView.ServiceStartDate" value=""class="button" placeholder="DD/MM/YYYY">
                                                     </div>
                                                     <div class="dropdown">
                                                         <select asp-for="SchedulePlanView.StartTime" class="button">
@@ -377,6 +377,7 @@
                                 </div>
                             </div>
                 
+                            <!-- Complete Booking -->
                             <div class="tab-pane fade" id="MakePayment" role="tabpanel" aria-labelledby="MakePayment-tab">
                                 <div class="make-payment">
                                     <div class="payment-step2 mb-3">
@@ -414,17 +415,19 @@
                                     <hr>
                                     <div class="comment">
                                         <div class="mt-3 form-check">
-                                            <input type="checkbox" class="form-check-input form-cmt" id="InvoiceCheckbox">
+                                            <input type="checkbox" class="form-check-input form-cmt" id="Terms">
                                             <label class="form-check-label ml-3" for="exampleCheck1">I accepted <a href="#">terms and
                                                     conditions</a>, the <a href="#">cancellation policy</a> and the <a href="#">privacy
                                                     policy</a>. I confirm that Helperland starts to execute the contract before the
                                                 expiry of the withdrawal period and I lose my right of withdrawal as a consumer with
                                                 full performance of the contract.</label>
+                                                <div id="checkrequired" class="text-danger"></div>
                                         </div>
+                                        
                                     </div>
                                     <hr>
                                     <div class="text-end mt-2">
-                                        <button class="btn-continue">Complete Booking</button>
+                                        <button type="button" id="complete-btn" class="btn-continue">Complete Booking</button>
                                     </div>
                                 </div>
                             </div>
@@ -626,6 +629,29 @@
         </div>
     </section>
 
+
+    <div class="modal fade"  data-bs-backdrop="static">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <h4>You will save 20% according to §35a EStG.</h4>
+                    <button type="button" class="close-btn" data-bs-dismiss="modal" aria-label="Close"><img
+                            src="~/image/close.png"></button>
+                    
+                    <p>Our helpers help you with tax savings! Parts of the costs for household tasks recognize
+                        the tax
+                        office as a tax advantage. Assuming you are a private client, you have received an
+                        invoice and have
+                        not paid it in cash. You can deduct 20% of the expenses directly from your tax
+                        liability, a maximum
+                        of 4,000 euros per year.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
     <!-- News Letter -->
     <section class="faq-news">
         <div class="newsletter">
@@ -648,72 +674,11 @@
     <script>
         $(document).ready(function(){
 
-            //Your Details
-            let AddAddresses =[];
-            $('#AddAddressSave').click(function(){
-                let AddressModel = {
-                    AddressLine1 : $('#@Html.IdFor(m => m.userAddress.AddressLine1)').val(),
-                    AddressLine2 : $('#@Html.IdFor(m => m.userAddress.AddressLine2)').val(),
-                    PostalCode : $('#@Html.IdFor(m => m.userAddress.PostalCode)').val(),
-                    Mobile:  $('#@Html.IdFor(m => m.userAddress.Mobile)').val(),
-                    City :  $('#@Html.IdFor(m => m.userAddress.City)').val()
-                }
-                
-                $.ajax({
-                    type: 'POST',
-                    url: '@Url.Action("AddAddress","BookService")',
-                    data: AddressModel,
-                    dataType: 'JSON',
-                    success: function (response) {
-                        if(response.success)
-                        {
-                            AddAddresses = response.addresses;
-                            console.log(AddAddresses);
-                            showAddresses();
-                            $('#AddAddressForm').removeClass('show');
-                            $('#AddAddressForm').addClass('hide');
-                            $('#AddAddressButton').removeClass('hide');
-                            
-                        }
-                        if(!response.success)
-                        {
-                             $('#xyz').html('Not Added');
-                        }
-                    },
-                    error: function(){
-                
-                    }
-                });
-            });
-
-            $('#continue-btn2').click(function(){
-                console.log($('input[name="address"]:').is(':checked').val());
-               
-                if($('input[name="address"]').is(':checked'))      
-                {
-                    $('#YourDetailsError').html('Selected');
-                    $('#payment-tabs li a').next().removeClass('active-after');
-                    $('#MakePayment-tab').removeClass('disabled').addClass('active');
-                    $('#YourDetails-tab').removeClass('active').addClass('active-after');
-                    $('#YourDetails').removeClass('show active')
-                    $('#MakePayment').addClass('show active');
-                    
-                }
-                else
-                {
-                    $('#YourDetailsError').html(`<div class="alert alert-warning alert-dismissible fade show" role="alert">
-                                          Please Select Address
-                                          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                          </button>
-                                        </div>`);
-                }
-            });
-
+           
+            
             //Setup Service
             $('#check-btn').click(function () {
                 let model = { PostalCode : $('#@Html.IdFor(m => m.PostalCodeView.PostalCode)').val()};
-                
                 $.ajax({
                     type: 'POST',
                     url: '@Url.Action("PostalCode","BookService")',
@@ -749,10 +714,6 @@
 
             var extraServices = [false,false,false,false,false]
                 
-            
-
-            
-
             //Default Value
             SchedulePlan.time = $('#@Html.IdFor(m => m.SchedulePlanView.StartTime)').val();
             SchedulePlan.stay = $('#@Html.IdFor(m => m.SchedulePlanView.StayTime)').val();
@@ -1008,7 +969,116 @@
                 $('#Address').html(s);
             }
 
-      
+            //Your Details
+            let AddAddresses =[];
+            let check ;
+            $('#AddAddressSave').click(function(){
+                let AddressModel = {
+                    AddressLine1 : $('#@Html.IdFor(m => m.userAddress.AddressLine1)').val(),
+                    AddressLine2 : $('#@Html.IdFor(m => m.userAddress.AddressLine2)').val(),
+                    PostalCode : $('#@Html.IdFor(m => m.userAddress.PostalCode)').val(),
+                    Mobile:  $('#@Html.IdFor(m => m.userAddress.Mobile)').val(),
+                    City :  $('#@Html.IdFor(m => m.userAddress.City)').val()
+                }
+                
+                $.ajax({
+                    type: 'POST',
+                    url: '@Url.Action("AddAddress","BookService")',
+                    data: AddressModel,
+                    dataType: 'JSON',
+                    success: function (response) {
+                        if(response.success)
+                        {
+                            AddAddresses = response.addresses;
+                            console.log(AddAddresses);
+                            showAddresses();
+                            $('#AddAddressForm').removeClass('show');
+                            $('#AddAddressForm').addClass('hide');
+                            $('#AddAddressButton').removeClass('hide');
+                            
+                        }
+                    },
+                    error: function(){
+                
+                    }
+                });
+            });
+
+            $('#continue-btn2').click(function(){
+               
+                if($('input[name="address"]').is(':checked'))      
+                {
+                    check = $('input[name="address"]:checked').val();
+                    console.log(check);
+                    $('#YourDetailsError').html("");
+                    $('#payment-tabs li a').next().removeClass('active-after');
+                    $('#MakePayment-tab').removeClass('disabled').addClass('active');
+                    $('#YourDetails-tab').removeClass('active').addClass('active-after');
+                    $('#YourDetails').removeClass('show active')
+                    $('#MakePayment').addClass('show active');
+                    
+                }
+                else
+                {
+                    $('#YourDetailsError').html(`<div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                          Please Select Address
+                                          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                          </button>
+                                        </div>`);
+                }
+            });
+            debugger;
+            
+            //Complete Booking   
+
+            $('#complete-btn').click(function(){
+                var z = parseFloat(SchedulePlan.stay) - parseFloat($('#@Html.IdFor(m => m.SchedulePlanView.StayTime)').val());
+                let model1 = {PostalCode : $('#@Html.IdFor(m => m.PostalCodeView.PostalCode)').val()};
+                let model2 = {
+                    ServiceStartDate : $('#@Html.IdFor(m => m.SchedulePlanView.ServiceStartDate)').val(),
+                    StartTime : $('#@Html.IdFor(m => m.SchedulePlanView.StartTime)').val(),
+                    StayTime : $('#@Html.IdFor(m => m.SchedulePlanView.StayTime)').val(),
+                    TotalTime: SchedulePlan.stay,
+                    TotalCost: SchedulePlan.totalCost, 
+                    EffctiveCost: SchedulePlan.effective,
+                    Extra: extraServices,
+                    comment: $('#@Html.IdFor(m => m.SchedulePlanView.comment)').val(),
+                    IsPet : $('#@Html.IdFor(m => m.SchedulePlanView.IsPet)').is(':checked')
+                }
+                let model3 = {
+                    AddressLine1 : AddAddresses[check-1].addressLine1,
+                    AddressLine2 :AddAddresses[check-1].addressLine2,
+                    PostalCode : AddAddresses[check-1].postalCode,
+                    Mobile:  AddAddresses[check-1].mobile,
+                    City :  AddAddresses[check-1].city
+                }
+                let CompleteModel ={
+                    PostalCodeView : model1, 
+                    SchedulePlanView : model2,
+                    userAddress: model3
+                }
+                if($('#Terms').prop('checked'))
+                {
+                    $('#checkrequired').html('');
+                    $.ajax({
+                        type: 'POST',
+                        url: '@Url.Action("CompleteBooking","BookService")',
+                        data: CompleteModel,
+                        dataType: 'JSON',
+                        success: function(response){
+                            if(response.success)
+                            {
+                                $('checkrequired').html(response.serviceId);
+                            }
+                        }
+                    });
+                }
+                else
+                {
+                    $('#checkrequired').html('Required');
+                }
+            });
         });
     </script>
 }

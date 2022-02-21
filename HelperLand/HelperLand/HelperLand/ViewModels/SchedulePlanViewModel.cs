@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
 namespace HelperLand.ViewModels
@@ -12,11 +14,11 @@ namespace HelperLand.ViewModels
 
         public string StayTime { get; set; } 
 
-        public double TotalTime { get; set; } 
+        public float TotalTime { get; set; } 
 
-        public double TotalCost { get; set; }
+        public float TotalCost { get; set; }
 
-        public double EffctiveCost { get; set; }
+        public float EffctiveCost { get; set; }
 
         public List<bool> Extra { get; set; }
 
