@@ -1253,3 +1253,7 @@ line-height: 21px; padding: 12px 20px;margin: 0;display: block; }
 .change-password .register-form{ max-width: 400px;}
 .change-password .form-label{ font-size: 17px; color: #646464; font-weight: bold;}
 
+#SucessBooking .modal-body p{font-size: 23px;text-align: center;margin-top: 60px;}
+#SucessBooking .modal-body p#p1{font-size: 17px;margin-top: 0;}
+#SucessBooking .modal-body div{width: fit-content; margin: auto;}
+#SucessBooking .modal-body div a button{background-color: #1d7a8c; color: #fff; font-size: 16px; padding: 6px 22px; border: none; border-radius: 50px;}

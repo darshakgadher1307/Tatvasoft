@@ -629,27 +629,21 @@
         </div>
     </section>
 
-
-    <div class="modal fade"  data-bs-backdrop="static">
+    <div class="modal fade" id="SucessBooking" data-bs-backdrop="static">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-body">
-                    <h4>You will save 20% according to §35a EStG.</h4>
-                    <button type="button" class="close-btn" data-bs-dismiss="modal" aria-label="Close"><img
-                            src="~/image/close.png"></button>
-                    
-                    <p>Our helpers help you with tax savings! Parts of the costs for household tasks recognize
-                        the tax
-                        office as a tax advantage. Assuming you are a private client, you have received an
-                        invoice and have
-                        not paid it in cash. You can deduct 20% of the expenses directly from your tax
-                        liability, a maximum
-                        of 4,000 euros per year.
-                    </p>
+                    <button type="button" class="close-btn" data-bs-dismiss="modal" aria-label="Close">
+                        <img src="~/image/close.png">
+                    </button>
+                    <p>Booking has been succesfully submitted</p>
+                    <p id="p1">Service request id : <span id="serviceId"></span></p>
+                    <div><a asp-action="Index" asp-controller="Home"><button>Ok</button></a></div>
                 </div>
             </div>
         </div>
     </div>
+    
 
     
     <!-- News Letter -->
@@ -1069,7 +1063,8 @@
                         success: function(response){
                             if(response.success)
                             {
-                                $('checkrequired').html(response.serviceId);
+                                $('#serviceId').html(response.serviceId);
+                                $('#SucessBooking').modal('show');
                             }
                         }
                     });

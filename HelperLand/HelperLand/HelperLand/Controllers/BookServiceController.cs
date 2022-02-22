@@ -132,7 +132,7 @@ namespace HelperLand.Controllers
             helperlandContext.SaveChanges();
 
             ServiceRequestAddress model2 = new ServiceRequestAddress();
-            var c = helperlandContext.ServiceRequests.Where(m => m.ServiceRequestId == ServiceId).FirstOrDefault();
+            var c = helperlandContext.ServiceRequests.Where(m => m.ServiceId == ServiceId).FirstOrDefault();
             model2.ServiceRequestId = c.ServiceRequestId;
             model2.AddressLine1 = model.userAddress.AddressLine1;
             model2.AddressLine2 = model.userAddress.AddressLine2;
@@ -158,7 +158,7 @@ namespace HelperLand.Controllers
                 i += 1;
             }
 
-            return Json(new { success = true , serviceId = model1.ServiceId });
+            return Json(new { success = true , serviceId = ServiceId });
         }
     }
 }
