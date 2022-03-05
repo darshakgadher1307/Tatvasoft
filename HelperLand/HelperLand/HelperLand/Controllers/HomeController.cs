@@ -26,6 +26,16 @@ namespace HelperLand.Controllers
 
         public IActionResult Index()
         {
+            var a = Convert.ToInt32(TempData["login"]);
+            if (a != 0)
+            {
+                ViewBag.loginStatus = a;
+                ViewBag.loginModel = true;
+            }
+            else if(a == null || a == 0)
+            {
+                ViewBag.loginModel = false;
+            }
             return View();
         }
 
@@ -69,12 +79,22 @@ namespace HelperLand.Controllers
         [HttpGet]
         public IActionResult Register()
         {
+            var a = Convert.ToInt32(TempData["register"]);
+            if (a != 0)
+            {
+                ViewBag.registerStatus = true;
+            }
+            else if (a == null || a == 0)
+            {
+                ViewBag.registerStatus = false;
+            }
             return View();
         }
 
         [HttpPost]
         public IActionResult Register(User model)
         {
+            TempData["register"] = "0";
             if (ModelState.IsValid)
             {
                 var isEmailAlreadyExists = helperlandContext.Users.Any(x => x.Email == model.Email);
@@ -89,7 +109,8 @@ namespace HelperLand.Controllers
                 model.ModifiedBy = model.UserId;
                 helperlandContext.Users.Add(model);
                 helperlandContext.SaveChanges();
-                return RedirectToAction("Index");
+                TempData["register"] = "1";
+                return RedirectToAction("Register");
             }
             else
                 return RedirectToAction("Index");
@@ -98,10 +119,12 @@ namespace HelperLand.Controllers
         [HttpPost]
         public IActionResult Login(string email, string password)
         {
+            TempData["login"] = "0";
             User user = helperlandContext.Users.Where(x => x.Email == email).FirstOrDefault();
             if (user == null)
             {
-                return RedirectToAction("Register");
+                TempData["login"] = "2";
+                return RedirectToAction("Index");
             }
             else
             {
@@ -109,16 +132,13 @@ namespace HelperLand.Controllers
                 {
                     HttpContext.Session.SetString("UserID", user.UserId.ToString());
                     HttpContext.Session.SetString("UserName", user.FirstName);
-                    return RedirectToAction("Index","Home");
+                    TempData["login"] = "3";
+                    return RedirectToAction("CustomerDashboard", "Customer");
                 }
                 else
                 {
-                    //if (user.Email != email || user.Password != password)
-                    //{
-                    //    ModelState.AddModelError("Email", "Invalid Email");
-                    //}
-                    //return RedirectToAction("Login");
-                    return View("Index");
+                    TempData["login"] = "1";
+                    return RedirectToAction("Index");
                 }
             }
         }
@@ -126,6 +146,7 @@ namespace HelperLand.Controllers
         [HttpGet]
         public IActionResult Logout()
         {
+            TempData["login"] = "0";
             HttpContext.Session.Remove("UserName");
             return RedirectToAction("Index");
         }

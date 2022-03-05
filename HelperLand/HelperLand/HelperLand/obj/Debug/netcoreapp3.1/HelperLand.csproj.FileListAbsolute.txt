@@ -168,7 +168,6 @@ G:\TatvaSoft\Practice\HelperLand\HelperLand\HelperLand\bin\Debug\netcoreapp3.1\E
 G:\TatvaSoft\Practice\HelperLand\HelperLand\HelperLand\obj\Debug\netcoreapp3.1\Razor\Views\Home\Register.cshtml.g.cs
 G:\TatvaSoft\Practice\HelperLand\HelperLand\HelperLand\bin\Debug\netcoreapp3.1\libman.json
 G:\TatvaSoft\Practice\HelperLand\HelperLand\HelperLand\obj\Debug\netcoreapp3.1\Razor\Views\Home\Service_Provider_Sign_Up.cshtml.g.cs
-G:\TatvaSoft\Practice\HelperLand\HelperLand\HelperLand\obj\Debug\netcoreapp3.1\Razor\Views\Customer\ServiceRequest.cshtml.g.cs
 G:\TatvaSoft\Practice\HelperLand\HelperLand\HelperLand\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout2.cshtml.g.cs
 G:\TatvaSoft\Practice\HelperLand\HelperLand\HelperLand\obj\Debug\netcoreapp3.1\Razor\Views\Home\ChangePassword.cshtml.g.cs
 G:\TatvaSoft\Project\Tatvasoft\HelperLand\HelperLand\HelperLand\bin\Debug\netcoreapp3.1\libman.json
@@ -179,3 +178,10 @@ G:\TatvaSoft\Project\Tatvasoft\HelperLand\HelperLand\HelperLand\obj\Debug\netcor
 G:\TatvaSoft\Project\Tatvasoft\HelperLand\HelperLand\HelperLand\obj\Debug\netcoreapp3.1\Razor\Views\Home\Service_Provider_Sign_Up.cshtml.g.cs
 G:\TatvaSoft\Project\Tatvasoft\HelperLand\HelperLand\HelperLand\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout2.cshtml.g.cs
 G:\TatvaSoft\Practice\HelperLand\HelperLand\HelperLand\obj\Debug\netcoreapp3.1\Razor\Views\BookService\BookService.cshtml.g.cs
+G:\TatvaSoft\Practice\HelperLand\HelperLand\HelperLand\obj\Debug\netcoreapp3.1\Razor\Views\Customer\CustomerDashboard.cshtml.g.cs
+G:\TatvaSoft\Practice\HelperLand\HelperLand\HelperLand\obj\Debug\netcoreapp3.1\Razor\Views\Customer\CustomerServiceHistory.cshtml.g.cs
+G:\TatvaSoft\Practice\HelperLand\HelperLand\HelperLand\obj\Debug\netcoreapp3.1\Razor\Views\Customer\CustomerSettings.cshtml.g.cs
+G:\TatvaSoft\Project\Tatvasoft\HelperLand\HelperLand\HelperLand\obj\Debug\netcoreapp3.1\Razor\Views\BookService\BookService.cshtml.g.cs
+G:\TatvaSoft\Project\Tatvasoft\HelperLand\HelperLand\HelperLand\obj\Debug\netcoreapp3.1\Razor\Views\Customer\CustomerDashboard.cshtml.g.cs
+G:\TatvaSoft\Project\Tatvasoft\HelperLand\HelperLand\HelperLand\obj\Debug\netcoreapp3.1\Razor\Views\Customer\CustomerServiceHistory.cshtml.g.cs
+G:\TatvaSoft\Project\Tatvasoft\HelperLand\HelperLand\HelperLand\obj\Debug\netcoreapp3.1\Razor\Views\Customer\CustomerSettings.cshtml.g.cs

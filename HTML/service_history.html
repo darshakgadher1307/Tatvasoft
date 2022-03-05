@@ -8,6 +8,9 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel=stylesheet>
     <title>Service History</title>
+    <link href="https://cdn.datatables.net/1.11.4/css/jquery.dataTables.min.css" rel="stylesheet">
+    <script src="https://cdn.datatables.net/1.11.4/js/jquery.dataTables.min.js"></script>
+    <link  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 </head>
 <body>
 
@@ -108,26 +111,32 @@
                             <h3>Service History</h3>
                             <button class="blue">Export</button>
                         </div>
-                        <table class="table">
+                        <table id="Data" class="table mb-3">
                             <thead>
                                 <tr>
-                                    <th><span>Service details<img src="image/sort.png" alt="Sort"></span></th>
-                                    <th><span>Service Provider<img src="image/sort.png" alt="Sort"></span></th>
-                                    <th><span>Payment<img src="image/sort.png" alt="Sort"></span></th>
-                                    <th><span>Status<img src="image/sort.png" alt="Sort"></span></th>
-                                    <th><span>Rate SP<img src="image/sort.png" alt="Sort"></span></th>
+                                    <th>Service details</th>
+                                    <th>Service Provider</th>
+                                    <th>Payment</th>
+                                    <th>Status</th>
+                                    <th>Rate SP</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr id="service">
-                                    <td id="table-item-2">
-                                        <span id="t-bold"><img src="image/calendar.png"
-                                                alt="Sort">09/04/2018</span>
-                                        <br><span>12:00 - 08:00</span>
+                                    <td class="table-item-2">
+                                        <span>
+                                            <img src="image/calendar2.png" alt="Sort">
+                                            <b>09/04/2018</b>
+                                        </span>
+                                        <br>
+                                        <span>
+                                            <img src="image/layer-14.png" alt="Sort">
+                                            12:00 - 08:00
+                                        </span>
                                     </td>
-                                    <td id="rating">
+                                    <td class="rating">
                                         <div class="rating d-flex">
-                                            <img id="image4" src="image/cap.png" alt="Sort">
+                                            <img class="image4" src="image/cap.png" alt="Sort">
                                             <div class="r-details d-flex flex-column">
                                                 <p>Lyum Watson</p>
                                                 <div class="star d-flex">
@@ -141,25 +150,32 @@
                                             </div>
                                         </div>    
                                     </td>
-                                    <td id="table-btn-2">
+                                    <td class="table-btn-2">
                                         <span id="Price">&euro;<p>63</p></span>
                                     </td>
-                                    <td class="button" id="table-btn-2">
+                                    <td class="button" class="table-btn-2">
                                         <button class="green">Completed</button>
                                     </td>
-                                    <td class="button" id="table-btn">
-                                        <button class="blue">Rate SP</button>
+                                    <td class="button" class="table-btn">
+                                        <a data-bs-toggle="modal" data-bs-target="#RateSP"><button class="blue">Rate SP</button></a>
                                     </td>
                                 </tr>
+                                
                                 <tr id="service">
-                                    <td id="table-item-2">
-                                        <span id="t-bold"><img src="image/calendar.png"
-                                                alt="Sort">09/04/2018</span>
-                                        <br><span>12:00 - 08:00</span>
+                                    <td class="table-item-2">
+                                        <span>
+                                            <img src="image/calendar2.png" alt="Sort">
+                                            <b>09/04/2018</b>
+                                        </span>
+                                        <br>
+                                        <span>
+                                            <img src="image/layer-14.png" alt="Sort">
+                                            12:00 - 08:00
+                                        </span>
                                     </td>
-                                    <td id="rating">
+                                    <td class="rating">
                                         <div class="rating d-flex">
-                                            <img id="image4" src="image/cap.png" alt="Sort">
+                                            <img class="image4" src="image/cap.png" alt="Sort">
                                             <div class="r-details d-flex flex-column">
                                                 <p>Lyum Watson</p>
                                                 <div class="star d-flex">
@@ -173,56 +189,88 @@
                                             </div>
                                         </div>    
                                     </td>
-                                    <td id="table-btn-2">
+                                    <td class="table-btn-2">
                                         <span id="Price">&euro;<p>63</p></span>
                                     </td>
-                                    <td class="button" id="table-btn-2">
-                                        <button class="pink">Cancelled</button>
+                                    <td class="button" class="table-btn-2">
+                                        <button class="green">Completed</button>
                                     </td>
-                                    <td class="button" id="table-btn">
+                                    <td class="button" class="table-btn">
                                         <button class="blue">Rate SP</button>
                                     </td>
                                 </tr>
                             </tbody>
                         </table>
-                        <div id="table-row-number" class="d-flex justify-content-between">
-                            <div class="details d-flex">
-                                <p>Show</p>
-                                <div class="drop-down">
-                                    <select name="Total Entries" id="1">
-                                        <option value="5" selected>5</option>
-                                        <option value="10">10</option>
-                                        <option value="15">15</option>
-                                    </select>
-                                </div>
-                                <p id="p3">Entries</p>
-                                <p>Total Recored: 55</p>
-                            </div>
-                            <div class="numbers">
-                                <nav aria-label="Page navigation example">
-                                    <ul class="pagination">
-                                        <li class="page-item">
-                                            <a class="page-link" href="#" aria-label="Previous">
-                                                <span aria-hidden="true">&laquo;</span>
-                                            </a>
-                                        </li>
-                                        <li class="page-item"><a class="page-link active" href="#">1</a></li>
-                                        <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                        <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                        <li class="page-item">
-                                            <a class="page-link" href="#" aria-label="Next">
-                                                <span aria-hidden="true">&raquo;</span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </nav>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
+    <div class="modal fade" id="RateSP" data-bs-backdrop="static">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <button type="button" class="close-btn" data-bs-dismiss="modal" aria-label="Close"><img
+                            src="image/close.png"></button>
+                
+                    <div class="rating">
+                        <div class="rating d-flex">
+                            <img class="image4" src="image/cap.png" alt="Sort">
+                            <div class="r-details d-flex flex-column">
+                                <p class="mb-1">Lyum Watson</p>
+                                <div class="star d-flex">
+                                    <img id="1" src="image/star2.png" alt="">
+                                    <img id="2" src="image/star2.png" alt="">
+                                    <img id="3" src="image/star2.png" alt="">
+                                    <img id="4" src="image/star2.png" alt="">
+                                    <img id="5" src="image/star2.png" alt="">
+                                    <p id="totalRate">0</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <h3>Rate your service provider</h3>
+                    <hr>
+                    <div class="d-flex">
+                        <p>On time arrival</p>
+                        <div id="OnTime" class="rating-star star d-flex">
+                            <img id="star1" name="2" src="image/star2.png" alt="">
+                            <img id="star2" name="2" src="image/star2.png" alt="">
+                            <img id="star3" name="2" src="image/star2.png" alt="">
+                            <img id="star4" name="2" src="image/star2.png" alt="">
+                            <img id="star5" name="2" src="image/star2.png" alt="">
+                        </div>
+                    </div>
+                    <div class="d-flex">
+                        <p>Friendly</p>
+                        <div id="friendly" class="rating-star rating-star-1 star d-flex">
+                            <img id="star1" name="2" src="image/star2.png" alt="">
+                            <img id="star2" name="2" src="image/star2.png" alt="">
+                            <img id="star3" name="2" src="image/star2.png" alt="">
+                            <img id="star4" name="2" src="image/star2.png" alt="">
+                            <img id="star5" name="2" src="image/star2.png" alt="">
+                        </div>
+                    </div>
+                    <div class="d-flex">
+                        <p>Quality of service</p>
+                        <div id="quality" class="rating-star rating-star-2 star d-flex">
+                            <img id="star1" name="2" src="image/star2.png" alt="">
+                            <img id="star2" name="2" src="image/star2.png" alt="">
+                            <img id="star3" name="2" src="image/star2.png" alt="">
+                            <img id="star4" name="2" src="image/star2.png" alt="">
+                            <img id="star5" name="2" src="image/star2.png" alt="">
+                        </div>
+                    </div>
+                    <label class="form-label">Feedback on your service provider</label>
+                    <div class="mb-3">
+                        <textarea type="text" class="form-control" rows="2"></textarea>
+                    </div>
+                    <button type="button" class="blue">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
      <!-- Footer -->
      <footer class="faq-footer footer">
@@ -286,5 +334,161 @@
         
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
     <script type="text/javascript" src="js/general.js"></script>
+    <script type="text/javascript" src="js/table.js"></script>
+    <script>
+        $(document).ready(function(){
+            var x =[0,0,0];   
+            var p = 0;
+            function mainRating(){
+                var b = parseInt($('#totalRate').text());
+                console.log(b);
+                if(b <= 1)
+                {
+                    $('#1').attr('src','./image/star1.png');
+                    $('#2').attr('src','./image/star2.png');
+                    $('#3').attr('src','./image/star2.png');
+                    $('#4').attr('src','./image/star2.png');
+                    $('#5').attr('src','./image/star2.png');
+                }
+                else if(b <= 2)
+                {
+                    $('#1').attr('src','./image/star1.png');
+                    $('#2').attr('src','./image/star1.png');
+                    $('#3').attr('src','./image/star2.png');
+                    $('#4').attr('src','./image/star2.png');
+                    $('#5').attr('src','./image/star2.png');
+                }
+                else if(b <= 3)
+                {
+                    $('#1').attr('src','./image/star1.png');
+                    $('#2').attr('src','./image/star1.png');
+                    $('#3').attr('src','./image/star1.png');
+                    $('#4').attr('src','./image/star2.png');
+                    $('#5').attr('src','./image/star2.png');
+                }
+                else if(b <= 4)
+                {
+                    $('#1').attr('src','./image/star1.png');
+                    $('#2').attr('src','./image/star1.png');
+                    $('#3').attr('src','./image/star1.png');
+                    $('#4').attr('src','./image/star1.png');
+                    $('#5').attr('src','./image/star2.png');
+                }
+                else if(b <= 5)
+                {
+                    $('#1').attr('src','./image/star1.png');
+                    $('#2').attr('src','./image/star1.png');
+                    $('#3').attr('src','./image/star1.png');
+                    $('#4').attr('src','./image/star1.png');
+                    $('#5').attr('src','./image/star1.png');
+                }
+            };
+            
+
+            $('#OnTime').click(function(){
+                rating($(this),0);
+            });
+
+            $('#friendly').click(function(){
+                rating($(this),1);
+            });
+
+            $('#quality').click(function(){
+                rating($(this),2);
+            });
+
+            function rating(a,i)
+            {
+                $('#star1',a).click(function(){
+                    if($(this).attr('name') == 2)
+                    {
+                        $('#star1',a).attr('src','./image/star1.png');
+                        $(this).attr('name','1');
+                        x[i]+=1;
+                    }
+                    else
+                    {
+                        $('#star1',a).attr('src','./image/star2.png');
+                        $(this).attr('name','2');
+                        x[i]-=1;
+                    }
+                    p = ((x[0]+x[1]+x[2])/3).toFixed(2);
+                    $('#totalRate').html(p);
+                    mainRating();
+                    $('#star2',a).click(function(){
+                        if($(this).attr('name') == 2)
+                        {
+                            $('#star2',a).attr('src','./image/star1.png');
+                            $(this).attr('name','1');
+                            x[i]+=1;
+                        }
+                        else
+                        {
+                            $('#star2',a).attr('src','./image/star2.png');
+                            $(this).attr('name','2');
+                            x[i]-=1;
+                        }
+                        p = ((x[0]+x[1]+x[2])/3).toFixed(2);
+                        $('#totalRate').html(p);
+                        mainRating();
+                        $('#star3',a).click(function(){
+                            if($(this).attr('name') == 2)
+                            {
+                                $('#star3',a).attr('src','./image/star1.png');
+                                $(this).attr('name','1');
+                                x[i]+=1;
+                            }
+                            else
+                            {
+                                $('#star3',a).attr('src','./image/star2.png');
+                                $(this).attr('name','2');
+                                x[i]-=1;
+                            }
+                            p = ((x[0]+x[1]+x[2])/3).toFixed(2);
+                            $('#totalRate').html(p);
+                            mainRating();
+                            $('#star4',a).click(function(){
+                                if($(this).attr('name') == 2)
+                                {
+                                    $('#star4',a).attr('src','./image/star1.png');
+                                    $(this).attr('name','1');
+                                    x[i]+=1;
+                                }
+                                else
+                                {
+                                    $('#star4',a).attr('src','./image/star2.png');
+                                    $(this).attr('name','2');
+                                    x[i]-=1;
+                                }
+                                p = ((x[0]+x[1]+x[2])/3).toFixed(2);
+                                $('#totalRate').html(p);
+                                mainRating();
+                                $('#star5',a).click(function(){
+                                    if($(this).attr('name') == 2)
+                                    {
+                                        $('#star5',a).attr('src','./image/star1.png');
+                                        $(this).attr('name','1');
+                                        x[i]+=1;
+                                    }
+                                    else
+                                    {
+                                        $('#star5',a).attr('src','./image/star2.png');
+                                        $(this).attr('name','2');
+                                        x[i]-=1;
+                                    }
+                                    p = ((x[0]+x[1]+x[2])/3).toFixed(2);
+                                    $('#totalRate').html(p);
+                                    mainRating();
+                                });
+                            });
+                        });
+                    });
+                });
+            }
+        });
+    </script>
+
+
+
 </body>
 </html>

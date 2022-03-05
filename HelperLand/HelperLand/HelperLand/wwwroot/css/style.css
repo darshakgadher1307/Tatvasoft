@@ -3,7 +3,9 @@
 body {
     font-family: 'Roboto';
 }
-
+div#rescheduleMsg{
+    color: green !important;
+}
 h1, .h1 {
     font-size: 50px;
     font-weight: 500;
@@ -1850,6 +1852,7 @@ a.arrow-link {
         height: fit-content;
         margin: auto;
         position: relative;
+        text-decoration: none !important;
     }
 
     .upcoming-service .faq-header .container ul li .dropdown-menu {
@@ -1886,6 +1889,7 @@ a.arrow-link {
         }
 
             .upcoming-service .faq-header .container ul li .dropdown-menu li a {
+                text-decoration: none;
                 color: #646464;
                 display: block;
                 padding: 8px 15px;
@@ -1959,12 +1963,11 @@ a.arrow-link {
 
         .upcoming-service-details .container .container-menu {
             background-color: #1d7a8c;
-            height: 764px;
             min-width: fit-content;
         }
 
             .upcoming-service-details .container .container-menu .navbar {
-                padding: 0 ;
+                padding: 0;
             }
 
             .upcoming-service-details .container .container-menu ul li a {
@@ -2015,19 +2018,23 @@ a.arrow-link {
                 border-style: none;
             }
 
-            .container-details table thead span {
-                display: flex;
-                color: #646464;
-                font-weight: bold;
-                line-height: 1.63;
-                margin: 5px 5px;
-            }
+        .container-details table tr td, .container-details table tr th{
+            vertical-align: middle;
+        }
 
-                .container-details table thead span img {
-                    height: min-content;
-                    margin-left: 5px;
-                    margin-top: 6px;
-                }
+        .container-details table thead span {
+            display: flex;
+            color: #646464;
+            font-weight: bold;
+            line-height: 1.63;
+            margin: 5px 5px;
+        }
+
+            .container-details table thead span img {
+                height: min-content;
+                margin-left: 5px;
+                margin-top: 6px;
+            }
 
         .container-details table tbody span img {
             margin-right: 10px;
@@ -2037,23 +2044,14 @@ a.arrow-link {
             margin-bottom: 5px;
         }
 
-        .container-details table tbody tr td {
-            padding-top: 10px;
-            padding-bottom: 10px;
+        .container-details table tbody tr td, .container-details table thead tr th {
+            padding: 20px 15px;
+            text-align: left;
         }
 
-            .container-details table tbody tr td#table-item {
-                padding-top: 25px;
-                padding-left: 13px;
+            .container-details table tbody tr td.table-item-2 {
+                line-height: 25px;
             }
-
-        .container-details table tbody tr span#t-bold {
-            font-weight: bold;
-        }
-
-        .container-details table tbody tr td#table-item-2 {
-            line-height: 25px;
-        }
 
         .container-details table tbody tr .button {
             padding-top: 15px;
@@ -2134,11 +2132,9 @@ a.arrow-link {
             }
 }
 
-/*-------------------Service History----------------------*/
-.service-history .upcoming-service-details .container .container-menu {
-    height: 1032px;
-}
 
+
+/*-------------------Service History----------------------*/
 .service-history .container-details h3 {
     font-size: 22px;
 }
@@ -2159,11 +2155,11 @@ a.arrow-link {
         padding-right: 15px;
     }
 
-.service-history .container-details table tbody tr td#rating img {
+.service-history .container-details table tbody tr td.rating img {
     height: fit-content;
 }
 
-    .service-history .container-details table tbody tr td#rating img#image4 {
+    .service-history .container-details table tbody tr td.rating img.image4 {
         margin-top: auto;
         margin-bottom: auto;
         border: 1px solid #aaaaaa;
@@ -2171,26 +2167,23 @@ a.arrow-link {
         padding: 12px 7px;
     }
 
-.service-history .container-details table tbody tr td#rating .r-details {
+.service-history .container-details table tbody tr td.rating .r-details {
     margin-left: 10px;
     margin-top: 10px;
 }
 
-    .service-history .container-details table tbody tr td#rating .r-details .star {
+    .service-history .container-details table tbody tr td.rating .r-details .star {
         margin-top: -10px;
     }
 
-.service-history .container-details table tbody tr td#table-item-2 {
+.service-history .container-details table tbody tr td.table-item-2 {
     padding-top: 23px;
 }
 
-.service-history .container-details table tbody tr td#table-btn {
+.service-history .container-details table tbody tr td.table-btn {
     padding-top: 25px;
 }
 
-.service-history .container-details table tbody tr td#table-btn-2 {
-    padding-top: 33px;
-}
 
 .service-history .container-details table tbody tr td span p {
     display: inline-block;
@@ -2302,13 +2295,12 @@ a.arrow-link {
         justify-content: center;
     }
 }
-
 /*-------------------Admin----------------------*/
 .admin-user {
     background-color: #1fb6ff;
     padding: 10px 10px;
     position: fixed;
-    width: -webkit-fill-available;
+    width: 100%;
     z-index: 10;
 }
 
@@ -3668,3 +3660,387 @@ a.arrow-link {
         border: none;
         border-radius: 50px;
     }
+
+/*-------------------Customer DashBoard----------------------*/
+.serviceRequest .service-history .container-details .table thead tr th {
+    padding: 15px 10px !important;
+}
+
+.serviceRequest .service-history .container-details .table tr td .blue {
+    background-color: #1d798c;
+    padding: 5px 15px;
+}
+
+.serviceRequest .service-history .container-details .table tr td .cancel {
+    background-color: #ff6b6b;
+}
+
+.serviceRequest .service-history .container-details .table tr td .blue:hover {
+    background-color: #0e505e;
+}
+
+.serviceRequest .service-history .container-details .table tr td .cancel:hover {
+    background-color: #912d2d;
+}
+
+.serviceRequest .service-history .container-details .table tr td.button {
+    text-align: center !important;
+}
+
+table.dataTable.no-footer {
+    border-bottom: none !important;
+}
+
+.dataTables_wrapper .dataTables_length, .dataTables_wrapper .dataTables_length select, .dataTables_wrapper .dataTables_info {
+    color: #646464 !important;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button {
+    color: #646464 !important;
+    border-radius: 50px !important;
+    padding: 5px 13px !important;
+    border: 1px solid #e1e1e1 !important;
+}
+
+    .dataTables_wrapper .bottom .dataTables_paginate .paginate_button.current, .dataTables_wrapper .dataTables_paginate .paginate_button:hover, .dataTables_wrapper .bottom .dataTables_paginate .paginate_button.current:hover {
+        background: #1d7a8c !important;
+        color: #fff !important;
+    }
+
+    .dataTables_wrapper .dataTables_paginate .paginate_button.previous, .dataTables_wrapper .dataTables_paginate .paginate_button.next {
+        padding: 4px 13px !important;
+    }
+
+.dataTables_wrapper .bottom .dataTables_paginate .paginate_button.disabled:hover {
+    color: #fff !important;
+}
+
+.dataTables_wrapper .dataTables_info {
+    padding-top: 4px !important;
+    padding-left: 9px;
+    clear: none !important;
+}
+
+table.dataTable tbody tr {
+    border-bottom: 1px solid #e1e1e1;
+}
+div#Reschedule .modal-content, div#cancel .modal-content {
+    max-width: 400px;
+}
+
+div#Reschedule .modal-body .form-label, div#cancel .modal-body .form-label {
+    color: #646464;
+}
+
+div#Reschedule .dropdown .button {
+    border: 1px solid #ced4da;
+    padding: 8px 12px;
+    width: 100%;
+    border-radius: 4px;
+    color: #646464;
+}
+
+    div#Reschedule .dropdown .button:focus, div#Reschedule .form-control:focus, div#cancel .form-control:focus, div#RateSP .form-control:focus {
+        box-shadow: none;
+    }
+
+div#Reschedule .update, div#cancel .update, div#RateSP .blue, div#DeleteAddress .blue{
+    background-color: #1d7a8c;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 50px;
+    width: 100%;
+}
+
+    div#Reschedule .update:hover, div#cancel .update:hover, div#DeleteAddress .blue:hover{
+        background-color: #13515e;
+    }
+
+
+/*-------------------Customer Profile----------------------*/
+.container-details {
+    margin-left: 20px;
+    width: -webkit-fill-available;
+}
+
+.profile-options ul li .nav-link.active, .profile-options ul li .nav-link:hover {
+    border: none;
+    border-bottom: 4px solid #1d7a8c;
+    color: #1d7a8c;
+}
+
+.profile-options ul li a.nav-link {
+    color: #646464;
+    font-size: 16px;
+    font-weight: 700;
+    border: none;
+    border-bottom: 4px solid #e1e1e1;
+    padding-bottom: 15px;
+}
+
+.profile-options .tab-content div#MyDetails {
+    padding: 20px 0;
+}
+
+    .profile-options .tab-content div#MyDetails .row .form-label {
+        color: #646464;
+        font-weight: 700;
+    }
+
+    .profile-options .tab-content div#MyDetails .row .form-control {
+        box-shadow: none;
+        color: #646464;
+        font-size: 16px;
+        padding: 8px 15px;
+        border: 1px solid #e1e1e1;
+    }
+
+    .profile-options .tab-content div#MyDetails .row .input-group-text {
+        color: #646464;
+    }
+
+    .profile-options .tab-content div#MyDetails .row .dob-group {
+        display: table;
+        width: 100%;
+    }
+
+        .profile-options .tab-content div#MyDetails .row .dob-group .dob {
+            display: table-cell;
+        }
+
+            .profile-options .tab-content div#MyDetails .row .dob-group .dob .form-select {
+                box-shadow: none;
+                color: #646464;
+                font-size: 16px;
+                padding: 8px;
+                border: 1px solid #e1e1e1;
+                background-position: right 2.75px center
+            }
+
+            .profile-options .tab-content div#MyDetails .row .dob-group .dob:nth-child(2) {
+                padding: 0px 10px;
+            }
+
+    .profile-options .tab-content div#MyDetails .form-label {
+        color: #646464;
+        font-weight: 700;
+    }
+
+    .profile-options .tab-content div#MyDetails .form-select {
+        box-shadow: none;
+        color: #646464;
+        font-size: 16px;
+        padding: 8px;
+        border: 1px solid #e1e1e1;
+        background-position: right 2.75px center;
+        width: 150px;
+    }
+
+    .profile-options .tab-content div#MyDetails .save-btn {
+        color: #fff;
+        background-color: #1d7a8c;
+        border: none;
+        padding: 10px 30px;
+        border-radius: 50px;
+    }
+
+.profile-options .tab-content table {
+    width: 100%;
+    border: 1px solid #e1e1e1;
+}
+
+    .profile-options .tab-content table thead {
+        background-color: #f3f3f3;
+        border-bottom: 2px solid #e1e1e1;
+    }
+
+    .profile-options .tab-content table tr th {
+        padding: 10px 15px;
+        font-weight: 400;
+    }
+
+    .profile-options .tab-content table tr td {
+        padding: 15px;
+    }
+
+    .profile-options .tab-content table tr {
+        border-bottom: 1px solid #e1e1e1;
+    }
+
+        .profile-options .tab-content table tr td .radio-btn input {
+            opacity: 0;
+        }
+
+        .profile-options .tab-content table tr td .radio-btn {
+            position: relative;
+        }
+
+            .profile-options .tab-content table tr td .radio-btn span {
+                position: absolute;
+                right: 50%;
+                top: 50%;
+                height: 18px;
+                width: 18px;
+                border-radius: 500px;
+                padding: 3px;
+                border: 1px solid #c8c8c8;
+                margin-top: -10px;
+            }
+
+                .profile-options .tab-content table tr td .radio-btn span::after {
+                    background: #1d7a8c;
+                    content: "";
+                    border-radius: 500px;
+                    height: 10px;
+                    width: 10px;
+                    display: block;
+                    opacity: 0;
+                    transition: all .2s ease;
+                }
+
+            .profile-options .tab-content table tr td .radio-btn input:checked ~ span {
+                border-color: #1d7a8c;
+            }
+
+                .profile-options .tab-content table tr td .radio-btn input:checked ~ span::after {
+                    opacity: 1;
+                }
+
+        .profile-options .tab-content table tr td .invoices .address-1 {
+            display: block;
+        }
+
+        .profile-options .tab-content table tr td .action-btn a {
+            padding: 5px;
+        }
+
+            .profile-options .tab-content table tr td .action-btn a:hover {
+                background-color: #e1e1e1;
+                border-radius: 50px;
+            }
+
+        .profile-options .tab-content table tr td:last-child {
+            text-align: center !important;
+        }
+
+.profile-options .tab-content .add-address-btn, div#DeleteAddress blue {
+    background-color: #1d7a8c;
+    color: #ffff;
+    border: none;
+    border-radius: 50px;
+    padding: 7px 10px;
+    font-size: 14px;
+}
+
+    .profile-options .tab-content .add-address-btn:hover, div#DeleteAddress blue:hover {
+        background-color: #0f5563;
+    }
+
+.profile-options .tab-content .show-more {
+    color: #646464;
+}
+
+    .profile-options .tab-content .show-more .show-more-btn {
+        background-color: transparent;
+        border: 1px solid #c6c6c6;
+        padding: 7px 10px;
+        color: #646464;
+        border-radius: 50px;
+    }
+
+        .profile-options .tab-content .show-more .show-more-btn:hover {
+            border: 1px solid #1d7a8c;
+            color: #1d7a8c;
+        }
+
+div#AddAddressInvoice .modal-content, div#EditAddress .modal-content {
+    max-width: 700px;
+}
+
+div#AddAddressInvoice .modal-dialog, div#EditAddress .modal-dialog {
+    top: 70px;
+}
+
+.profile-options .tab-content div#ChangePassword .row .form-label {
+    color: #646464;
+    font-weight: 700;
+}
+
+.profile-options .tab-content div#ChangePassword .row .form-control {
+    box-shadow: none;
+    color: #646464;
+    font-size: 16px;
+    padding: 8px 15px;
+    border: 1px solid #e1e1e1;
+}
+
+.profile-options .tab-content div#ChangePassword .pwd-save {
+    background-color: #1d7a8c;
+    border: none;
+    padding: 9px 30px;
+    color: #fff;
+    border-radius: 50px;
+}
+
+@media(max-width:717px) {
+    .profile-options .tab-content table {
+        width: 100%;
+        border: 1px solid #e1e1e1;
+    }
+
+    .profile-options .container-details table tbody tr {
+        margin-top: 15px;
+        box-shadow: none;
+    }
+}
+
+div#RateSP .modal-content, div#DeleteAddress .modal-content {
+    max-width: 600px;
+}
+
+div#RateSP .rating .image4 {
+    margin-top: auto;
+    margin-bottom: auto;
+    border: 1px solid #aaaaaa;
+    border-radius: 50%;
+    padding: 12px 7px;
+    height: fit-content;
+}
+
+div#RateSP .rating .r-details {
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+div#RateSP .star img {
+    height: fit-content;
+    margin-right: 5px;
+    width: 20px;
+}
+
+div#RateSP h3 {
+    font-size: 20px;
+    color: #646464;
+    margin-top: 10px;
+    font-weight: 700;
+}
+
+div#RateSP .rating-star {
+    height: fit-content;
+    margin-top: 2px;
+    margin-left: 30px;
+}
+
+div#RateSP .rating-star-1 {
+    margin-left: 78px;
+}
+
+div#RateSP .rating-star-2 {
+    margin-left: 10px;
+}
+
+div#RateSP .blue {
+    width: auto;
+}   
+

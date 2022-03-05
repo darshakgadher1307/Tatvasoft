@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 #nullable disable
 
@@ -17,6 +18,7 @@ namespace HelperLand.Models
         public int ServiceRequestId { get; set; }
         public int UserId { get; set; }
         public int ServiceId { get; set; }
+
         public DateTime ServiceStartDate { get; set; }
         public string ZipCode { get; set; }
         public decimal? ServiceHourlyRate { get; set; }

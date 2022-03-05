@@ -1,7 +1,7 @@
 ﻿@model RegisterViewModel
-
 @{
     ViewBag.Title = "Create an account";
+    var status = ViewBag.registerStatus;
     Layout = "_Layout1";
 }
 
@@ -72,41 +72,46 @@
         </div>
     </section>
 
-   @section Scripts{
-       <script>
-           $(document).ready(function(){
-               $("button").click(function(){
-                   
-                   if(!$("#flexCheckDefault").prop("checked"))
-                   {
-                       $('#checkboxDiv').html("Read and accept policy");
-                   }
-                   else
-                   {
-                       $('#checkboxDiv').html(" ");
-                   }
-                   
-                   //var confirmPass = $("#ConfirmPassword").val();
-                   //var pass = $("#password").val();
-                   //if(confirmPass == null)
-                   //{
-                   //    $("#ConfirmPasswordDiv").html("Confirm Password field is required");
-                   //}
-                   //else
-                   //{
-                   //    if(confirmPass != pass)
-                   //    {
-                           
-                   //        $("#ConfirmPasswordDiv").html("Password and Confirmation Password do not match");
-                   //    }
-                   //    else
-                   //    {
-                           
-                   //        $("#ConfirmPasswordDiv").html(" ");
-                   //    }
-                   //}
-               });
 
-           });
-       </script>
-   }    
+    <div class="modal fade" id="registerStatus" data-bs-backdrop="static">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <a  asp-action="Index" asp-controller="Home">
+                        <button type="button" class="close-btn" data-bs-dismiss="modal" aria-label="Close">
+                            <img src="~/image/close.png">
+                        </button>
+                    </a>
+                    <h4 class="mb-3">Registered Succesffully </h4>
+                </div>
+            </div>
+        </div>
+    </div>
+
+@section Scripts{
+    @if(status != null && status)
+    {
+        <script>
+            $(document).ready(function(){
+                $('#registerStatus').modal('show');
+            });
+        </script>
+    }
+    <script>
+        $(document).ready(function(){
+            $("button").click(function(){
+                   
+                if(!$("#flexCheckDefault").prop("checked"))
+                {
+                    $('#checkboxDiv').html("Read and accept policy");
+                }
+                else
+                {
+                    $('#checkboxDiv').html(" ");
+                }
+            });
+        });
+    </script>
+    
+} 
+

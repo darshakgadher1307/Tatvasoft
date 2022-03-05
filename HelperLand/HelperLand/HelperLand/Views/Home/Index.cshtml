@@ -1,5 +1,7 @@
 ﻿@{
     ViewBag.Title = "HomePage";
+    var IsLogin = ViewBag.loginModel;
+    var status = ViewBag.loginStatus;
     Layout = "_Layout";
 }
 
@@ -252,4 +254,35 @@
 </section>
 
 
-    
+@if(IsLogin && status == 1)
+{
+    @section Scripts{
+        <script>
+            $(document).ready(function(){
+                $('#staticBackdrop').modal('show');
+                $('#InvalidEmailPwd').html(`<div class="alert alert-danger alert-dismissible fade show" role="alert">
+                            Invalid Password
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>`);
+            });
+        </script>
+    }
+}
+@if(IsLogin && status == 2)
+{
+    @section Scripts{
+        <script>
+            $(document).ready(function(){
+                $('#staticBackdrop').modal('show');
+                $('#InvalidEmailPwd').html(`<div class="alert alert-danger alert-dismissible fade show" role="alert">
+                            Email Id doesn't exists
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>`);
+            });
+        </script>
+    }
+}

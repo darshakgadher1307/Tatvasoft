@@ -49,8 +49,18 @@
                                 </li>
                                 <li class="nav-item d-flex">
                                     <div class="line" id="l1"></div>
-                                    <img src="image/admin-user.png" alt="User">
-                                    <img id="arrow-down" src="image/sp-arrow-down.png" alt="">
+                                    <a class="drop-toggle" data-bs-toggle="collapse" href="#drop-down">
+                                        <img src="image/admin-user.png" alt="User">
+                                        <img id="arrow-down" src="image/sp-arrow-down.png" alt="">
+                                    </a>
+                                    <ul class="collapdse dropdown-menu" id="drop-down">
+                                        <li class="user-details">
+                                            Welcome<b>First Customer</b>
+                                        </li>
+                                        <li><a>My Dashboard</a></li>
+                                        <li><a>My Setting</a></li>
+                                        <li><a>Logout</a></li>
+                                    </ul>
                                 </li>
                             </ul>
                         </div>
@@ -96,10 +106,10 @@
                     </div>
                 </div>
                 <div class="container-details text-center">
-                    <table class="table">
+                    <table id="Data" class="table">
                         <thead>
                             <tr>
-                                <th class="pe-4"><span>Service ID<img src="image/sort.png" alt="Sort"></span></th>
+                                <th><span>Service ID<img src="image/sort.png" alt="Sort"></span></th>
                                 <th><span>Service details<img src="image/sort.png" alt="Sort"></span></th>
                                 <th><span>Customer Details<img src="image/sort.png" alt="Sort"></span></th>
                                 <th><span>Distance<img src="image/sort.png" alt="Sort"></span></th>
@@ -107,15 +117,28 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td id="table-item">323436</td>
-                                <td id="table-item-2"><span id="t-bold"><img src="image/calendar2.png" alt="Sort">09/04/2018</span>
-                                    <br><span><img src="image/layer-14.png" alt="Sort">12:00 - 08:00</span>
+                            <tr id="service">
+                                <td>323436</td>
+                                <td class="table-item-2">
+                                    <span>
+                                        <img src="image/calendar2.png" alt="Sort">
+                                        <b>09/04/2018</b>
+                                    </span>
+                                    <br>
+                                    <span>
+                                        <img src="image/layer-14.png" alt="Sort">
+                                        12:00 - 08:00
+                                    </span>
                                 </td>
-                                <td id="table-item-2"><span>David Bough</span><br>
-                                    <span><img src="image/layer-15.png" alt="Sort">Musterstrabe 5,12345 Bonn</span>
+                                <td class="table-item-2">
+                                    <span>David Bough</span>
+                                    <br>
+                                    <span>
+                                        <img src="image/layer-15.png" alt="Sort">
+                                        Musterstrabe 5,12345 Bonn
+                                    </span>
                                 </td>
-                                <td id="table-item">5 km</td>
+                                <td>5 km</td>
                                 <td class="button">
                                     <button class="red">Cancel</button>
                                 </td>
@@ -190,5 +213,6 @@
         
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
     <script type="text/javascript" src="js/general.js"></script>
+    <script type="text/javascript" src="js/table.js"></script>
 </body>
 </html>

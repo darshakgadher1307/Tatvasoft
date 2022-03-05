@@ -112,9 +112,12 @@ namespace HelperLand.Controllers
         {
             var a = float.Parse(model.SchedulePlanView.StayTime);
             var b = model.SchedulePlanView.TotalTime;
+            var z = double.Parse(model.SchedulePlanView.StartTime);
+            var x = Convert.ToDateTime(model.SchedulePlanView.ServiceStartDate);
+            var y = x.AddHours(z);
             ServiceRequest model1 = new ServiceRequest();
             model1.UserId = int.Parse(HttpContext.Session.GetString("UserID"));
-            model1.ServiceStartDate = Convert.ToDateTime(model.SchedulePlanView.ServiceStartDate);
+            model1.ServiceStartDate = y;
             model1.ZipCode = model.PostalCodeView.PostalCode;
             model1.ServiceHours = a;
             model1.ExtraHours = b - a;
@@ -125,6 +128,7 @@ namespace HelperLand.Controllers
             model1.ModifiedDate = DateTime.Now;
             model1.SubTotal = Convert.ToDecimal(model.SchedulePlanView.TotalCost);
             model1.TotalCost = Convert.ToDecimal(model.SchedulePlanView.EffctiveCost);
+            model1.Discount = model1.SubTotal - model1.TotalCost;
             var count = helperlandContext.ServiceRequests.Count();
             var ServiceId = 1000 + count;
             model1.ServiceId = ServiceId;
