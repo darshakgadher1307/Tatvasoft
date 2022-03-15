@@ -228,7 +228,7 @@
                                             placeholder="Comments"></textarea>
                                     </div>
                                     <div class="mb-3 form-check">
-                                        <input asp-for="SchedulePlanView.IsPet" class="form-check-input form-cmt" id="exampleCheck1">
+                                        <input asp-for="SchedulePlanView.IsPet" class="form-check-input form-cmt">
                                         <label class="form-check-label ml-3" for="exampleCheck1">I have pets at home</label>
                                     </div>
                                 </div>
@@ -910,7 +910,7 @@
                     EffctiveCost: SchedulePlan.effective,
                     Extra: extraServices,
                     comment: $('#@Html.IdFor(m => m.SchedulePlanView.comment)').val(),
-                    IsPet : $('#@Html.IdFor(m => m.SchedulePlanView.IsPet)').is(':checked')
+                    IsPet : $('#@Html.IdFor(m => m.SchedulePlanView.IsPet)').val()
                 };
                 console.log(model1);
                 

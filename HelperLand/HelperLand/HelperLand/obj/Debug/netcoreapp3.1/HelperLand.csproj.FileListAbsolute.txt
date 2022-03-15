@@ -185,3 +185,10 @@ G:\TatvaSoft\Project\Tatvasoft\HelperLand\HelperLand\HelperLand\obj\Debug\netcor
 G:\TatvaSoft\Project\Tatvasoft\HelperLand\HelperLand\HelperLand\obj\Debug\netcoreapp3.1\Razor\Views\Customer\CustomerDashboard.cshtml.g.cs
 G:\TatvaSoft\Project\Tatvasoft\HelperLand\HelperLand\HelperLand\obj\Debug\netcoreapp3.1\Razor\Views\Customer\CustomerServiceHistory.cshtml.g.cs
 G:\TatvaSoft\Project\Tatvasoft\HelperLand\HelperLand\HelperLand\obj\Debug\netcoreapp3.1\Razor\Views\Customer\CustomerSettings.cshtml.g.cs
+G:\TatvaSoft\Project\Tatvasoft\HelperLand\HelperLand\HelperLand\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout3.cshtml.g.cs
+G:\TatvaSoft\Project\Tatvasoft\HelperLand\HelperLand\HelperLand\obj\Debug\netcoreapp3.1\Razor\Views\ServiceProvider\SPServiceRequest.cshtml.g.cs
+G:\TatvaSoft\Project\Tatvasoft\HelperLand\HelperLand\HelperLand\obj\Debug\netcoreapp3.1\Razor\Views\ServiceProvider\SPUpcomingService.cshtml.g.cs
+G:\TatvaSoft\Project\Tatvasoft\HelperLand\HelperLand\HelperLand\obj\Debug\netcoreapp3.1\Razor\Views\ServiceProvider\SPServiceHistory.cshtml.g.cs
+G:\TatvaSoft\Project\Tatvasoft\HelperLand\HelperLand\HelperLand\obj\Debug\netcoreapp3.1\Razor\Views\ServiceProvider\SPRatting.cshtml.g.cs
+G:\TatvaSoft\Project\Tatvasoft\HelperLand\HelperLand\HelperLand\obj\Debug\netcoreapp3.1\Razor\Views\ServiceProvider\SPBlock.cshtml.g.cs
+G:\TatvaSoft\Project\Tatvasoft\HelperLand\HelperLand\HelperLand\obj\Debug\netcoreapp3.1\Razor\Views\ServiceProvider\SPSettings.cshtml.g.cs

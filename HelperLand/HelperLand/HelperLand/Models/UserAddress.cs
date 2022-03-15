@@ -22,7 +22,7 @@ namespace HelperLand.Models
         public bool IsDefault { get; set; }
         public bool IsDeleted { get; set; }
 
-        [Required, RegularExpression("^[0-9]{10}$")]
+        [RegularExpression("^[0-9]{10}$")]
         public string Mobile { get; set; }
         public string Email { get; set; }
 

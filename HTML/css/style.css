@@ -940,7 +940,7 @@ line-height: 18px;}
 .service-history .container-details h3{font-size: 22px;}
 .service-history .container-details .title{margin-bottom: 10px;}
 .service-history .container-details .title .blue{background-color: #146371; color: #fff; font-size: 14px; line-height: 1.71; font-family: 'Roboto'; border: none; border-radius: 17px; padding-left: 15px; padding-right: 15px;}
-.service-history .container-details table tbody tr td.rating img{height: fit-content;}
+.service-history .container-details table tbody tr td.rating img,.service-history .container-details table tbody tr div.rating img{height: fit-content;}
 .service-history .container-details table tbody tr td.rating img.image4{margin-top: auto; margin-bottom: auto; border: 1px solid #aaaaaa; border-radius: 50%; padding: 12px 7px;}
 .service-history .container-details table tbody tr td.rating .r-details{margin-left: 10px; margin-top: 10px;}
 .service-history .container-details table tbody tr td.rating .r-details .star{margin-top: -10px;}
@@ -1305,7 +1305,8 @@ div#AddAddressInvoice .modal-dialog,div#EditAddress .modal-dialog{top: 70px;}
     .profile-options .container-details table tbody tr{margin-top: 15px; box-shadow: none ;}
 }
 
-
+a{cursor: pointer;
+}
 
 /*-------------------Customer DashBoard----------------------*/
 .serviceRequest .service-history .container-details .table thead tr th{padding: 15px 10px !important;}
@@ -1340,3 +1341,49 @@ div#RateSP .rating-star{height: fit-content; margin-top: 2px; margin-left: 30px;
 div#RateSP .rating-star-1{margin-left: 78px;}
 div#RateSP .rating-star-2{margin-left: 10px;}
 div#RateSP .blue{width: auto;}
+
+div#ServiceDetails .modal-content{max-width: 700px;}
+div#ServiceDetails .modal-dialog{top: 50px;}
+div#ServiceDetails h4{margin-bottom: 20px;}
+div#ServiceDetails p.dateTime{color: #646464; font-weight: 700; font-size: 22px; margin-bottom: 5px;}
+div#ServiceDetails p span{color: #1d798c; font-size: 26px; font-weight: 700;}
+div#ServiceDetails .green{background-color: #67b644; color: #fff; padding: 10px 20px; border: none; border-radius: 50px;}
+
+.spRatting .serviceRequest .service-history table{border: none;}
+.spRatting .serviceRequest .service-history table tr td{border: 1px solid #e1e1e1;}
+.spRatting .table>:not(caption)>*>*{border-bottom-width: 0px ;}
+
+
+.spProfile #MyDetails h3{color: #646464; font-size: 20px;}
+.spProfile #MyDetails h3 span{color: #67b644; font-weight: normal;}
+.spProfile #MyDetails h3 img{float: right; margin-left: 20px;}
+.spProfile #MyDetails h3 p {color: #646464; font-size: 20px;}
+.spProfile .profile-options .tab-content div#MyDetails .nation{width: 100%;}
+.spProfile .profile-options .tab-content div#MyDetails .form-check-input:first-child{margin-left: 0px;}
+.spProfile .profile-options .tab-content div#MyDetails .form-check-input{ margin-right: 5px; margin-left: 20px; }
+.spProfile .profile-options .tab-content div#MyDetails  span.radio{color: #646464; font-size: 16px;}
+.spProfile .profile-options .tab-content div#MyDetails .form-check-input:checked{background-color: #1d798c; box-shadow: none;}
+.spProfile .profile-options .tab-content div#MyDetails .avatarImage{ float: left; margin-right: 15px; margin-bottom: 10px; margin-top: 5px;}
+.spProfile .profile-options .tab-content div#MyDetails .avatar{height: 82px;}
+.spProfile .profile-options .tab-content div#MyDetails .avatar.active{border: 3px solid #1d798c; border-radius: 82px;}
+.spProfile .profile-options .tab-content div#MyDetails .avatarLabel{display: block;}
+.spProfile .profile-options .tab-content div#MyDetails .title{color: #646464; font-weight: 700; font-size: 18px;}
+.spProfile .profile-options .tab-content div#MyDetails .address .form-label{font-weight: normal;}
+.spProfile .profile-options .tab-content div#MyDetails .form-select{width: 100%;}
+
+@media(max-width: 650px)
+{
+    .spProfile #MyDetails h3 img {display: none;}
+}
+@media(max-width: 500px)
+{
+    .spProfile .upcoming-service-details{ padding-left: 10px; padding-right: 10px;}
+}
+
+.spBlock .serviceRequest .service-history .container-details .col-sm-4{padding: 0 10px;}
+.spBlock .serviceRequest .service-history .container-details .block{border: 1px solid #e1e1e1;}
+.spBlock .serviceRequest .service-history .container-details .userBlock{padding: 30px 0;}
+.spBlock .serviceRequest .service-history .container-details .userBlock img{ border: 1px solid #acacac; border-radius: 50px;}
+.spBlock .serviceRequest .service-history .container-details .userBlock div{font-size: 18px; color: #4f4f4f; font-weight: 700;}
+.spBlock .serviceRequest .service-history .container-details .userBlock button.cancel{background-color: #1d798c;} 
+.spBlock .serviceRequest .service-history .container-details .userBlock button.cancel:hover{background-color: #09404b;} 
