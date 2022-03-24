@@ -8,6 +8,9 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel=stylesheet>
     <title>Admin- Service Request</title>
+    <link href="https://cdn.datatables.net/1.11.4/css/jquery.dataTables.min.css" rel="stylesheet">
+    <script src="https://cdn.datatables.net/1.11.4/js/jquery.dataTables.min.js"></script>
+    <link  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 </head>
 <body>
  
@@ -48,82 +51,10 @@
                         <div class="navbar" id="adminMenu">
                             <ul class="nav flex-column">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">Service Management</a>
+                                    <a class="nav-link active" href="#">Service Management</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">Role Management</a>
-                                </li>
-                                <li class="nav-item" id="list-down">
-                                    <a id="extra-item" class="nav-link" href="#">Coupon Code Management</a>
-                                    <button data-bs-toggle="collapse" data-bs-target="#coupon-code">
-                                        <img src="image/admin-arrow.png" alt="">
-                                    </button>
-                                    <div class="collapse" id="coupon-code">
-                                        <ul class="nav flex-column">
-                                            <li class="nav-item">
-                                                <a class="nav-link">Coupon Code</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link">Usage History</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">Escalation Management</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">Service Request</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link active" href="#">User Management</a>
-                                </li>
-                                <li class="nav-item" id="list-down">
-                                    <a id="extra-item" class="nav-link" href="#">Finance Mosule</a>
-                                    <button data-bs-toggle="collapse" data-bs-target="#finance">
-                                        <img src="image/admin-arrow.png" alt="">
-                                    </button>
-                                    <div class="collapse" id="finance">
-                                        <ul class="nav flex-column">
-                                            <li class="nav-item">
-                                                <a class="nav-link">All Transacations</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link">Generate Payment</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link">Customer Invoices</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">Zip Code Management</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">Rating Management</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">Inquiry Management</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">Newsletter Management</a>
-                                </li>
-                                <li class="nav-item" id="list-down">
-                                    <a id="extra-item" class="nav-link" href="#">Contact Management</a>
-                                    <button data-bs-toggle="collapse" data-bs-target="#contact">
-                                        <img src="image/admin-arrow.png" alt="">
-                                    </button>
-                                    <div class="collapse" id="contact">
-                                        <ul class="nav flex-column">
-                                            <li class="nav-item">
-                                                <a class="nav-link">Blog</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link">FAQs</a>
-                                            </li>
-                                        </ul>
-                                    </div>
+                                    <a class="nav-link" href="#">User Management</a>
                                 </li>
                             </ul>
                         </div>
@@ -189,210 +120,330 @@
                                 </div>
                             </div>
                             <div class="user-table">
-                                <table class="table">
+                                <table id="Data" class="table">
                                     <thead>
                                         <tr>
-                                            <th><span>Service ID<img src="image/sort.png" alt="Sort"></span></th>
-                                            <th><span>Service date<img src="image/sort.png" alt="Sort"></span></th>
-                                            <th><span>Customer Details<img src="image/sort.png" alt="Sort"></span></th>
-                                            <th><span>Service Provider<img src="image/sort.png" alt="Sort"></span></th>
-                                            <th><span>Status<img src="image/sort.png" alt="Sort"></span></th>
+                                            <th>Service ID</th>
+                                            <th>Service date</th>
+                                            <th>Customer Details</th>
+                                            <th>Service Provider</th>
+                                            <th>Gross Amount</th>
+                                            <th>Net Amount</th>
+                                            <th>Discount</th>
+                                            <th>Status</th>
+                                            <th>Payment Status</th>
                                             <th>Actions</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr id="admin"> 
-                                            <td id="t1">323436</td>
-                                            <td id="table-item-2">
-                                                <span id="t-bold">
-                                                    <img src="image/calendar2.png" alt="Sort">09/04/2018
+                                        <tr id="admin">
+                                            <td>323436</td>
+                                            <td>
+                                                <span class="mb-3">
+                                                    <img src="image/calendar2.png" alt="Sort">
+                                                    <b>09/04/2018</b>
                                                 </span><br>
-                                                <span id="t-height">
+                                                <span>
                                                     <img src="image/layer-14.png" alt="Sort">12:00 - 08:00
                                                 </span>
                                             </td>
-                                            <td id="table-item-2">
-                                                <span>David Bough</span><br>
-                                                <span id="t-height"><img src="image/layer-15.png" alt="Sort">Musterstrabe 5,12345 Bonn</span>
+                                            <td>
+                                                <div class="d-flex">
+                                                    <img src="image/layer-15.png">
+                                                    <div>
+                                                        <p>David Bough</p>
+                                                        <p>Musterstrabe 5</p>
+                                                        <p>12345 Bonn</p>
+                                                    </div>
+                                                </div>
                                             </td>
                                             <td></td>
+                                            <td>54.00 &euro;</td>
+                                            <td>54.00 &euro;</td>
+                                            <td></td>
                                             <td class="button">
-                                                <button id="yellow" class="green">New</button>
+                                                <button class="yellow" class="green">New</button>
                                             </td>
-                                            <td id='t1'>
-                                                <img id="menu" src="image/group-38.png" alt="">
+                                            <td class="button">
+                                                <button class="pink" class="green">New</button>
                                             </td>
+                                            <td>
+                                                <a class="drop-toggle" data-bs-toggle="collapse" href="#drop-down1">
+                                                    <img src="image/group-38.png" alt="">
+                                                </a>
+                                                <ul class="collapdse dropdown-menu" id="drop-down1">
+                                                    <li>
+                                                        <a data-bs-toggle="modal" data-bs-target="#EditReschedule" data-bs-dismiss="modal">
+                                                            Edit & Reschedule
+                                                        </a>
+                                                    </li>
+                                                    <li><a>Cancel SR by Cust</a></li>
+                                                    <li><a>Inquiry</a></li>
+                                                    <li><a>History log</a></li>
+                                                    <li><a>Download Invoice</a></li>
+                                                    <li><a>Other Transcation</a></li>
+                                                </ul>
+                                            </td>
+
+                                            
                                         </tr>
+                                        
                                         <tr id="admin">
-                                            <td id="t1">323436</td>
-                                            <td id="table-item-2">
-                                                <span id="t-bold">
-                                                    <img src="image/calendar2.png" alt="Sort">09/04/2018
+                                            <td>323436</td>
+                                            <td>
+                                                <span class="mb-3">
+                                                    <img src="image/calendar2.png" alt="Sort">
+                                                    <b>09/04/2018</b>
                                                 </span><br>
-                                                <span id="t-height">
+                                                <span>
                                                     <img src="image/layer-14.png" alt="Sort">12:00 - 08:00
                                                 </span>
                                             </td>
-                                            <td id="table-item-2">
-                                                <span>David Bough</span><br>
-                                                <span id="t-height"><img src="image/layer-15.png" alt="Sort">Musterstrabe 5,12345 Bonn</span>
-                                            </td>
-                                            <td >   
-                                            </td>
-                                            <td class="button">
-                                                <button id="yellow" class="green">New</button>
-                                            </td>
-                                            <td id='t1'>
-                                                <img id="menu" src="image/group-38.png" alt="">
-                                            </td>
-                                        </tr>
-                                        <tr id="admin">
-                                            <td id="t1">323436</td>
-                                            <td id="table-item-2">
-                                                <span id="t-bold">
-                                                    <img src="image/calendar2.png" alt="Sort">09/04/2018
-                                                </span><br>
-                                                <span id="t-height">
-                                                    <img src="image/layer-14.png" alt="Sort">12:00 - 08:00
-                                                </span>
-                                            </td>
-                                            <td id="table-item-2">
-                                                <span>David Bough</span><br>
-                                                <span id="t-height"><img src="image/layer-15.png" alt="Sort">Musterstrabe 5,12345 Bonn</span>
-                                            </td>
-                                            <td id="rating">
-                                                <div class="rating d-flex">
-                                                    <img id="image4" src="image/cap.png" alt="Sort">
-                                                    <div class="r-details d-flex flex-column">
-                                                        <p>Lyum Watson</p>
-                                                        <div class="star d-flex">
-                                                            <img src="image/star1.png" alt="">
-                                                            <img src="image/star1.png" alt="">
-                                                            <img src="image/star1.png" alt="">
-                                                            <img src="image/star1.png" alt="">
-                                                            <img src="image/star2.png" alt="">
-                                                            <p>4</p>
-                                                        </div>
+                                            <td>
+                                                <div class="d-flex">
+                                                    <img src="image/layer-15.png">
+                                                    <div>
+                                                        <p>David Bough</p>
+                                                        <p>Musterstrabe 5</p>
+                                                        <p>12345 Bonn</p>
                                                     </div>
-                                                </div>    
+                                                </div>
+                                            </td>
+                                            <td></td>
+                                            <td>54.00 &euro;</td>
+                                            <td>54.00 &euro;</td>
+                                            <td></td>
+                                            <td class="button">
+                                                <button class="yellow" class="green">New</button>
                                             </td>
                                             <td class="button">
-                                                <button class="green">Completed</button>
+                                                <button class="pink" class="green">New</button>
                                             </td>
-                                            <td id='t1'>
-                                                <img id="menu" src="image/group-38.png" alt="">
+                                            <td>
+                                                <a class="drop-toggle" data-bs-toggle="collapse" href="#drop-down2">
+                                                    <img src="image/group-38.png" alt="">
+                                                </a>
+                                                <ul class="collapdse dropdown-menu" id="drop-down2">
+                                                    <li><a>Edit & Reschedule</a></li>
+                                                    <li><a>Cancel SR by Cust</a></li>
+                                                    <li><a>Inquiry</a></li>
+                                                    <li><a>History log</a></li>
+                                                    <li><a>Download Invoice</a></li>
+                                                    <li><a>Other Transcation</a></li>
+                                                </ul>
                                             </td>
                                         </tr>
                                         <tr id="admin">
-                                            <td id="t1">323436</td>
-                                            <td id="table-item-2">
-                                                <span id="t-bold">
-                                                    <img src="image/calendar2.png" alt="Sort">09/04/2018
+                                            <td>323436</td>
+                                            <td>
+                                                <span class="mb-3">
+                                                    <img src="image/calendar2.png" alt="Sort">
+                                                    <b>09/04/2018</b>
                                                 </span><br>
-                                                <span id="t-height">
+                                                <span>
                                                     <img src="image/layer-14.png" alt="Sort">12:00 - 08:00
                                                 </span>
                                             </td>
-                                            <td id="table-item-2">
-                                                <span>David Bough</span><br>
-                                                <span id="t-height"><img src="image/layer-15.png" alt="Sort">Musterstrabe 5,12345 Bonn</span>
-                                            </td>
-                                            <td id="rating">
-                                                <div class="rating d-flex">
-                                                    <img id="image4" src="image/cap.png" alt="Sort">
-                                                    <div class="r-details d-flex flex-column">
-                                                        <p>Lyum Watson</p>
-                                                        <div class="star d-flex">
-                                                            <img src="image/star1.png" alt="">
-                                                            <img src="image/star1.png" alt="">
-                                                            <img src="image/star1.png" alt="">
-                                                            <img src="image/star1.png" alt="">
-                                                            <img src="image/star2.png" alt="">
-                                                            <p>4</p>
-                                                        </div>
+                                            <td>
+                                                <div class="d-flex">
+                                                    <img src="image/layer-15.png">
+                                                    <div>
+                                                        <p>David Bough</p>
+                                                        <p>Musterstrabe 5</p>
+                                                        <p>12345 Bonn</p>
                                                     </div>
-                                                </div>    
+                                                </div>
+                                            </td>
+                                            <td></td>
+                                            <td>54.00 &euro;</td>
+                                            <td>54.00 &euro;</td>
+                                            <td></td>
+                                            <td class="button">
+                                                <button class="yellow" class="green">New</button>
                                             </td>
                                             <td class="button">
-                                                <button id="blue" class="green">Pemding</button>
+                                                <button class="pink" class="green">New</button>
                                             </td>
-                                            <td id='t1'>
-                                                <img id="menu" src="image/group-38.png" alt="">
+                                            <td>
+                                                <a class="drop-toggle" data-bs-toggle="collapse" href="#drop-down3">
+                                                    <img src="image/group-38.png" alt="">
+                                                </a>
+                                                <ul class="collapdse dropdown-menu" id="drop-down3">
+                                                    <li><a>Edit & Reschedule</a></li>
+                                                    <li><a>Cancel SR by Cust</a></li>
+                                                    <li><a>Inquiry</a></li>
+                                                    <li><a>History log</a></li>
+                                                    <li><a>Download Invoice</a></li>
+                                                    <li><a>Other Transcation</a></li>
+                                                </ul>
                                             </td>
                                         </tr>
                                         <tr id="admin">
-                                            <td id="t1">323436</td>
-                                            <td id="table-item-2">
-                                                <span id="t-bold">
-                                                    <img src="image/calendar2.png" alt="Sort">09/04/2018
+                                            <td>323436</td>
+                                            <td>
+                                                <span class="mb-3">
+                                                    <img src="image/calendar2.png" alt="Sort">
+                                                    <b>09/04/2018</b>
                                                 </span><br>
-                                                <span id="t-height">
+                                                <span>
                                                     <img src="image/layer-14.png" alt="Sort">12:00 - 08:00
                                                 </span>
                                             </td>
-                                            <td id="table-item-2">
-                                                <span>David Bough</span><br>
-                                                <span id="t-height"><img src="image/layer-15.png" alt="Sort">Musterstrabe 5,12345 Bonn</span>
-                                            </td>
-                                            <td id="rating">
-                                                <div class="rating d-flex">
-                                                    <img id="image4" src="image/cap.png" alt="Sort">
-                                                    <div class="r-details d-flex flex-column">
-                                                        <p>Lyum Watson</p>
-                                                        <div class="star d-flex">
-                                                            <img src="image/star1.png" alt="">
-                                                            <img src="image/star1.png" alt="">
-                                                            <img src="image/star1.png" alt="">
-                                                            <img src="image/star1.png" alt="">
-                                                            <img src="image/star2.png" alt="">
-                                                            <p>4</p>
-                                                        </div>
+                                            <td>
+                                                <div class="d-flex">
+                                                    <img src="image/layer-15.png">
+                                                    <div>
+                                                        <p>David Bough</p>
+                                                        <p>Musterstrabe 5</p>
+                                                        <p>12345 Bonn</p>
                                                     </div>
-                                                </div>    
+                                                </div>
+                                            </td>
+                                            <td></td>
+                                            <td>54.00 &euro;</td>
+                                            <td>54.00 &euro;</td>
+                                            <td></td>
+                                            <td class="button">
+                                                <button class="yellow" class="green">New</button>
                                             </td>
                                             <td class="button">
-                                                <button id="pink" class="green">Cancelled</button>
+                                                <button class="pink" class="green">New</button>
                                             </td>
-                                            <td id='t1'>
-                                                <img id="menu" src="image/group-38.png" alt="">
+                                            <td>
+                                                <a class="drop-toggle" data-bs-toggle="collapse" href="#drop-down4">
+                                                    <img src="image/group-38.png" alt="">
+                                                </a>
+                                                <ul class="collapdse dropdown-menu" id="drop-down4">
+                                                    <li><a>Edit & Reschedule</a></li>
+                                                    <li><a>Cancel SR by Cust</a></li>
+                                                    <li><a>Inquiry</a></li>
+                                                    <li><a>History log</a></li>
+                                                    <li><a>Download Invoice</a></li>
+                                                    <li><a>Other Transcation</a></li>
+                                                </ul>
                                             </td>
-                                        </tr>
+                                        </tr>   
                                     </tbody>
                                 </table>
-                                <div class="table-end">
-                                    <div id="table-row-number" class="d-flex justify-content-between">
-                                        <div class="details d-flex">
-                                            <p>Show</p>
-                                            <div class="drop-down">
-                                                <select name="Total Entries" id="1">
-                                                    <option value="5" selected>5</option>
-                                                    <option value="10">10</option>
-                                                    <option value="15">15</option>
-                                                </select>
-                                            </div>
-                                            <p id="p3">Entries</p>
-                                        </div>
-                                        <div class="numbers">
-                                            <nav aria-label="Page navigation example">
-                                                <ul class="pagination">
-                                                    <li class="page-item">
-                                                        <a class="page-link" href="#" aria-label="Previous">
-                                                            <span aria-hidden="true">&laquo;</span>
-                                                        </a>
-                                                    </li>
-                                                    <li class="page-item"><a class="page-link active" href="#">1</a></li>
-                                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                                    <li class="page-item"><a class="page-link" href="#">4</a></li>
-                                                    <li class="page-item"><a class="page-link" href="#">5</a></li>
-                                                    <li class="page-item">
-                                                        <a class="page-link" href="#" aria-label="Next">
-                                                            <span aria-hidden="true">&raquo;</span>
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </nav>
-                                        </div>
+                            </div>
+                        </div>
+
+                        <div class="modal fade" id="EditReschedule" data-bs-backdrop="static">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-body">
+                                        <h4>Edit Service Request</h4>
+                                        <button type="button" class="close-btn" data-bs-dismiss="modal" aria-label="Close"><img
+                                                src="image/close.png"></button>
+
+                                                <form class="mb-0">
+                                                    <div class="row">
+                                                        
+                                                        <div class="col-sm-6">
+                                                            <div class="mb-3">
+                                                                <label class="form-label"><b>Date</b></label>
+                                                                <input type="text" class="form-control" placeholder="Date">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-6">
+                                                            <div class="mb-3">
+                                                                <label class="form-label">Time</label>
+                                                                <div class="dropdown">
+                                                                    <select id="start-time" class="button">
+                                                                        <option value="8" selected>8:00</option>
+                                                                        <option value="8.5">8:30</option>
+                                                                        <option value="9">9:00</option>
+                                                                        <option value="9.5">9:30</option>
+                                                                        <option value="10">10:00</option>
+                                                                        <option value="10.5">10:30</option>
+                                                                        <option value="11">11:00</option>
+                                                                        <option value="11.5">11:30</option>
+                                                                        <option value="12">12:00</option>
+                                                                        <option value="12.5">12:30</option>
+                                                                        <option value="13">13:00</option>
+                                                                        <option value="13.5">13:30</option>
+                                                                        <option value="14">14:00</option>
+                                                                        <option value="14.5">14:30</option>
+                                                                        <option value="15">15:00</option>
+                                                                        <option value="15.5">15:30</option>
+                                                                        <option value="16">16:00</option>
+                                                                        <option value="16.5">16:30</option>
+                                                                        <option value="17">17:00</option>
+                                                                        <option value="17.5">17:30</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <label class="form-label"><b>Service Address</b></label>
+                                                    <div class="row">
+                                                        <div class="col-sm-6">
+                                                            <div class="mb-3">
+                                                                <label class="form-label">Street Name</label>
+                                                                <input type="text" class="form-control" >
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-6">
+                                                            <div class="mb-3">
+                                                                <label class="form-label">House Number</label>
+                                                                <input type="text" class="form-control" >
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-6">
+                                                            <div class="mb-3">
+                                                                <label class="form-label">Postal Code</label>
+                                                                <input type="text" class="form-control" >
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-6">
+                                                            <div class="mb-3">
+                                                                <label class="form-label">City</label>
+                                                                <input type="text" class="form-control" >
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <label class="form-label"><b>Invoice Address</b></label>
+                                                    <div class="row">
+                                                        <div class="col-sm-6">
+                                                            <div class="mb-3">
+                                                                <label class="form-label">Street Name</label>
+                                                                <input type="text" class="form-control" >
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-6">
+                                                            <div class="mb-3">
+                                                                <label class="form-label">House Number</label>
+                                                                <input type="text" class="form-control" >
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-6">
+                                                            <div class="mb-3">
+                                                                <label class="form-label">Postal Code</label>
+                                                                <input type="text" class="form-control" >
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-6">
+                                                            <div class="mb-3">
+                                                                <label class="form-label">City</label>
+                                                                <input type="text" class="form-control" >
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <label class="form-label"><b>Why do you wnt to reschedule service requets?
+                                                            </b></label>
+                                                        <textarea type="text" class="form-control" rows="4"></textarea>
+                                                    </div>
+
+                                                    <div class="mb-3">
+                                                        <label class="form-label"><b>Call center EMP notes?
+                                                            </b></label>
+                                                        <textarea type="text" class="form-control" rows="2"></textarea>
+                                                    </div>
+                                                    <button class="update">Update</button>
+                                                </form>
+                                        
                                     </div>
                                 </div>
                             </div>
@@ -411,5 +462,13 @@
         
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
     <script type="text/javascript" src="js/general.js"></script>
+    <script type="text/javascript" src="js/table.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(document).click(function(){
+                $('#drop-down1').collapse('hide');
+            });
+        });
+    </script>
 </body>
 </html>

@@ -137,10 +137,26 @@ namespace HelperLand.Controllers
                 }
                 else if (user.Email == email && user.Password == password && user.UserTypeId == 2)
                 {
+                    if(user.IsActive)
+                    {
+                        HttpContext.Session.SetString("UserID", user.UserId.ToString());
+                        HttpContext.Session.SetString("UserName", user.FirstName);
+                        TempData["login"] = "3";
+                        return RedirectToAction("SPServiceRequest", "ServiceProvider");
+                    }
+                    else
+                    {
+                        TempData["login"] = "10";
+                        return RedirectToAction("Index");
+                    }
+                   
+                }
+                else if (user.Email == email && user.Password == password && user.UserTypeId == 3)
+                {
                     HttpContext.Session.SetString("UserID", user.UserId.ToString());
                     HttpContext.Session.SetString("UserName", user.FirstName);
                     TempData["login"] = "3";
-                    return RedirectToAction("SPServiceRequest", "ServiceProvider");
+                    return RedirectToAction("AdminService", "Admin");
                 }
                 else
                 {

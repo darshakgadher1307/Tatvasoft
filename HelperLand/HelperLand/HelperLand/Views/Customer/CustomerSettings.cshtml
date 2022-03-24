@@ -440,19 +440,7 @@
             });
 
             let aId = 0;
-            let x = 0;
-            $("[id^='edit_']").click(function(){
-                var a = $(this).prop('id');
-                console.log(a);
-                aId = a.split('_')[1];
-                x = $(this).attr('name');
-                j = x;
-                $('#addressline1').val('@Model.Address[j].AddressLine1');
-                $('#addressline2').val('@Model.Address[j].AddressLine2');
-                $('#postalcode').val('@Model.Address[j].PostalCode');
-                $('#city').val('@Model.Address[j].City');
-                $('#mobile').val('@Model.Address[j].Mobile');
-            });
+            
 
             $("[id^='delete_']").click(function(){
                 var a = $(this).prop('id');

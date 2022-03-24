@@ -125,7 +125,7 @@ namespace HelperLand.Controllers
 
                     foreach (var z in spService)
                     {
-                        if (z.ServiceId != id)
+                        if (z.ServiceId != id && z.Status == null)
                         {
                             var date = z.ServiceStartDate.ToString("yyyy-MM-dd");
                             if (date == model.serviceDate)

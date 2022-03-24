@@ -7,7 +7,10 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel=stylesheet>
-    <title>Admin</title>
+    <title>User Management</title>
+    <link href="https://cdn.datatables.net/1.11.4/css/jquery.dataTables.min.css" rel="stylesheet">
+    <script src="https://cdn.datatables.net/1.11.4/js/jquery.dataTables.min.js"></script>
+    <link  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 </head>
 <body>
  
@@ -48,79 +51,7 @@
                                 <a class="nav-link" href="#">Service Management</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Role Management</a>
-                            </li>
-                            <li class="nav-item" id="list-down">
-                                <a id="extra-item" class="nav-link" href="#">Coupon Code Management</a>
-                                <button data-bs-toggle="collapse" data-bs-target="#coupon-code">
-                                    <img src="image/admin-arrow.png" alt="">
-                                </button>
-                                <div class="collapse" id="coupon-code">
-                                    <ul class="nav flex-column">
-                                        <li class="nav-item">
-                                            <a class="nav-link">Coupon Code</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link">Usage History</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Escalation Management</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Service Request</a>
-                            </li>
-                            <li class="nav-item">
                                 <a class="nav-link active" href="#">User Management</a>
-                            </li>
-                            <li class="nav-item" id="list-down">
-                                <a id="extra-item" class="nav-link" href="#">Finance Mosule</a>
-                                <button data-bs-toggle="collapse" data-bs-target="#finance">
-                                    <img src="image/admin-arrow.png" alt="">
-                                </button>
-                                <div class="collapse" id="finance">
-                                    <ul class="nav flex-column">
-                                        <li class="nav-item">
-                                            <a class="nav-link">All Transacations</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link">Generate Payment</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link">Customer Invoices</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Zip Code Management</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Rating Management</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Inquiry Management</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Newsletter Management</a>
-                            </li>
-                            <li class="nav-item" id="list-down">
-                                <a id="extra-item" class="nav-link" href="#">Contact Management</a>
-                                <button data-bs-toggle="collapse" data-bs-target="#contact">
-                                    <img src="image/admin-arrow.png" alt="">
-                                </button>
-                                <div class="collapse" id="contact">
-                                    <ul class="nav flex-column">
-                                        <li class="nav-item">
-                                            <a class="nav-link">Blog</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link">FAQs</a>
-                                        </li>
-                                    </ul>
-                                </div>
                             </li>
                         </ul>
                     </div>
@@ -170,157 +101,68 @@
                             </div>
                         </div>
                         <div class="user-table">
-                            <table class="table">
+                            <table id="Data" class="table">
                                 <thead>
                                     <tr>
-                                        <th><span>User Name<img src="image/sort.png" alt="Sort"></span></th>
-                                        <th>User Type</th>
+                                        <th>User Name</th>
                                         <th>Role</th>
-                                        <th><span>Postel Code<img src="image/sort.png" alt="Sort"></span></th>
-                                        <th>City</th>
-                                        <th><span>Radius<img src="image/sort.png" alt="Sort"></span></th>
-                                        <th><span>User Status<img src="image/sort.png" alt="Sort"></span></th>
+                                        <th>Date of Registration</th>
+                                        <th>User Type</th>
+                                        <th>Phone</th>
+                                        <th>Postal code</th>
+                                        <th>Status</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr id="admin">
                                         <td>Lyum watson</td>
-                                        <td>Call Center</td>
-                                        <td>Inquiry Manager</td>
-                                        <td>123456</td>
-                                        <td>Berlin</td>
                                         <td></td>
-                                        <td class="button">
-                                            <button class="green">Active</button>
+                                        <td>
+                                            <img src="image/calendar2.png" class="me-2">
+                                            <span><b>13/02/22</b></span>
                                         </td>
-                                        <td> 
-                                            <img id="" src="image/group-38.png" alt="">
-                                        </td>
-                                    </tr>
-                                    <tr id="admin">
-                                        <td>Lyum watson</td>
-                                        <td>Service Provider</td>
-                                        <td></td>
-                                        <td>123456</td>
-                                        <td>Berlin</td>
-                                        <td>10 km</td>
-                                        <td class="button">
-                                            <button class="green">Active</button>
-                                        </td>
-                                        <td> 
-                                            <img id="" src="image/group-38.png" alt="">
-                                        </td>
-                                    </tr>
-                                    <tr id="admin">
-                                        <td>Lyum watson</td>
-                                        <td>Call Center</td>
-                                        <td>Inquiry Manager</td>
-                                        <td>123456</td>
-                                        <td>Berlin</td>
-                                        <td></td>
-                                        <td class="button">
-                                            <button class="green">Active</button>
-                                        </td>
-                                        <td> 
-                                            <img id="" src="image/group-38.png" alt="">
-                                        </td>
-                                    </tr>
-                                    <tr id="admin">
-                                        <td>Lyum watson</td>
                                         <td>Customer</td>
-                                        <td></td>
-                                        <td>123456</td>
-                                        <td>Berlin</td>
+                                        <td>9876543210</td>
                                         <td></td>
                                         <td class="button">
                                             <button class="green">Active</button>
                                         </td>
                                         <td> 
-                                            <img id="" src="image/group-38.png" alt="">
+                                            <a class="drop-toggle" data-bs-toggle="collapse" href="#drop-down1">
+                                                <img src="image/group-38.png" alt="">
+                                            </a>
+                                            <ul class="collapdse dropdown-menu" id="drop-down1">
+                                                <li><a>Delete</a></li>
+                                            </ul>
                                         </td>
                                     </tr>
+                                    
                                     <tr id="admin">
                                         <td>Lyum watson</td>
-                                        <td>Call Center</td>
-                                        <td>Content Manager</td>
-                                        <td>123456</td>
-                                        <td>Berlin</td>
                                         <td></td>
-                                        <td class="button">
-                                            <button class="green">Active</button>
+                                        <td>
+                                            <img src="image/calendar2.png" class="me-2">
+                                            <span><b>13/02/22</b></span>
                                         </td>
-                                        <td> 
-                                            <img id="" src="image/group-38.png" alt="">
-                                        </td>
-                                    </tr>
-                                    <tr id="admin">
-                                        <td>Lyum watson</td>
                                         <td>Customer</td>
-                                        <td></td>
-                                        <td>123456</td>
-                                        <td>Berlin</td>
+                                        <td>9876543210</td>
                                         <td></td>
                                         <td class="button">
                                             <button class="pink">Inactive</button>
                                         </td>
                                         <td> 
-                                            <img id="" src="image/group-38.png" alt="">
-                                        </td>
-                                    </tr>
-                                    <tr id="admin">
-                                        <td>Lyum watson</td>
-                                        <td>Call Center</td>
-                                        <td>Finance Manager</td>
-                                        <td>123456</td>
-                                        <td>Berlin</td>
-                                        <td></td>
-                                        <td class="button">
-                                            <button class="green">Active</button>
-                                        </td>
-                                        <td> 
-                                            <img id="" src="image/group-38.png" alt="">
+                                            <a class="drop-toggle" data-bs-backdrop="static" data-bs-toggle="collapse" href="#drop-down2">
+                                                <img src="image/group-38.png" alt="">
+                                            </a>
+                                            <ul class="collapdse dropdown-menu" id="drop-down2">
+                                                <li><a>Delete</a></li>
+                                            </ul>
                                         </td>
                                     </tr>
                                     
                                 </tbody>
                             </table>
-                            <div class="table-end">
-                                <div id="table-row-number" class="d-flex justify-content-between">
-                                    <div class="details d-flex">
-                                        <p>Show</p>
-                                        <div class="drop-down">
-                                            <select name="Total Entries" id="1">
-                                                <option value="5" selected>5</option>
-                                                <option value="10">10</option>
-                                                <option value="15">15</option>
-                                            </select>
-                                        </div>
-                                        <p id="p3">Entries</p>
-                                    </div>
-                                    <div class="numbers">
-                                        <nav aria-label="Page navigation example">
-                                            <ul class="pagination">
-                                                <li class="page-item">
-                                                    <a class="page-link" href="#" aria-label="Previous">
-                                                        <span aria-hidden="true">&laquo;</span>
-                                                    </a>
-                                                </li>
-                                                <li class="page-item"><a class="page-link active" href="#">1</a></li>
-                                                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                                <li class="page-item"><a class="page-link" href="#">4</a></li>
-                                                <li class="page-item"><a class="page-link" href="#">5</a></li>
-                                                <li class="page-item">
-                                                    <a class="page-link" href="#" aria-label="Next">
-                                                        <span aria-hidden="true">&raquo;</span>
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </nav>
-                                    </div>
-                                </div>  
-                            </div>
                         </div>
                     </div>
                     <div class="admin-footer">
@@ -336,5 +178,6 @@
         
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
     <script type="text/javascript" src="js/general.js"></script>
+    <script type="text/javascript" src="js/table.js"></script>
 </body>
 </html>

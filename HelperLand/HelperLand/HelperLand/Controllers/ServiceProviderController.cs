@@ -35,36 +35,39 @@ namespace HelperLand.Controllers
             {
                 foreach (var x in spRequest)
                 {
-                    service.services.Add(x);
-                    var address = helperlandContext.ServiceRequestAddresses
-                        .Where(m => m.ServiceRequestId == x.ServiceRequestId).FirstOrDefault();
-                    service.addresses.Add(address);
-                    var y = x.ServiceStartDate.AddHours(x.ServiceHours);
-                    service.serviceEnd.Add(y);
-                    var sp = helperlandContext.Users.Find(x.UserId);
-                    service.custName.Add(sp.FirstName + " " + sp.LastName);
-                    var extraList = helperlandContext.ServiceRequestExtras.Where(m => m.ServiceRequestId == x.ServiceRequestId).ToList();
-                    if (extraList.Any())
+                    if (x.ServiceStartDate > DateTime.Now)
                     {
-                        var s = "";
-                        foreach (var p in extraList)
+                        service.services.Add(x);
+                        var address = helperlandContext.ServiceRequestAddresses
+                            .Where(m => m.ServiceRequestId == x.ServiceRequestId).FirstOrDefault();
+                        service.addresses.Add(address);
+                        var y = x.ServiceStartDate.AddHours(x.ServiceHours);
+                        service.serviceEnd.Add(y);
+                        var sp = helperlandContext.Users.Find(x.UserId);
+                        service.custName.Add(sp.FirstName + " " + sp.LastName);
+                        var extraList = helperlandContext.ServiceRequestExtras.Where(m => m.ServiceRequestId == x.ServiceRequestId).ToList();
+                        if (extraList.Any())
                         {
-                            if (p.ServiceExtraId == 1)
-                                s += "Inside Cabinets";
-                            if (p.ServiceExtraId == 2)
-                                s += " Inside Fridge";
-                            if (p.ServiceExtraId == 3)
-                                s += " Inside Oven";
-                            if (p.ServiceExtraId == 4)
-                                s += " Laundry wash & dry";
-                            if (p.ServiceExtraId == 5)
-                                s += " Interior Windows";
+                            var s = "";
+                            foreach (var p in extraList)
+                            {
+                                if (p.ServiceExtraId == 1)
+                                    s += "Inside Cabinets";
+                                if (p.ServiceExtraId == 2)
+                                    s += " Inside Fridge";
+                                if (p.ServiceExtraId == 3)
+                                    s += " Inside Oven";
+                                if (p.ServiceExtraId == 4)
+                                    s += " Laundry wash & dry";
+                                if (p.ServiceExtraId == 5)
+                                    s += " Interior Windows";
+                            }
+                            service.extras.Add(s);
                         }
-                        service.extras.Add(s);
-                    }
-                    else
-                    {
-                        service.extras.Add("");
+                        else
+                        {
+                            service.extras.Add("");
+                        }
                     }
 
                 }

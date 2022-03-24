@@ -192,3 +192,9 @@ G:\TatvaSoft\Project\Tatvasoft\HelperLand\HelperLand\HelperLand\obj\Debug\netcor
 G:\TatvaSoft\Project\Tatvasoft\HelperLand\HelperLand\HelperLand\obj\Debug\netcoreapp3.1\Razor\Views\ServiceProvider\SPRatting.cshtml.g.cs
 G:\TatvaSoft\Project\Tatvasoft\HelperLand\HelperLand\HelperLand\obj\Debug\netcoreapp3.1\Razor\Views\ServiceProvider\SPBlock.cshtml.g.cs
 G:\TatvaSoft\Project\Tatvasoft\HelperLand\HelperLand\HelperLand\obj\Debug\netcoreapp3.1\Razor\Views\ServiceProvider\SPSettings.cshtml.g.cs
+G:\TatvaSoft\Project\Tatvasoft\HelperLand\HelperLand\HelperLand\obj\Debug\netcoreapp3.1\Razor\Views\Admin\AdminUser.cshtml.g.cs
+G:\TatvaSoft\Project\Tatvasoft\HelperLand\HelperLand\HelperLand\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout4.cshtml.g.cs
+G:\TatvaSoft\Project\Tatvasoft\HelperLand\HelperLand\HelperLand\obj\Debug\netcoreapp3.1\Razor\Views\Admin\AdminService.cshtml.g.cs
+G:\TatvaSoft\Project\Tatvasoft\HelperLand\HelperLand\HelperLand\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.JsonPatch.dll
+G:\TatvaSoft\Project\Tatvasoft\HelperLand\HelperLand\HelperLand\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+G:\TatvaSoft\Project\Tatvasoft\HelperLand\HelperLand\HelperLand\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll

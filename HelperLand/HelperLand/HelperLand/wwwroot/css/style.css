@@ -2301,6 +2301,7 @@ a.arrow-link {
         justify-content: center;
     }
 }
+
 /*-------------------Admin----------------------*/
 .admin-user {
     background-color: #1fb6ff;
@@ -2311,8 +2312,7 @@ a.arrow-link {
 }
 
     .admin-user .navbar {
-        padding-bottom: 0;
-        padding-top: 0;
+        padding: 0;
     }
 
     .admin-user .navbar-brand {
@@ -2340,12 +2340,12 @@ a.arrow-link {
 
 .admin-content {
     font-family: 'Roboto';
-    padding-top: 61px;
+    padding-top: 55px;
 }
 
     .admin-content .admin-menu {
         background-color: #fff;
-        height: 1012px;
+        min-height: 700px;
         box-shadow: 2px 0 5.5px 0.5px rgba(0, 0, 0, 0.1);
     }
 
@@ -2380,7 +2380,7 @@ a.arrow-link {
         }
 
         .admin-content .admin-menu .navbar ul {
-            width: max-content;
+            width: 250px;
         }
 
             .admin-content .admin-menu .navbar ul li a {
@@ -2388,14 +2388,9 @@ a.arrow-link {
                 font-size: 16px;
             }
 
-            .admin-content .admin-menu .navbar ul li#list-down {
-                position: relative;
-            }
-
-            .admin-content .admin-menu .navbar ul li a#extra-item {
-                display: inline-block;
-                padding-right: 70px;
-            }
+                .admin-content .admin-menu .navbar ul li a:hover {
+                    color: #1fb6ff;
+                }
 
             .admin-content .admin-menu .navbar ul li button {
                 position: absolute;
@@ -2412,24 +2407,6 @@ a.arrow-link {
                     transition: ease 0.3s;
                 }
 
-            .admin-content .admin-menu .navbar ul li div li {
-                border-bottom: none;
-                padding-bottom: 0;
-            }
-
-                .admin-content .admin-menu .navbar ul li div li:last-child {
-                    padding-bottom: 10px;
-                }
-
-                .admin-content .admin-menu .navbar ul li div li a {
-                    padding-bottom: 0;
-                    font-size: 15px;
-                }
-
-            .admin-content .admin-menu .navbar ul li div .nav {
-                padding-left: 20px;
-            }
-
             .admin-content .admin-menu .navbar ul li .active {
                 color: #1fb6ff;
             }
@@ -2441,7 +2418,7 @@ a.arrow-link {
             }
 
         .admin-content .admin-menu .navbar {
-            padding-top: 0;
+            padding: 0;
         }
 
     .admin-content .user-details {
@@ -2500,11 +2477,10 @@ a.arrow-link {
             width: 84px;
             box-shadow: none;
         }
-
-        .admin-content .user-search .col-auto .clear {
-            border: 1px solid #dedddd;
-            color: #646464;
-        }
+            .admin-content .user-search .col-auto .clear {
+                border: 1px solid #dedddd;
+                color: #646464;
+            }
 
         .admin-content .user-search .col-auto button:hover {
             box-shadow: none;
@@ -2520,8 +2496,7 @@ a.arrow-link {
         }
 
         .admin-content .user-search .col-auto .form-control {
-            padding-top: 10px;
-            padding-bottom: 10px;
+            padding: 22px 5px;
         }
 
         .admin-content .user-search .col-auto .form-select {
@@ -2530,9 +2505,6 @@ a.arrow-link {
             padding-right: 124px;
         }
 
-        .admin-content .user-search .col-auto .form-2 {
-            padding-right: 175px;
-        }
 
         .admin-content .user-search .col-auto .form-4 {
             width: 140px;
@@ -2541,7 +2513,7 @@ a.arrow-link {
     .admin-content .user-table {
         margin-top: 20px;
         margin-bottom: 20px;
-        width: -webkit-fill-available;
+        width: 100%;
     }
 
         .admin-content .user-table .table {
@@ -2554,24 +2526,14 @@ a.arrow-link {
         }
 
             .admin-content .user-table .table tr td {
-                padding-top: 20px;
-                padding-bottom: 20px;
+                vertical-align: middle;
+                padding: 20px 5px;
             }
 
             .admin-content .user-table .table tr th {
                 border-bottom: 1px solid #e1e1e1;
                 font-weight: bold;
-                padding-top: 20px;
-                padding-bottom: 20px;
-            }
-
-                .admin-content .user-table .table tr th span img {
-                    margin-left: 5px;
-                }
-
-            .admin-content .user-table .table tr .button {
-                padding-top: 16px;
-                padding-bottom: 10px;
+                padding: 20px 5px;
             }
 
         .admin-content .user-table table thead {
@@ -2585,63 +2547,46 @@ a.arrow-link {
             padding: 5px 20px;
         }
 
+        .admin-content .user-table .table tr td.button .lblue {
+            border: none;
+            background-color: #1fb6ff;
+            color: #fff;
+            padding: 5px 20px;
+        }
+
+        .admin-content .user-table table tbody tr td.rating .rating img {
+            height: fit-content;
+        }
+
+            .admin-content .user-table table tbody tr td.rating .rating img.image4 {
+                margin-top: auto;
+                margin-bottom: auto;
+                border: 1px solid #aaaaaa;
+                border-radius: 50%;
+                padding: 12px 7px;
+            }
+
+        .admin-content .user-table table tbody tr td.rating .r-details {
+            margin-left: 10px;
+            margin-top: 10px;
+        }
+
+            .admin-content .user-table   table tbody tr td.rating .r-details .star {
+                margin-top: -7px;
+            }
+            .admin-content .user-table   table tbody tr td.rating .r-details .star img{
+                padding-right: 5px;
+            }
+        .admin-content .user-table .table tr td:first-child, .admin-content .user-table .table tr th:first-child {
+            padding-left: 10px;
+        }
+
         .admin-content .user-table .table tr td .pink {
             border: none;
             background-color: #ff6b6b;
             color: #fff;
             padding: 5px 14px;
         }
-
-        .admin-content .user-table .table tr td img {
-            padding-left: 20px;
-        }
-
-    .admin-content .table-end {
-        background-color: #fff;
-        border: 1px solid #e1e1e1;
-    }
-
-        .admin-content .table-end .details p {
-            width: fit-content;
-            margin: auto;
-            padding-left: 15px;
-            color: #646464;
-        }
-
-        .admin-content .table-end .details .drop-down {
-            width: fit-content;
-            margin: auto;
-            padding-left: 10px;
-        }
-
-        .admin-content .table-end .details select {
-            color: #646464;
-            padding: 10px;
-            font-size: 14px;
-            border: 1px solid #d6d6d6;
-            border-radius: 4px;
-        }
-
-        .admin-content .table-end .numbers nav ul {
-            margin: revert;
-            margin-right: 20px;
-        }
-
-            .admin-content .table-end .numbers nav ul li a {
-                color: #646464;
-                font-size: 14px;
-            }
-
-            .admin-content .table-end .numbers nav ul li .active {
-                background-color: #646464;
-                color: #fff;
-            }
-
-            .admin-content .table-end .numbers nav ul li a:hover {
-                background-color: #646464;
-                color: #fff;
-                transition: ease 0.3s;
-            }
 
 .admin-footer p {
     bottom: 0;
@@ -2747,8 +2692,7 @@ a.arrow-link {
 
 /*-------------------Admin - Service Requests----------------------*/
 .admin-service-request .admin-content .user-search .col-auto .form-control {
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding: 22px 10px;
 }
 
 .admin-service-request .admin-content .user-search .col-auto .form-select {
@@ -2778,14 +2722,19 @@ a.arrow-link {
     background-color: transparent;
 }
 
-.admin-service-request .admin-content .user-table .table tr td {
-    padding-top: 15px;
-    padding-bottom: 0;
+.admin-service-request .admin-content .user-table .table tr td, .admin-service-request .admin-content .user-table .table tr th {
+    padding-right: 10px;
 }
 
-    .admin-service-request .admin-content .user-table .table tr td img {
-        padding-left: 0;
+    .admin-service-request .admin-content .user-table .table tr td .d-flex img {
+        margin: auto 0 auto 0;
+        height: fit-content;
         padding-right: 9px;
+    }
+
+    .admin-service-request .admin-content .user-table .table tr td p {
+        margin-bottom: 5px;
+        color: #646464;
     }
 
     .admin-service-request .admin-content .user-table .table tr td#rating {
@@ -2818,43 +2767,21 @@ a.arrow-link {
             padding-right: 1px;
         }
 
-.admin-service-request .admin-content .user-table .table tr td span#t-height {
-    line-height: 30px;
-}
-
-.admin-service-request .admin-content .user-table .table tr td span#t-bold {
-    font-weight: bold;
-}
-
-.admin-service-request .admin-content .user-table .table tr td#t1 {
-    padding-top: 30px;
-}
-
 .admin-service-request .admin-content .user-table .table tr .button {
     padding-top: 25px;
 }
 
-.admin-service-request .admin-content .user-table .table tr td img#menu {
-    padding-left: 25px;
-}
-
-.admin-service-request .admin-content .user-table .table tr .button button {
-    padding: 5px 8px;
-    font-size: 13px;
-}
-
-    .admin-service-request .admin-content .user-table .table tr .button button#yellow {
-        background-color: #f2bb37;
-        padding: 5px 15px;
+    .admin-service-request .admin-content .user-table .table tr .button button {
+        padding: 5px 8px;
+        font-size: 13px;
     }
 
-    .admin-service-request .admin-content .user-table .table tr .button button#blue {
-        background-color: #1fb6ff;
-    }
-
-    .admin-service-request .admin-content .user-table .table tr .button button#pink {
-        background-color: #ff6b6b;
-    }
+        .admin-service-request .admin-content .user-table .table tr .button button.yellow {
+            background-color: #f2bb37;
+            padding: 5px 15px;
+            border: none;
+            color: #fff;
+        }
 
 @media(max-width:660px) {
     .admin-service-request .admin-content .user-table .table tr td#rating .rating {
@@ -4290,4 +4217,127 @@ hr {
 
     .spBlock .serviceRequest .service-history .container-details .userBlock button.cancel:hover {
         background-color: #09404b;
+    }
+
+
+
+.admin-content .dataTables_wrapper .dataTables_paginate .paginate_button {
+    color: #646464 !important;
+    border-radius: 0px !important;
+    padding: 5px 13px !important;
+    border: 1px solid #e1e1e1 !important;
+    margin: 0;
+}
+
+    .admin-content .dataTables_wrapper .bottom .dataTables_paginate .paginate_button.current, .admin-content .dataTables_wrapper .dataTables_paginate .paginate_button:hover, .admin-content .dataTables_wrapper .bottom .dataTables_paginate .paginate_button.current:hover {
+        margin: 0;
+        background: #646464 !important;
+        color: #fff !important;
+    }
+
+.dataTables_wrapper .dataTables_info {
+    padding-top: 4px !important;
+    padding-left: 9px;
+    clear: none !important;
+}
+
+table.dataTable tbody tr {
+    border-bottom: 1px solid #e1e1e1;
+}
+
+.admin-content .dataTables_wrapper .dataTables_paginate .paginate_button i {
+    padding: 4px 0;
+}
+
+.admin-content .dataTables_wrapper .dataTables_paginate, .admin-content .dataTables_wrapper .dataTables_length {
+    padding-top: 20px !important;
+}
+
+.admin-content .dataTables_wrapper .dataTables_info {
+    padding-top: 23px !important;
+}
+
+.admin-content .user-table .table tr td .drop-toggle {
+    padding: 10px 15px;
+    position: relative;
+}
+
+    .admin-content .user-table .table tr td .drop-toggle:hover {
+        background-color: #e1e1e1;
+        border-radius: 50px;
+    }
+
+.admin-content .dropdown-menu {
+    min-width: 0;
+    border: none;
+    box-shadow: 0 0 10px rgb(0 0 0 / 30%);
+    right: 32px;
+    margin-top: 20px;
+    width: fit-content;
+    left: auto;
+    top: auto;
+}
+
+    .admin-content .dropdown-menu::after {
+        position: absolute;
+        content: "";
+        border-width: 0 8px 12px 8px;
+        border-style: solid;
+        border-color: transparent transparent #fff transparent;
+        top: -12px;
+        right: 35px;
+    }
+
+    .admin-content .dropdown-menu a {
+        color: #646464 !important;
+        display: block;
+        padding: 9px 50px 9px 10px !important;
+    }
+
+        .admin-content .dropdown-menu a:hover {
+            background-color: #e1e1e1;
+            border-radius: 0;
+        }
+
+.admin-service-request .admin-content .dropdown-menu::after {
+    right: 18px;
+}
+
+div.EditReschedule .modal-content {
+max-width: 600px !important;
+}
+
+div.EditReschedule .modal-dialog {
+    top: 50px;
+    max-width: 600px;
+}
+
+div.EditReschedule .form-label {
+    color: #646464;
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+div.EditReschedule select {
+    width: 100%;
+    padding: 8px 5px;
+    border: 1px solid #c4d4da;
+    border-radius: 4px;
+}
+
+div.EditReschedule .form-control:focus {
+    box-shadow: none;
+}
+
+div.EditReschedule button.update {
+    width: 100%;
+    color: #fff;
+    background-color: #1fb6ff;
+    padding: 10px 0;
+    border: none;
+    border-radius: 5px;
+}
+
+    div.EditReschedule button.update:hover {
+        background-color: #157fb4;
     }
